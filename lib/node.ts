@@ -94,6 +94,15 @@ function refToNodeType(node: xmlNodePtr | xmlDocPtr | null): XMLNode | XMLAttrib
     return createXMLReference(XMLNode, node);
 }
 
+function refToNodeTypeOrThrow(node: xmlNodePtr | xmlDocPtr | null, error: string): XMLNode | XMLAttribute | XMLElement | XMLDocument {
+    let result = refToNodeType(node);
+    if (result === null) {
+        throw new Error(error);
+    }
+
+    return result;
+}
+
 export class XMLNode extends XMLReference<xmlNodePtr> {
     /**
      * @private
@@ -302,7 +311,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
         return node;
     }
 
-    protected importNode(node: xmlNodePtr): XMLNode {
+    protected importNode(node: xmlNodePtr): any {
         const _ref = this.getNativeReference();
 
         if (_ref.doc === node.doc) {
@@ -310,10 +319,10 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
                 xmlUnlinkNode(node);
             }
 
-            return createXMLReferenceOrThrow(XMLNode, node, XMLNodeError.NO_REF);
+            return refToNodeTypeOrThrow(node, XMLNodeError.NO_REF);
         }
 
-        return createXMLReferenceOrThrow(XMLNode, xmlDocCopyNode(node, _ref.doc, 1), XMLNodeError.NO_REF);
+        return refToNodeTypeOrThrow(xmlDocCopyNode(node, _ref.doc, 1), XMLNodeError.NO_REF);
     }
 
     private childWillMerge(_nodeRef: xmlNodePtr) {
