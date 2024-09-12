@@ -8,7 +8,8 @@ import {
     xmlSchemaNewDocParserCtxt,
     xmlSchemaNewValidCtxt,
     xmlSchemaParse,
-    xmlSchemaValidateDoc
+    xmlSchemaValidateDoc,
+    xmlSchemaSetValidOptions
 } from "./bindings/functions";
 
 import { xmlSchemaPtr } from "./bindings/types";
@@ -61,7 +62,7 @@ export class XMLSchema extends XMLReference<xmlSchemaPtr> {
         })
     }
 
-    validateDocument(doc: XMLDocument) {
+    validateDocument(doc: XMLDocument, options: number) {
         xmlResetLastError();
 
         return withStructuredErrors((errors) => {
@@ -72,6 +73,7 @@ export class XMLSchema extends XMLReference<xmlSchemaPtr> {
                 throw new Error("Unable to create a validation context for the schema");
             }
 
+            xmlSchemaSetValidOptions(valid_ctxt, options);
             const valid = xmlSchemaValidateDoc(valid_ctxt, _docRef) == 0;
 
             xmlSchemaFreeValidCtxt(valid_ctxt);

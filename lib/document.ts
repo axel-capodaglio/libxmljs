@@ -263,9 +263,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
      * @param schemaDoc document to validate against
      * @returns {boolean} valid
      */
-    public validate(schemaDoc: XMLDocument) {
+    public validate(schemaDoc: XMLDocument, options: number) {
         const schema = XMLSchema._parseSchema(schemaDoc);
-        return schema.validateDocument(this);
+        return schema.validateDocument(this, options);
     }
 
     public rngValidate(schemaDoc: XMLDocument): boolean {

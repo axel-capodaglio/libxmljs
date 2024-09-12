@@ -273,6 +273,11 @@ export const parseSchema = (buffer: string | Buffer, options: XMLParseOptions = 
     return schema;
 }
 
+export const parseSchemaFromDoc = (document: XMLDocument): XMLSchema => {
+    const schema = XMLSchema._parseSchema(document);
+    return schema;
+}
+
 export const parseHtml = (buffer: string | Buffer, options: HTMLParseOptions = {}): HTMLDocument =>
     withStructuredErrors((structuredErrors) => {
         const document = createXMLReferenceOrThrow(
