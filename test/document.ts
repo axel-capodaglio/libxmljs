@@ -243,10 +243,10 @@ module.exports.validate = function (assert: any) {
     var xmlDocValid = libxml.parseXml(xml_valid);
     var xmlDocInvalid = libxml.parseXml(xml_invalid);
 
-    assert.equal(xmlDocValid.validate(xsdDoc), true);
+    assert.equal(xmlDocValid.validate(xsdDoc, 0), true);
     assert.equal(xmlDocValid.validationErrors.length, 0);
 
-    assert.equal(xmlDocInvalid.validate(xsdDoc), false);
+    assert.equal(xmlDocInvalid.validate(xsdDoc, 0), false);
     assert.equal(xmlDocInvalid.validationErrors.length, 1);
 
     assert.done();
@@ -351,7 +351,7 @@ module.exports.validate_memory_usage = function (assert: any) {
     var rssBefore = rssAfterGarbageCollection();
 
     for (var i = 0; i < 10000; ++i) {
-        xmlDoc.validate(xsdDoc);
+        xmlDoc.validate(xsdDoc, 0);
     }
 
     assert.done();
