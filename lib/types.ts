@@ -325,3 +325,7 @@ export enum XMLElementType {
     // XML_DOCB_DOCUMENT_NODE = 21
     XML_DOCB_DOCUMENT_NODE = bindings.XML_DOCB_DOCUMENT_NODE,
 }
+
+export enum xmlSchemaValidOption {
+    XML_SCHEMA_VAL_VC_I_CREATE = bindings.XML_SCHEMA_VAL_VC_I_CREATE, // Default/fixed: create an attribute node or an element's text node on the instance.
+}
