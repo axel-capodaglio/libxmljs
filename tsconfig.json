@@ -11,6 +11,6 @@
       "noUncheckedIndexedAccess": true,
       "strictNullChecks": true,
     },
-    "include": ["index.ts", "test"],
+    "include": ["index.ts", "test", "lib"],
     "exclude": ["node_modules"]
   }
