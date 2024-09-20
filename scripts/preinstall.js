@@ -3,7 +3,7 @@ const { execSync } = require("child_process");
 const packageRoot = __dirname + "/../";
 
 if (
-    /*fs.existsSync(packageRoot + ".git") &&*/
+    fs.existsSync(packageRoot + ".git") &&
     (!fs.existsSync(packageRoot + "vendor/libxml2/include/libxml/parserInternals.h") ||
         !fs.existsSync(packageRoot + "vendor/libxml2/globals.c"))
 ) {
