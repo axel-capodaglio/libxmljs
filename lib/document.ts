@@ -517,6 +517,17 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
         return parseHtml(buffer, options);
     }
+
+	// --- AXEL : MSXML DOM interface
+	public get documentElement(): XMLElement | null
+	{
+		return this.root();
+	}
+	
+	public set documentElement(elem: XMLElement)
+	{
+		this.root(elem);
+	}
 }
 
 export class HTMLDocument extends XMLDocument {

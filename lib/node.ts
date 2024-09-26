@@ -287,13 +287,13 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
      * @returns {XMLElement | null} previous element
      */
     public prevElement() {
-        let node = this.prevSibling();
+        let node = this.getNativeReference().prev;
 
-        while (node !== null && node.type() !== "element") {
-            node = node.prevSibling();
+        while (node !== null && node.type !== XMLElementType.XML_ELEMENT_NODE) {
+            node = node.prev;
         }
 
-        return node;
+        return createXMLReference(XMLElement, node);
     }
 
     /**
@@ -302,13 +302,13 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
      * @returns {XMLElement | null} next element
      */
     public nextElement() {
-        let node = this.nextSibling();
+		let node = this.getNativeReference().next;
 
-        while (node !== null && node.type() !== "element") {
-            node = node.nextSibling();
+        while (node !== null && node.type !== XMLElementType.XML_ELEMENT_NODE) {
+            node = node.next
         }
 
-        return node;
+        return createXMLReference(XMLElement, node);
     }
 
     protected importNode(node: xmlNodePtr): any {
@@ -442,7 +442,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
         return createXMLReference(XMLNode, this.getNativeReference().prev);
     }
 
-    public nextSibling() {
+    public _nextSibling() {
         return createXMLReference(XMLNode, this.getNativeReference().next);
     }
 
@@ -643,6 +643,106 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
     public _xmlSaveTree(context: xmlSaveCtxtPtr) {
         xmlSaveTree(context, this.getNativeReference());
     }
+	
+	// --- AXEL : MSXML DOM interface
+	public get nodeName(): string
+	{
+		return this.name();
+	}
+	
+	public cloneNode(deep: boolean)
+	{
+		const _ref = this.getNativeReference();
+		return refToNodeType(xmlDocCopyNode(_ref, _ref.doc, deep ? 1 : 0));
+	}
+	
+	public get xml()
+	{
+		return this.toString();
+	}
+	
+	public get ownerDocument()
+	{
+		return this.doc();
+	}
+	
+
+	public get firstChild()
+	{
+		return this.child(0);
+	}
+	
+	public get lastChild(): XMLElement|undefined|null
+	{
+		let children = this.childNodes();
+		if (children && children.length != 0)
+			return children[children.length - 1];
+		else
+			return null;
+	}
+	
+	public hasChildNodes(): boolean
+	{
+		return this.child(0) != null;
+	}
+	
+	public selectSingleNode(xpath: string): XMLXPathNode | boolean | number | string | null
+	{
+		return this.get(xpath);
+	}
+	
+	public selectNodes(xpath: string): XMLDOMNodeList
+	{
+		const result = this.evaluateXPath(xpath, undefined);
+
+		const nodeSet = new XMLDOMNodeList();
+
+		result.nodesetval.forEach((node) => {
+			const instance = refToNodeType(node);
+			
+			if (instance !== null && !(instance instanceof XMLDocument)) {
+				nodeSet.push(instance);
+			}
+		});
+
+		xmlXPathFreeObject(result);
+
+		return nodeSet;
+	}
+	
+	public get previousSibling() {
+		return this.prevElement();
+	}
+	
+	public get nextSibling() {
+		return this.nextElement();
+	}
+	
+	public appendChild(node: XMLElement): XMLElement {
+		return this.addChild(node);
+	}
+	
+	public removeChild(node: XMLElement): XMLElement {
+		node.remove();
+		return node;
+	}
+	
+	public replaceChild(newElem: XMLElement, oldElem: XMLElement): XMLElement
+	{
+		oldElem.replace(newElem);
+		return oldElem;
+	}
+	
+	public insertBefore(newChild: XMLElement, refChild: XMLElement): XMLElement
+	{
+		refChild.addPrevSibling(newChild);
+		return newChild;
+	}
+	
+	public get parentNode()
+	{
+		return this.parent();
+	}
 }
 
 export class XMLElement extends XMLNode {
@@ -654,7 +754,7 @@ export class XMLElement extends XMLNode {
         return super.name();
     }
 
-    public getAttribute(key: string): XMLAttribute | null {
+    public getAttributeNode(key: string): XMLAttribute | null {
         const _ref = this.getNativeReference();
 
         return createXMLReference(XMLAttribute, xmlHasProp(_ref, key));
@@ -709,13 +809,13 @@ export class XMLElement extends XMLNode {
         return this;
     }
 
-    public text(content?: string) {
+    public getText(): string {
         const _ref = this.getNativeReference();
-
-        if (content === undefined) {
-            return xmlNodeGetContent(_ref);
-        }
-
+        return xmlNodeGetContent(_ref);
+	}
+	
+    public setText(content: string) {
+        const _ref = this.getNativeReference();
         const doc = this.doc();
 
         if (doc && this.type() !== "comment") {
@@ -754,6 +854,31 @@ export class XMLElement extends XMLNode {
             this.setNativeReference(_newRef);
         }
     }
+
+
+	// --- AXEL : MSXML DOM interface
+	public get text(): string
+	{
+		return this.getText();
+	}
+	public set text(content: string)
+	{
+		this.setText(content);
+	}
+	
+	public get attributes()
+	{
+		return this.attrs();
+	}
+	
+	public getAttribute(key: string): string | null
+	{
+		let attr = this.getAttributeNode(key);
+		if (attr != null)
+			return attr.value();
+		else
+			return null;
+	}
 }
 
 export class XMLNamespace extends XMLReference<xmlNsPtr> {
@@ -833,6 +958,16 @@ export class XMLAttribute extends XMLNode {
     public node(): XMLElement {
         return createXMLReferenceOrThrow(XMLElement, this.getNativeReference().parent, XMLNodeError.NO_REF);
     }
+	
+	// --- AXEL : MSXML DOM interface
+	public get text(): string
+	{
+		return this.value();
+	}
+	public set text(content: string)
+	{
+		this.value(content);
+	}
 }
 
 export class XMLDTD extends XMLReference<xmlDtdPtr> {
@@ -879,4 +1014,32 @@ export class XMLText extends XMLElement {
     constructor(_ref: any) {
         super(_ref);
     }
+}
+
+// --- AXEL : MSXML DOM interface
+export class XMLDOMNodeList
+{
+	public nextNode(): XMLXPathNode|undefined
+	{
+		let idx = this.pos++;
+		return this.arr[idx];
+	}
+	
+	public item(idx: number):  XMLXPathNode|undefined
+	{
+		return this.arr[idx];
+	}
+	
+	public reset()
+	{
+		this.pos = 0;
+	}
+
+	public push(item: XMLXPathNode)
+	{
+		this.arr.push(item);
+	}
+	
+	private pos: number = 0;
+	private arr: Array<XMLXPathNode> = [];
 }
