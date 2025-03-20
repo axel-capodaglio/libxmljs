@@ -1017,17 +1017,19 @@ export class XMLText extends XMLElement {
 }
 
 // --- AXEL : MSXML DOM interface
-export class XMLDOMNodeList
+// IMPORTANTE: per far funzionare extends array è stato messo es6 in tsconfig.json ! altrimenti con es5 non va!
+// https://bigfatsoftwareinc.medium.com/extending-javascript-arrays-a-journey-from-es5-to-es6-df1206176c5b
+export class XMLDOMNodeList extends Array<XMLXPathNode>
 {
 	public nextNode(): XMLXPathNode|undefined
 	{
 		let idx = this.pos++;
-		return this.arr[idx];
+		return this[idx];
 	}
 	
-	public item(idx: number):  XMLXPathNode|undefined
+	public item(idx: number): XMLXPathNode|undefined
 	{
-		return this.arr[idx];
+		return this[idx];
 	}
 	
 	public reset()
@@ -1035,11 +1037,5 @@ export class XMLDOMNodeList
 		this.pos = 0;
 	}
 
-	public push(item: XMLXPathNode)
-	{
-		this.arr.push(item);
-	}
-	
 	private pos: number = 0;
-	private arr: Array<XMLXPathNode> = [];
 }

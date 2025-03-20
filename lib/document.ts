@@ -528,6 +528,16 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 	{
 		this.root(elem);
 	}
+	
+	public selectSingleNode(xpath: string): XMLXPathNode | boolean | number | string | null
+	{
+		return this.root().selectSingleNode(xpath);
+	}
+	
+	public selectNodes(xpath: string): XMLDOMNodeList
+	{
+		return this.root().selectNodes(xpath);
+	}
 }
 
 export class HTMLDocument extends XMLDocument {
