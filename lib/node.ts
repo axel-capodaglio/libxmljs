@@ -743,6 +743,13 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 	{
 		return this.parent();
 	}
+	
+	public get nodeType()
+	{
+        const _ref = this.getNativeReference();
+		// enum XMLElementType da libxmljs\lib\types.ts
+        return _ref.type;
+	}
 }
 
 export class XMLElement extends XMLNode {
@@ -879,6 +886,16 @@ export class XMLElement extends XMLNode {
 		else
 			return null;
 	}
+	
+	public get nodeValue(): string
+	{
+		return this.getText();
+	}
+
+	public set nodeValue(content: string)
+	{
+		this.setText(content);
+	}
 }
 
 export class XMLNamespace extends XMLReference<xmlNsPtr> {
@@ -965,6 +982,16 @@ export class XMLAttribute extends XMLNode {
 		return this.value();
 	}
 	public set text(content: string)
+	{
+		this.value(content);
+	}
+	
+	public get nodeValue(): string
+	{
+		return this.value();
+	}
+
+	public set nodeValue(content: string)
 	{
 		this.value(content);
 	}

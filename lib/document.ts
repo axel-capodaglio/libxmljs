@@ -1,5 +1,7 @@
 import { XMLElement, XMLDTD, XPathNamespace, XMLNode, XMLText, XMLNodeError, XMLNamespace } from "./node";
 
+const fs = require("fs");
+
 import {
     parseHtml,
     parseXml,
@@ -537,6 +539,23 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 	public selectNodes(xpath: string): XMLDOMNodeList
 	{
 		return this.root().selectNodes(xpath);
+	}
+	
+	public appendChild(elem: XMLElement)
+	{
+		// TODO ???
+		if (elem.type() == "pi")
+			return;
+		
+		this.root(elem);
+		return elem;
+	}
+	
+	public save(filename)
+	{
+		// XML_SAVE_NO_DECL ?
+		//let xmlstr = this.toString( { declaration:false } );
+		fs.writeFileSync(filename, this.toString());
 	}
 }
 
