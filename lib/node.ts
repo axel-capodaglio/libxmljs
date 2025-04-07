@@ -887,6 +887,13 @@ export class XMLElement extends XMLNode {
 			return null;
 	}
 	
+	public removeAttribute(name: string)
+	{
+		let attr = this.getAttributeNode(name);
+		if (attr != null)
+			attr.remove();
+	}
+	
 	public get nodeValue(): string
 	{
 		return this.getText();

@@ -552,11 +552,37 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 		return elem;
 	}
 	
-	public save(filename)
+	public save(filename: string)
 	{
 		// XML_SAVE_NO_DECL ?
 		//let xmlstr = this.toString( { declaration:false } );
 		fs.writeFileSync(filename, this.toString());
+	}
+	
+	public loadXML(xml: string): boolean
+	{
+		try
+		{
+			this.fromXml(xml);
+			return true;
+		}
+		catch (ex)
+		{
+			return false;
+		}
+	}
+	
+	public load(filename: string): boolean
+	{
+		try
+		{
+			let xml = fs.readFileSync(filename).toString();
+			return this.loadXML(xml);
+		}
+		catch (ex)
+		{
+			return false;
+		}
 	}
 	
 	public get parentNode()
