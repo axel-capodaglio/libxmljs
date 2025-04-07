@@ -521,6 +521,7 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
     }
 
 	// --- AXEL : MSXML DOM interface
+	// NB: il document non discende dal node!
 	public get documentElement(): XMLElement | null
 	{
 		return this.root();
@@ -556,6 +557,18 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 		// XML_SAVE_NO_DECL ?
 		//let xmlstr = this.toString( { declaration:false } );
 		fs.writeFileSync(filename, this.toString());
+	}
+	
+	public get parentNode()
+	{
+		return null;
+	}
+	
+	public get nodeType()
+	{
+		const _ref = this.getNativeReference();
+		// enum XMLElementType da libxmljs\lib\types.ts
+		return _ref.type;
 	}
 }
 

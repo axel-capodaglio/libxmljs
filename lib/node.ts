@@ -746,9 +746,9 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 	
 	public get nodeType()
 	{
-        const _ref = this.getNativeReference();
+		const _ref = this.getNativeReference();
 		// enum XMLElementType da libxmljs\lib\types.ts
-        return _ref.type;
+		return _ref.type;
 	}
 }
 
