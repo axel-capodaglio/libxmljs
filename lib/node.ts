@@ -647,6 +647,19 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 	// --- AXEL : MSXML DOM interface
 	public get nodeName(): string
 	{
+		// Contains the qualified name of the element, attribute, or entity reference, or a fixed string for other node types  : ma non gestiamo namespace quindi == name
+		return this.name();
+	}
+	
+	public get tagName(): string
+	{
+		// Contains the element name
+		return this.name();
+	}
+	
+	public get baseName(): string
+	{
+		// Returns the base name for the name qualified with the namespace : ma non gestiamo namespace quindi == name
 		return this.name();
 	}
 	
@@ -709,7 +722,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 
 		return nodeSet;
 	}
-	
+
 	public get previousSibling() {
 		return this.prevElement();
 	}
@@ -892,6 +905,11 @@ export class XMLElement extends XMLNode {
 		let attr = this.getAttributeNode(name);
 		if (attr != null)
 			attr.remove();
+	}
+
+	public removeAttributeNode(attr: XMLAttribute)
+	{
+		attr.remove();
 	}
 	
 	public get nodeValue(): string
