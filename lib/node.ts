@@ -108,8 +108,11 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
      * @private
      * @param _ref 
      */
+    public ref;
+
     constructor(_ref: any) {
         super(_ref);
+        this.ref = _ref;
     }
 
     /**
@@ -132,7 +135,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
      *
      * @returns {string} name
      */
-    public name(): string {
+    public _name(): string {
         const _ref = this.getNativeReference();
 
         if (
@@ -424,7 +427,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
      *
      * @returns {XMLElement[]} array of child nodes
      */
-    public childNodes() {
+    public _childNodes() {
         const _ref = this.getNativeReference()
         const children: XMLElement[] = [];
 
@@ -644,23 +647,46 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
         xmlSaveTree(context, this.getNativeReference());
     }
 	
-	// --- AXEL : MSXML DOM interface
+	// --- AXEL : MSXML DOM interface (Node)
 	public get nodeName(): string
 	{
 		// Contains the qualified name of the element, attribute, or entity reference, or a fixed string for other node types  : ma non gestiamo namespace quindi == name
-		return this.name();
+		return this._name();
 	}
+
+    public get data(): string
+	{
+        switch (this.nodeType) {
+            case 3:
+            case 4:
+            case 8:
+                return this.ref.content ?? "";
+            case 7:
+                return (this.ref.content ?? "").replace(/&quot;/g, "\"");
+            default:
+                return "";
+        }
+	}
+
+    public get target(): string {
+        return this.ref.type === 7 ? this.ref.name ?? "" : "";
+    }
 	
 	public get tagName(): string
 	{
 		// Contains the element name
-		return this.name();
+		return this._name();
 	}
 	
 	public get baseName(): string
 	{
 		// Returns the base name for the name qualified with the namespace : ma non gestiamo namespace quindi == name
-		return this.name();
+		return this._name();
+	}
+
+    public get childNodes(): XMLElement[]
+	{
+        return this._childNodes();
 	}
 	
 	public cloneNode(deep: boolean)
@@ -687,7 +713,7 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 	
 	public get lastChild(): XMLElement|undefined|null
 	{
-		let children = this.childNodes();
+		let children = this._childNodes();
 		if (children && children.length != 0)
 			return children[children.length - 1];
 		else
@@ -771,7 +797,7 @@ export class XMLElement extends XMLNode {
             xmlNodeSetName(this.getNativeReference(), value);
         }
 
-        return super.name();
+        return super._name();
     }
 
     public getAttributeNode(key: string): XMLAttribute | null {
@@ -842,7 +868,7 @@ export class XMLElement extends XMLNode {
             content = doc.encode(content);
         }
 
-        this.childNodes().forEach((child) => {
+        this._childNodes().forEach((child) => {
             xmlUnlinkNode(child.getNativeReference());
         });
 
@@ -876,7 +902,7 @@ export class XMLElement extends XMLNode {
     }
 
 
-	// --- AXEL : MSXML DOM interface
+	// --- AXEL : MSXML DOM interface (Element)
 	public get text(): string
 	{
 		return this.getText();
@@ -895,10 +921,19 @@ export class XMLElement extends XMLNode {
 	{
 		let attr = this.getAttributeNode(key);
 		if (attr != null)
-			return attr.value();
+			return attr._value();
 		else
 			return null;
 	}
+
+    public setAttributeNode(attributeNode: XMLAttribute): void {
+        const name = attributeNode.name;
+        const value = attributeNode.value;
+        const attrPtr = xmlSetProp(this.ref, name, value);
+        if (!attrPtr) {
+            throw new Error(`Unable to set attribute: ${name}`);
+        }
+    }
 	
 	public removeAttribute(name: string)
 	{
@@ -909,7 +944,9 @@ export class XMLElement extends XMLNode {
 
 	public removeAttributeNode(attr: XMLAttribute)
 	{
+        let result = attr;
 		attr.remove();
+        return result;
 	}
 	
 	public get nodeValue(): string
@@ -962,7 +999,7 @@ export class XMLAttribute extends XMLNode {
         super(_ref);
     }
 
-    public name(): string {
+    public _name(): string {
         return this.getNativeReference().name;
     }
 
@@ -971,7 +1008,7 @@ export class XMLAttribute extends XMLNode {
         return this.node().defineNamespace(prefix, href);
     }
 
-    public value(value?: string): string {
+    public _value(value?: string): string {
         const _ref = this.getNativeReference();
 
         if (typeof value === "string") {
@@ -1001,24 +1038,43 @@ export class XMLAttribute extends XMLNode {
         return createXMLReferenceOrThrow(XMLElement, this.getNativeReference().parent, XMLNodeError.NO_REF);
     }
 	
-	// --- AXEL : MSXML DOM interface
+	// --- AXEL : MSXML DOM interface (Attribute)
 	public get text(): string
 	{
-		return this.value();
+		return this._value();
 	}
 	public set text(content: string)
 	{
-		this.value(content);
+		this._value(content);
+	}
+
+    public get value(): string
+	{
+		return this._value();
+	}
+	public set value(content: string)
+	{
+		this._value(content);
+	}
+
+    public get name(): string
+	{
+		return this._name();
 	}
 	
 	public get nodeValue(): string
 	{
-		return this.value();
+		return this._value();
 	}
 
 	public set nodeValue(content: string)
 	{
-		this.value(content);
+		this._value(content);
+	}
+
+    public get parentNode()
+	{
+		return null;
 	}
 }
 

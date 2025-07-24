@@ -1,4 +1,4 @@
-import { XMLElement, XMLDTD, XPathNamespace, XMLNode, XMLText, XMLNodeError, XMLNamespace } from "./node";
+import { XMLElement, XMLDTD, XPathNamespace, XMLNode, XMLText, XMLNodeError, XMLNamespace, XMLDOMNodeList, XMLXPathNode, XMLAttribute } from "./node";
 
 const fs = require("fs");
 
@@ -64,6 +64,15 @@ import {
     xmlSearchNsByHref,
     xmlNewNs,
     xmlSetNs,
+    xmlNewDocProp,
+    xmlSetProp,
+    xmlCopyDoc,
+    xmlNewCDataBlock,
+    xmlNewComment,
+    xmlNewText,
+    xmlNewNode,
+    xmlAddPrevSibling,
+    xmlReplaceNode,
 } from "./bindings/functions";
 
 import { XMLSchema } from "./schema";
@@ -200,14 +209,14 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
     /**
      * @see XMLNode.childNodes
      */
-    public childNodes() {
+    public _childNodes() {
         const root = this.root();
 
         if (root === null) {
             throw new Error(XMLDocumentError.NO_ROOT);
         }
 
-        return root.childNodes();
+        return root._childNodes();
     }
 
     /**
@@ -520,37 +529,125 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
         return parseHtml(buffer, options);
     }
 
-	// --- AXEL : MSXML DOM interface
+	// --- AXEL : MSXML DOM interface (Document)
 	// NB: il document non discende dal node!
 	public get documentElement(): XMLElement | null
 	{
 		return this.root();
 	}
 	
-	public set documentElement(elem: XMLElement)
+	public set documentElement(elem: XMLElement | null)
 	{
-		this.root(elem);
+		if (elem !== null) this.root(elem);
+	}
+
+    public get childNodes(): XMLElement[]
+	{
+		const root = this.root();
+
+        if (root === null) {
+            throw new Error(XMLDocumentError.NO_ROOT);
+        }
+
+        return root.childNodes;
+	}
+
+    public get firstChild(): XMLElement | undefined | null
+    {
+        let nodePtr = this.ref.children;
+        while (nodePtr) {
+            const node = new XMLElement(nodePtr);
+            return node;
+        }
+        return
+    }
+
+    public get xml(): string
+    {
+        return this.toString();
+    }
+
+    public removeChild(child: XMLElement): XMLElement
+    {
+        const childPtr = child.ref;
+        if (!childPtr || !this.ref) {
+            throw new Error("Elemento o figlio non valido");
+        }
+        if (childPtr.parent !== this.ref) {
+            throw new Error("Il nodo da rimuovere non è figlio di questo elemento");
+        }
+        xmlUnlinkNode(childPtr);
+        return child;
+    }
+	
+	public selectSingleNode(xpath: string): XMLXPathNode | boolean | number | string | null | undefined
+	{
+        let root = this.root();
+        if (!root)
+            return null;
+        let rootName = root.baseName;
+        if (xpath === rootName)
+            return root;
+        if (xpath.startsWith(rootName + "/"))
+            xpath = xpath.substring(rootName.length + 1);
+		return root.selectSingleNode(xpath);
 	}
 	
-	public selectSingleNode(xpath: string): XMLXPathNode | boolean | number | string | null
+	public selectNodes(xpath: string): XMLDOMNodeList | null | undefined
 	{
-		return this.root().selectSingleNode(xpath);
+        let root = this.root();
+        if (!root)
+            return undefined;
+        let rootName = root.baseName;
+        if (xpath === rootName)
+            return new XMLDOMNodeList(root);
+        if (xpath.startsWith(rootName + "/")) xpath = xpath.substring(rootName.length + 1);
+		return root.selectNodes(xpath);
 	}
 	
-	public selectNodes(xpath: string): XMLDOMNodeList
+	public appendChild(elem: XMLElement): XMLElement
 	{
-		return this.root().selectNodes(xpath);
+		if (!elem || elem.nodeType === 7) { // 7 = PROCESSING_INSTRUCTION_NODE
+            return elem;
+        }
+        const hasRoot = xmlDocGetRootElement(this.ref);
+        if (hasRoot) {
+            throw new Error("The document already has a root node");
+        }
+        xmlDocSetRootElement(this.ref, elem.ref);
+        return elem;
 	}
-	
-	public appendChild(elem: XMLElement)
+
+    public insertBefore(newNode: XMLElement, documentElement: XMLElement): XMLElement
 	{
-		// TODO ???
-		if (elem.type() == "pi")
-			return;
-		
-		this.root(elem);
-		return elem;
+		const docRootPtr = xmlDocGetRootElement(this.ref);
+        if (!docRootPtr) {
+            throw new Error("The document does not have a root node");
+        }
+        if (documentElement.ref !== docRootPtr) {
+            throw new Error("The target node is not the root node of the document");
+        }
+        const result = xmlAddPrevSibling(documentElement.ref, newNode.ref);
+        if (!result) {
+            throw new Error("Cannot insert node before root node");
+        }
+        return newNode;
 	}
+
+    public replaceChild(replacement: XMLElement, original: XMLElement): XMLElement
+    {
+        if (!replacement?.ref || !original?.ref || !this.ref) {
+            throw new Error("Invalid node");
+        }
+        if (original.ref.parent !== this.ref) {
+            throw new Error("The node to be replaced is not a child of this element");
+        }
+        const result = xmlReplaceNode(original.ref, replacement.ref);
+        if (!result) {
+            throw new Error("Unable to replace node");
+        }
+        return original;
+    }
 	
 	public save(filename: string)
 	{
@@ -584,6 +681,71 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 			return false;
 		}
 	}
+    
+    public cloneNode(deep: boolean): XMLDocument
+    {
+        const clonePtr = xmlCopyDoc(this.ref, deep ? 1 : 0);
+        if (!clonePtr) {
+            throw new Error("Unable to clone");
+        }
+        return createXMLReferenceOrThrow(XMLDocument, clonePtr, XMLDocumentError.NO_REF);
+    }
+
+    public createAttribute(name: string, value: string = ""): XMLAttribute
+    {
+        const attrPtr = xmlNewDocProp(this.ref, name, value);
+        if (!attrPtr) {
+            throw new Error(`Impossibile creare l'attributo: ${name}`);
+        }
+        return new XMLAttribute(attrPtr);
+    }
+
+    public createCDATASection(content: string): XMLNode {
+        const cdataPtr = xmlNewCDataBlock(this.ref, content, content.length);
+        if (!cdataPtr) {
+            throw new Error("Unable to create CDATA section");
+        }
+        return new XMLNode(cdataPtr);
+    }
+
+    public createNode(type: number, name: string, value: string = ""): XMLElement
+    {
+        let nodePtr: xmlNodePtr | null = null;
+        switch (type) {
+            case 1: // ELEMENT_NODE
+            nodePtr = xmlNewNode(null, name);
+            break;
+            case 3: // TEXT_NODE
+            nodePtr = xmlNewText(value);
+            break;
+            case 4: // CDATA_SECTION_NODE
+            nodePtr = xmlNewCDataBlock(this.ref, value, value.length);
+            break;
+            case 8: // COMMENT_NODE
+            nodePtr = xmlNewComment(value);
+            break;
+            default:
+            throw new Error(`Unsupported type: ${type}`);
+        }
+        if (!nodePtr) {
+            throw new Error("Unable to create XML Node");
+        }
+        return new XMLElement(nodePtr);
+    }
+
+    public createTextNode(value: string = ""): XMLElement
+    {
+        const textPtr = xmlNewText(value);
+        if (!textPtr) {
+            throw new Error("Unable to create XML Text Node");
+        }
+        return new XMLElement(textPtr);
+    }
+
+    public hasChildNodes(): boolean
+    {
+        return this.ref.children !== null;
+    }
 	
 	public get parentNode()
 	{

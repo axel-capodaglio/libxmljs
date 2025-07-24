@@ -37,6 +37,7 @@ export class XMLReference<T> {
      * @private
      */
     private _ref: T;
+    protected ref: T;
 
     /**
      * @private
@@ -44,6 +45,7 @@ export class XMLReference<T> {
      */
     constructor(_ref: T) {
         this._ref = _ref;
+        this.ref = _ref;
     }
 
     // public getSelfOrThrow(error: string) {
