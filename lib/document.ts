@@ -65,7 +65,6 @@ import {
     xmlNewNs,
     xmlSetNs,
     xmlNewDocProp,
-    xmlSetProp,
     xmlCopyDoc,
     xmlNewCDataBlock,
     xmlNewComment,
