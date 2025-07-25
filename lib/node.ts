@@ -1,4 +1,4 @@
-import { xmlDocPtr, xmlNodePtr, xmlDtdPtr, xmlNsPtr, XMLReferenceType, xmlXPathObjectPtr } from "./bindings/types";
+import { xmlDocPtr, xmlNodePtr, xmlDtdPtr, xmlNsPtr, xmlXPathObjectPtr } from "./bindings/types";
 
 import { XMLReference, createXMLReference, createXMLReferenceOrThrow } from "./bindings";
 
@@ -28,8 +28,6 @@ import {
     xmlGetLineNo,
     xmlDocSetRootElement,
     xmlSaveTree,
-    xmlReconciliateNs,
-    xmlSetTreeDoc,
     xmlXPathFreeObject,
     xmlXPathFreeContext,
 } from "./bindings/functions";
@@ -949,14 +947,24 @@ export class XMLElement extends XMLNode {
         return result;
 	}
 	
-	public get nodeValue(): string
-	{
-		return this.getText();
-	}
+	public get nodeValue(): string | null {
+        const type = this.type();
+        if (type === "element") {
+            return null;
+        }
+        if (type === "text" || type === "cdata" || type === "comment") {
+            return this.getText();
+        }
+        return null;
+    }
 
 	public set nodeValue(content: string)
 	{
-		this.setText(content);
+        // For elements, MSXML ignores the nodeValue set
+		const type = this.type();
+        if (type === "text" || type === "cdata" || type === "comment") {
+            this.setText(content);
+        }
 	}
 }
 
