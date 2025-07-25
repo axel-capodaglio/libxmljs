@@ -958,9 +958,10 @@ export class XMLElement extends XMLNode {
         return null;
     }
 
-	public set nodeValue(content: string)
+	public set nodeValue(content: string | null)
 	{
         // For elements, MSXML ignores the nodeValue set
+        content = content || "";
 		const type = this.type();
         if (type === "text" || type === "cdata" || type === "comment") {
             this.setText(content);
