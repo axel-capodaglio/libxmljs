@@ -1,16 +1,32 @@
-# libxmljs
+# libxmljs/MSXML
 
-NodeJS bindings for [libxml2](https://en.wikipedia.org/wiki/Libxml2) written in Typescript
+NodeJS bindings for [libxml2](https://en.wikipedia.org/wiki/Libxml2) with [MSXML](https://en.wikipedia.org/wiki/MSXML) support.
 
 `npm install @axelsoftware/libxmljs`
 
-## Documentation and examples
+This fork of libxmljs extends the original library with MSXML-compatible DOM methods and properties.
 
-* For documentation check out the original project [documentation](https://libxmljs.github.io/libxmljs/) and [repository](https://github.com/libxmljs/libxmljs)
+# Changes
 
-* For examples check out the [test suite](https://github.com/axel-capodaglio/libxmljs/tree/master/test)
+### New functions
+Some new functions have been added (e.g. `selectSingleNode`).
 
-## npm
+### Changes in naming
+Some methods from the original library have been renamed with a _ prefix (e.g. _methodName).
+This was done to allow them to be exposed as properties instead of functions, improving API consistency and aligning with MSXML-like usage.
+
+Example:
+```javascript
+// Old style:
+const name = node.childNodes();
+
+// New style (property-like):
+const name = node.childNodes;
+// or 
+const name = node._childNodes();
+```
+
+# npm
 
 To publish the package on npm you must generate the <em>dist</em> directory, otherwise the published package won't have a valid <em>main</em> entry.
 
