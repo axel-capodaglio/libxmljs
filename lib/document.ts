@@ -328,8 +328,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
         return node;
     }
 
-    public encode(data: string): string {
-       const _ref = this.getNativeReference(),
+    public encode(data: string | number): string {
+        data = data.toString();
+        const _ref = this.getNativeReference(),
             content = xmlEncodeSpecialChars(_ref, data);
 
         if (content === null) {
