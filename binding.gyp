@@ -89,6 +89,23 @@
                     ],
                 }]
             ],
-        }
+        },
+		{
+		  # per ragioni non note la compilazione su linux lascia l'output in build/Release/lib.target/xmljs.node : usa quindi una target fittizio action_after_build per copiarlo in build/Release
+		  # su windows invece non serve, viene già generato li'; c'è anche un vecchio ticket... https://github.com/libxmljs/libxmljs/issues/253
+		  "target_name": "action_after_build",
+		  "type": "none",
+		  "dependencies": [ "xmljs" ],
+		  "conditions": [
+			["OS=='linux'", {
+			  "copies": [
+				{
+				  "files": [ "<(PRODUCT_DIR)/lib.target/xmljs.node" ],
+				  "destination": "<(PRODUCT_DIR)/"
+				}
+			  ]
+			}]
+		  ]
+		}
     ]
 }
