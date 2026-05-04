@@ -1,6 +1,7 @@
 import { XMLElement, XMLDTD, XPathNamespace, XMLNode, XMLText, XMLNodeError, XMLNamespace, XMLDOMNodeList, XMLXPathNode, XMLAttribute } from "./node";
 
 const fs = require("fs");
+const path = require("path");
 
 import {
     parseHtml,
@@ -531,6 +532,16 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
 	// --- AXEL : MSXML DOM interface (Document)
 	// NB: il document non discende dal node!
+	
+	// sostituzione \ -> / per compatibilita' script che contengono separatori windows-style
+    private BackslashReplace(filename: string): string
+    {
+        if (path.sep == "/")
+            return filename.replaceAll("\\", "/");
+        else
+            return filename;
+    }
+
 	public get documentElement(): XMLElement | null
 	{
 		return this.root();
@@ -653,7 +664,7 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 	{
 		// XML_SAVE_NO_DECL ?
 		//let xmlstr = this.toString( { declaration:false } );
-		fs.writeFileSync(filename, this.toString());
+        fs.writeFileSync(this.BackslashReplace(filename), this.toString());
 	}
 	
 	public loadXML(xml: string): boolean
@@ -673,7 +684,7 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 	{
 		try
 		{
-			let xml = fs.readFileSync(filename).toString();
+            let xml = fs.readFileSync(this.BackslashReplace(filename)).toString();
 			return this.loadXML(xml);
 		}
 		catch (ex)
