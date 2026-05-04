@@ -11,3 +11,4 @@ crash.log
 swig.xml
 appveyor.yml
 docs/
+/.npmrc

@@ -28,6 +28,6 @@ const name = node._childNodes();
 
 # npm
 
-To publish the package on npm you must generate the <em>dist</em> directory, otherwise the published package won't have a valid <em>main</em> entry.
+To publish the package on npm you must generate/update the <em>dist</em> directory.
 
 To do this you have to run the `npm run tsc` command before.
