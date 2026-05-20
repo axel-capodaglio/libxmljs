@@ -1,5 +1,9 @@
 {
-    'targets': [
+		"variables": {
+    		"node_major%": "<!(node -p \"process.versions.node.split('.')[0]\")"
+  		},
+  
+      'targets': [
         {
             'target_name': 'xmljs',
             'product_extension': 'node',
@@ -91,13 +95,13 @@
             ],
         },
 		{
-		  # per ragioni non note la compilazione su linux lascia l'output in build/Release/lib.target/xmljs.node : usa quindi una target fittizio action_after_build per copiarlo in build/Release
+		  # per ragioni non note la compilazione su linux (su node 18, es debian 12 bookworm) lascia l'output in build/Release/lib.target/xmljs.node : usa quindi una target fittizio action_after_build per copiarlo in build/Release
 		  # su windows invece non serve, viene già generato li'; c'è anche un vecchio ticket... https://github.com/libxmljs/libxmljs/issues/253
 		  "target_name": "action_after_build",
 		  "type": "none",
 		  "dependencies": [ "xmljs" ],
 		  "conditions": [
-			["OS=='linux'", {
+			["OS=='linux' and node_major < 20", {
 			  "copies": [
 				{
 				  "files": [ "<(PRODUCT_DIR)/lib.target/xmljs.node" ],
