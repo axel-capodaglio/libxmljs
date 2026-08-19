@@ -43,7 +43,7 @@ export enum XMLNodeError {
 export type XPathNamespace = string | XMLNamespace | { [key: string]: string };
 
 export type XMLAttributeMap = {
-    [key: string]: string | number;
+    [key: string]: string | number | null | undefined;
 };
 
 import { XMLDocument } from "./document";
@@ -804,17 +804,26 @@ export class XMLElement extends XMLNode {
         return createXMLReference(XMLAttribute, xmlHasProp(_ref, key));
     }
 
-    public setAttribute(key: string, value: string | number): XMLAttribute | null {
+    /**
+     * Set (or create) an attribute on this element.
+     * `null` and `undefined` values are treated as an empty string.
+     * @param key attribute name
+     * @param value attribute value; null/undefined become ""
+     * @returns the attribute node, or null if it could not be set
+     */
+    public setAttribute(key: string, value: string | number | null | undefined): XMLAttribute | null {
         const _ref = this.getNativeReference();
+        const _value = value === null || value === undefined ? "" : value.toString();
 
-        return createXMLReference(XMLAttribute, xmlSetProp(_ref, key, value.toString()));
+        return createXMLReference(XMLAttribute, xmlSetProp(_ref, key, _value));
     }
 
     /**
      * set multiple attributes
      * BREAKING CHANGE: no longer overloaded for setting single attr
-     * @param attributes 
-     * @returns 
+     * Values are converted by setAttribute: null/undefined become "".
+     * @param attributes
+     * @returns
      */
     public attr(attributes: XMLAttributeMap): XMLElement {
         if (typeof attributes === "string") {
@@ -822,7 +831,7 @@ export class XMLElement extends XMLNode {
             return this;
         }
         Object.keys(attributes).forEach((k) => {
-            this.setAttribute(k, attributes[k] || "");
+            this.setAttribute(k, attributes[k]);
         });
 
         return this;
