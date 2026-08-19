@@ -12,3 +12,4 @@ swig.xml
 appveyor.yml
 docs/
 /.npmrc
+/release.ps1
