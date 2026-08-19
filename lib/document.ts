@@ -537,7 +537,7 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
     private BackslashReplace(filename: string): string
     {
         if (path.sep == "/")
-            return filename.replaceAll("\\", "/");
+            return filename.split("\\").join("/");
         else
             return filename;
     }
