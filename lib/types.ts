@@ -46,6 +46,25 @@ export class XMLStructuredError extends Error {
     }
 };
 
+/**
+ * Thrown when a value cannot be converted to an attribute value.
+ * Mirrors MSXML, which rejects a VT_NULL value: the `number` field carries the
+ * original COM error code so ported scripts can test it as they did under
+ * JScript/VBScript.
+ */
+export class XMLTypeMismatchError extends Error {
+    /** COM error code raised by MSXML (DISP_E_TYPEMISMATCH). */
+    public readonly number: number = 0x800a000d;
+
+    constructor(message: string = "Type mismatch") {
+        super(message);
+
+        this.name = "XMLTypeMismatchError";
+
+        Object.setPrototypeOf(this, XMLTypeMismatchError.prototype);
+    }
+};
+
 export type StructuredErrorCallback = (errors: XMLStructuredError[]) => any;
 export type GenericErrorCallback = (errors: string[]) => any;
 

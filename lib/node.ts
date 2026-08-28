@@ -43,11 +43,11 @@ export enum XMLNodeError {
 export type XPathNamespace = string | XMLNamespace | { [key: string]: string };
 
 export type XMLAttributeMap = {
-    [key: string]: string | number | null | undefined;
+    [key: string]: string | number | undefined;
 };
 
 import { XMLDocument } from "./document";
-import { XMLElementType, XMLSaveOptions } from "./types";
+import { XMLElementType, XMLSaveOptions, XMLTypeMismatchError } from "./types";
 
 export type XMLXPathNode = XMLNode | XMLAttribute | XMLElement;
 
@@ -806,14 +806,22 @@ export class XMLElement extends XMLNode {
 
     /**
      * Set (or create) an attribute on this element.
-     * `null` and `undefined` values are treated as an empty string.
+     * Follows MSXML value conversion: `undefined` (VT_EMPTY) becomes an empty
+     * string, while `null` (VT_NULL) is rejected.
      * @param key attribute name
-     * @param value attribute value; null/undefined become ""
+     * @param value attribute value; undefined becomes ""
      * @returns the attribute node, or null if it could not be set
+     * @throws XMLTypeMismatchError when value is null
      */
-    public setAttribute(key: string, value: string | number | null | undefined): XMLAttribute | null {
+    public setAttribute(key: string, value: string | number | undefined): XMLAttribute | null {
         const _ref = this.getNativeReference();
-        const _value = value === null || value === undefined ? "" : value.toString();
+
+        // il guard serve per i chiamanti JS: TypeScript esclude gia' null dal tipo
+        if ((value as string | number | null | undefined) === null) {
+            throw new XMLTypeMismatchError();
+        }
+
+        const _value = value === undefined ? "" : value.toString();
 
         return createXMLReference(XMLAttribute, xmlSetProp(_ref, key, _value));
     }
@@ -821,7 +829,7 @@ export class XMLElement extends XMLNode {
     /**
      * set multiple attributes
      * BREAKING CHANGE: no longer overloaded for setting single attr
-     * Values are converted by setAttribute: null/undefined become "".
+     * Values are converted by setAttribute: undefined becomes "", null throws.
      * @param attributes
      * @returns
      */
