@@ -565,7 +565,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
     public get firstChild(): XMLElement | undefined | null
     {
-        let nodePtr = this.ref.children;
+        const _ref = this.getNativeReference();
+
+        let nodePtr = _ref.children;
         while (nodePtr) {
             const node = new XMLElement(nodePtr);
             return node;
@@ -580,11 +582,15 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
     public removeChild(child: XMLElement): XMLElement
     {
-        const childPtr = child.ref;
-        if (!childPtr || !this.ref) {
+        const _ref = this.getNativeReference();
+
+        if (!child) {
             throw new Error("Elemento o figlio non valido");
         }
-        if (childPtr.parent !== this.ref) {
+        const childPtr = child.getNativeReference();
+        // in libxml2 il parent di un nodo di primo livello è l'xmlDoc stesso: il confronto fra
+        // xmlNodePtr.parent e xmlDocPtr è voluto, i due tipi sono disgiunti solo per TypeScript
+        if ((childPtr.parent as unknown) !== (_ref as unknown)) {
             throw new Error("Il nodo da rimuovere non è figlio di questo elemento");
         }
         xmlUnlinkNode(childPtr);
@@ -621,24 +627,32 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 		if (!elem || elem.nodeType === 7) { // 7 = PROCESSING_INSTRUCTION_NODE
             return elem;
         }
-        const hasRoot = xmlDocGetRootElement(this.ref);
+        const _ref = this.getNativeReference();
+
+        const hasRoot = xmlDocGetRootElement(_ref);
         if (hasRoot) {
             throw new Error("The document already has a root node");
         }
-        xmlDocSetRootElement(this.ref, elem.ref);
+        xmlDocSetRootElement(_ref, elem.getNativeReference());
         return elem;
 	}
 
     public insertBefore(newNode: XMLElement, documentElement: XMLElement): XMLElement
 	{
-		const docRootPtr = xmlDocGetRootElement(this.ref);
+        const _ref = this.getNativeReference();
+
+		const docRootPtr = xmlDocGetRootElement(_ref);
         if (!docRootPtr) {
             throw new Error("The document does not have a root node");
         }
-        if (documentElement.ref !== docRootPtr) {
+        if (!newNode || !documentElement) {
+            throw new Error("Invalid node");
+        }
+        const documentElementPtr = documentElement.getNativeReference();
+        if (documentElementPtr !== docRootPtr) {
             throw new Error("The target node is not the root node of the document");
         }
-        const result = xmlAddPrevSibling(documentElement.ref, newNode.ref);
+        const result = xmlAddPrevSibling(documentElementPtr, newNode.getNativeReference());
         if (!result) {
             throw new Error("Cannot insert node before root node");
         }
@@ -647,13 +661,18 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
     public replaceChild(replacement: XMLElement, original: XMLElement): XMLElement
     {
-        if (!replacement?.ref || !original?.ref || !this.ref) {
+        const _ref = this.getNativeReference();
+
+        if (!replacement || !original) {
             throw new Error("Invalid node");
         }
-        if (original.ref.parent !== this.ref) {
+        const replacementPtr = replacement.getNativeReference();
+        const originalPtr = original.getNativeReference();
+        // vedi removeChild: il parent di un nodo di primo livello è l'xmlDoc stesso
+        if ((originalPtr.parent as unknown) !== (_ref as unknown)) {
             throw new Error("The node to be replaced is not a child of this element");
         }
-        const result = xmlReplaceNode(original.ref, replacement.ref);
+        const result = xmlReplaceNode(originalPtr, replacementPtr);
         if (!result) {
             throw new Error("Unable to replace node");
         }
@@ -695,7 +714,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
     
     public cloneNode(deep: boolean): XMLDocument
     {
-        const clonePtr = xmlCopyDoc(this.ref, deep ? 1 : 0);
+        const _ref = this.getNativeReference();
+
+        const clonePtr = xmlCopyDoc(_ref, deep ? 1 : 0);
         if (!clonePtr) {
             throw new Error("Unable to clone");
         }
@@ -704,7 +725,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
     public createAttribute(name: string, value: string = ""): XMLAttribute
     {
-        const attrPtr = xmlNewDocProp(this.ref, name, value);
+        const _ref = this.getNativeReference();
+
+        const attrPtr = xmlNewDocProp(_ref, name, value);
         if (!attrPtr) {
             throw new Error(`Impossibile creare l'attributo: ${name}`);
         }
@@ -712,7 +735,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
     }
 
     public createCDATASection(content: string): XMLNode {
-        const cdataPtr = xmlNewCDataBlock(this.ref, content, content.length);
+        const _ref = this.getNativeReference();
+
+        const cdataPtr = xmlNewCDataBlock(_ref, content, content.length);
         if (!cdataPtr) {
             throw new Error("Unable to create CDATA section");
         }
@@ -730,7 +755,7 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
             nodePtr = xmlNewText(value);
             break;
             case 4: // CDATA_SECTION_NODE
-            nodePtr = xmlNewCDataBlock(this.ref, value, value.length);
+            nodePtr = xmlNewCDataBlock(this.getNativeReference(), value, value.length);
             break;
             case 8: // COMMENT_NODE
             nodePtr = xmlNewComment(value);
@@ -755,7 +780,9 @@ export class XMLDocument extends XMLReference<xmlDocPtr> {
 
     public hasChildNodes(): boolean
     {
-        return this.ref.children !== null;
+        const _ref = this.getNativeReference();
+
+        return _ref.children !== null;
     }
 	
 	public get parentNode()

@@ -104,13 +104,10 @@ function refToNodeTypeOrThrow(node: xmlNodePtr | xmlDocPtr | null, error: string
 export class XMLNode extends XMLReference<xmlNodePtr> {
     /**
      * @private
-     * @param _ref 
+     * @param _ref
      */
-    public ref;
-
     constructor(_ref: any) {
         super(_ref);
-        this.ref = _ref;
     }
 
     /**
@@ -654,20 +651,24 @@ export class XMLNode extends XMLReference<xmlNodePtr> {
 
     public get data(): string
 	{
+        const _ref = this.getNativeReference();
+
         switch (this.nodeType) {
             case 3:
             case 4:
             case 8:
-                return this.ref.content ?? "";
+                return _ref.content ?? "";
             case 7:
-                return (this.ref.content ?? "").replace(/&quot;/g, "\"");
+                return (_ref.content ?? "").replace(/&quot;/g, "\"");
             default:
                 return "";
         }
 	}
 
     public get target(): string {
-        return this.ref.type === 7 ? this.ref.name ?? "" : "";
+        const _ref = this.getNativeReference();
+
+        return _ref.type === 7 ? _ref.name ?? "" : "";
     }
 	
 	public get tagName(): string
@@ -942,9 +943,10 @@ export class XMLElement extends XMLNode {
 	}
 
     public setAttributeNode(attributeNode: XMLAttribute): void {
+        const _ref = this.getNativeReference();
         const name = attributeNode.name;
         const value = attributeNode.value;
-        const attrPtr = xmlSetProp(this.ref, name, value);
+        const attrPtr = xmlSetProp(_ref, name, value);
         if (!attrPtr) {
             throw new Error(`Unable to set attribute: ${name}`);
         }

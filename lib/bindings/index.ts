@@ -37,15 +37,13 @@ export class XMLReference<T> {
      * @private
      */
     private _ref: T;
-    protected ref: T;
 
     /**
      * @private
-     * @param _ref 
+     * @param _ref
      */
     constructor(_ref: T) {
         this._ref = _ref;
-        this.ref = _ref;
     }
 
     // public getSelfOrThrow(error: string) {
@@ -72,7 +70,7 @@ export class XMLReference<T> {
      * @private
      * @returns 
      */
-    protected getNativeReference(): T {
+    public getNativeReference(): T {
         if (this._ref === null) {
             throw new Error("Unexpected null reference");
         }
