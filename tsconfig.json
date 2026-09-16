@@ -10,6 +10,7 @@
       "removeComments": true,
       "noUncheckedIndexedAccess": true,
       "strictNullChecks": true,
+      "skipLibCheck": true,
     },
     "include": ["index.ts", "test", "lib"],
     "exclude": ["node_modules"]
