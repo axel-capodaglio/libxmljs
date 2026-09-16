@@ -1130,7 +1130,7 @@ SWIGRUNTIME SwigV8ReturnValue _SWIGV8_wrap_equals(const SwigV8Arguments &args) {
 
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for equals.");
 
-  res1 = SWIG_GetInstancePtr(args.Holder(), &arg1);
+  res1 = SWIG_GetInstancePtr(args.This(), &arg1);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ERROR, "Could not get pointer from 'this' object for equals.");
   }
@@ -1156,7 +1156,7 @@ SWIGRUNTIME SwigV8ReturnValue _wrap_getCPtr(const SwigV8Arguments &args) {
   long result;
   int res1;
 
-  res1 = SWIG_GetInstancePtr(args.Holder(), &arg1);
+  res1 = SWIG_GetInstancePtr(args.This(), &arg1);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getCPtr" "', argument " "1"" of type '" "void *""'");
   }
@@ -1336,7 +1336,7 @@ SWIGRUNTIME void SWIGV8_AddMemberFunction(SWIGV8_FUNCTION_TEMPLATE class_templ, 
 SWIGRUNTIME void SWIGV8_AddMemberVariable(SWIGV8_FUNCTION_TEMPLATE class_templ, const char* symbol,
   SwigV8AccessorGetterCallback getter, SwigV8AccessorSetterCallback setter) {
   SWIGV8_OBJECT_TEMPLATE proto_templ = class_templ->InstanceTemplate();
-  proto_templ->SetAccessor(SWIGV8_SYMBOL_NEW(symbol), getter, setter);
+  proto_templ->SetNativeDataProperty(SWIGV8_SYMBOL_NEW(symbol), getter, setter);
 }
 
 /**
@@ -1353,7 +1353,7 @@ SWIGRUNTIME void SWIGV8_AddStaticFunction(SWIGV8_OBJECT obj, const char* symbol,
 SWIGRUNTIME void SWIGV8_AddStaticVariable(SWIGV8_OBJECT obj, const char* symbol,
   SwigV8AccessorGetterCallback getter, SwigV8AccessorSetterCallback setter,
   v8::Local<v8::Context> context) {
-  SWIGV8_MAYBE_CHECK(obj->SetAccessor(context, SWIGV8_SYMBOL_NEW(symbol), getter, setter));
+  SWIGV8_MAYBE_CHECK(obj->SetNativeDataProperty(context, SWIGV8_SYMBOL_NEW(symbol), getter, setter));
 }
 
 SWIGRUNTIME void JS_veto_set_variable(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid& info)
@@ -6851,7 +6851,7 @@ static void _wrap__xmlBuffer_content_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_content_set" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -6886,7 +6886,7 @@ static SwigV8ReturnValue _wrap__xmlBuffer_content_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_content_get" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -6925,7 +6925,7 @@ static void _wrap__xmlBuffer_use_set(v8::Local<v8::Name> property, v8::Local<v8:
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_use_set" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -6954,7 +6954,7 @@ static SwigV8ReturnValue _wrap__xmlBuffer_use_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_use_get" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -6981,7 +6981,7 @@ static void _wrap__xmlBuffer_size_set(v8::Local<v8::Name> property, v8::Local<v8
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_size_set" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7010,7 +7010,7 @@ static SwigV8ReturnValue _wrap__xmlBuffer_size_get(v8::Local<v8::Name> property,
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_size_get" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7037,7 +7037,7 @@ static void _wrap__xmlBuffer_alloc_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_alloc_set" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7066,7 +7066,7 @@ static SwigV8ReturnValue _wrap__xmlBuffer_alloc_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   xmlBufferAllocationScheme result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_alloc_get" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7095,7 +7095,7 @@ static void _wrap__xmlBuffer_contentIO_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_contentIO_set" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7130,7 +7130,7 @@ static SwigV8ReturnValue _wrap__xmlBuffer_contentIO_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlBuffer_contentIO_get" "', argument " "1"" of type '" "_xmlBuffer *""'"); 
   }
@@ -7162,7 +7162,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlBuffer(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlBuffer *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlBuffer.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlBuffer.");
@@ -7662,7 +7662,7 @@ static void _wrap__xmlNotation_name_set(v8::Local<v8::Name> property, v8::Local<
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_name_set" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7697,7 +7697,7 @@ static SwigV8ReturnValue _wrap__xmlNotation_name_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_name_get" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7738,7 +7738,7 @@ static void _wrap__xmlNotation_PublicID_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_PublicID_set" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7773,7 +7773,7 @@ static SwigV8ReturnValue _wrap__xmlNotation_PublicID_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_PublicID_get" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7814,7 +7814,7 @@ static void _wrap__xmlNotation_SystemID_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_SystemID_set" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7849,7 +7849,7 @@ static SwigV8ReturnValue _wrap__xmlNotation_SystemID_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNotation_SystemID_get" "', argument " "1"" of type '" "_xmlNotation *""'"); 
   }
@@ -7881,7 +7881,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlNotation(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlNotation *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlNotation.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlNotation.");
@@ -8129,7 +8129,7 @@ static void _wrap__xmlEnumeration_next_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlEnumeration_next_set" "', argument " "1"" of type '" "_xmlEnumeration *""'"); 
   }
@@ -8158,7 +8158,7 @@ static SwigV8ReturnValue _wrap__xmlEnumeration_next_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   _xmlEnumeration *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlEnumeration_next_get" "', argument " "1"" of type '" "_xmlEnumeration *""'"); 
   }
@@ -8187,7 +8187,7 @@ static void _wrap__xmlEnumeration_name_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlEnumeration_name_set" "', argument " "1"" of type '" "_xmlEnumeration *""'"); 
   }
@@ -8222,7 +8222,7 @@ static SwigV8ReturnValue _wrap__xmlEnumeration_name_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlEnumeration, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlEnumeration_name_get" "', argument " "1"" of type '" "_xmlEnumeration *""'"); 
   }
@@ -8254,7 +8254,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlEnumeration(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlEnumeration *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlEnumeration.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlEnumeration.");
@@ -8290,7 +8290,7 @@ static void _wrap__xmlAttribute__private_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute__private_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8315,7 +8315,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute__private_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute__private_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8342,7 +8342,7 @@ static void _wrap__xmlAttribute_type_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_type_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8371,7 +8371,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_type_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_type_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8400,7 +8400,7 @@ static void _wrap__xmlAttribute_name_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_name_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8435,7 +8435,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_name_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_name_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8474,7 +8474,7 @@ static void _wrap__xmlAttribute_children_set(v8::Local<v8::Name> property, v8::L
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_children_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8515,7 +8515,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_children_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_children_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8542,7 +8542,7 @@ static void _wrap__xmlAttribute_last_set(v8::Local<v8::Name> property, v8::Local
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_last_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8583,7 +8583,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_last_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_last_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8610,7 +8610,7 @@ static void _wrap__xmlAttribute_parent_set(v8::Local<v8::Name> property, v8::Loc
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_parent_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8639,7 +8639,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_parent_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   _xmlDtd *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_parent_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8666,7 +8666,7 @@ static void _wrap__xmlAttribute_next_set(v8::Local<v8::Name> property, v8::Local
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_next_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8707,7 +8707,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_next_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_next_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8734,7 +8734,7 @@ static void _wrap__xmlAttribute_prev_set(v8::Local<v8::Name> property, v8::Local
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_prev_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8775,7 +8775,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_prev_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_prev_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8802,7 +8802,7 @@ static void _wrap__xmlAttribute_doc_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_doc_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8831,7 +8831,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_doc_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_doc_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8858,7 +8858,7 @@ static void _wrap__xmlAttribute_nexth_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_nexth_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8887,7 +8887,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_nexth_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   _xmlAttribute *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_nexth_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8914,7 +8914,7 @@ static void _wrap__xmlAttribute_atype_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_atype_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8943,7 +8943,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_atype_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlAttributeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_atype_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8970,7 +8970,7 @@ static void _wrap__xmlAttribute_def_set(v8::Local<v8::Name> property, v8::Local<
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_def_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -8999,7 +8999,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_def_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xmlAttributeDefault result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_def_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9028,7 +9028,7 @@ static void _wrap__xmlAttribute_defaultValue_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_defaultValue_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9063,7 +9063,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_defaultValue_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_defaultValue_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9102,7 +9102,7 @@ static void _wrap__xmlAttribute_tree_set(v8::Local<v8::Name> property, v8::Local
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_tree_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9131,7 +9131,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_tree_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlEnumerationPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_tree_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9160,7 +9160,7 @@ static void _wrap__xmlAttribute_prefix_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_prefix_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9195,7 +9195,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_prefix_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_prefix_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9236,7 +9236,7 @@ static void _wrap__xmlAttribute_elem_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_elem_set" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9271,7 +9271,7 @@ static SwigV8ReturnValue _wrap__xmlAttribute_elem_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlAttribute_elem_get" "', argument " "1"" of type '" "_xmlAttribute *""'"); 
   }
@@ -9303,7 +9303,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlAttribute(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlAttribute *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlAttribute.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlAttribute.");
@@ -9461,7 +9461,7 @@ static void _wrap__xmlElementContent_type_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_type_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9490,7 +9490,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_type_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlElementContentType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_type_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9517,7 +9517,7 @@ static void _wrap__xmlElementContent_ocur_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_ocur_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9546,7 +9546,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_ocur_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlElementContentOccur result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_ocur_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9575,7 +9575,7 @@ static void _wrap__xmlElementContent_name_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_name_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9610,7 +9610,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_name_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_name_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9649,7 +9649,7 @@ static void _wrap__xmlElementContent_c1_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_c1_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9678,7 +9678,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_c1_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   _xmlElementContent *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_c1_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9705,7 +9705,7 @@ static void _wrap__xmlElementContent_c2_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_c2_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9734,7 +9734,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_c2_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   _xmlElementContent *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_c2_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9761,7 +9761,7 @@ static void _wrap__xmlElementContent_parent_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_parent_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9790,7 +9790,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_parent_get(v8::Local<v8::Name>
   int res1 = 0 ;
   _xmlElementContent *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_parent_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9819,7 +9819,7 @@ static void _wrap__xmlElementContent_prefix_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_prefix_set" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9854,7 +9854,7 @@ static SwigV8ReturnValue _wrap__xmlElementContent_prefix_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlElementContent, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlElementContent_prefix_get" "', argument " "1"" of type '" "_xmlElementContent *""'"); 
   }
@@ -9886,7 +9886,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlElementContent(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlElementContent *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlElementContent.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlElementContent.");
@@ -11925,7 +11925,7 @@ static void _wrap__xmlElement__private_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement__private_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -11954,7 +11954,7 @@ static SwigV8ReturnValue _wrap__xmlElement__private_get(v8::Local<v8::Name> prop
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement__private_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -11981,7 +11981,7 @@ static void _wrap__xmlElement_type_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_type_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12010,7 +12010,7 @@ static SwigV8ReturnValue _wrap__xmlElement_type_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_type_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12039,7 +12039,7 @@ static void _wrap__xmlElement_name_set(v8::Local<v8::Name> property, v8::Local<v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_name_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12074,7 +12074,7 @@ static SwigV8ReturnValue _wrap__xmlElement_name_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_name_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12113,7 +12113,7 @@ static void _wrap__xmlElement_children_set(v8::Local<v8::Name> property, v8::Loc
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_children_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12154,7 +12154,7 @@ static SwigV8ReturnValue _wrap__xmlElement_children_get(v8::Local<v8::Name> prop
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_children_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12181,7 +12181,7 @@ static void _wrap__xmlElement_last_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_last_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12222,7 +12222,7 @@ static SwigV8ReturnValue _wrap__xmlElement_last_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_last_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12249,7 +12249,7 @@ static void _wrap__xmlElement_parent_set(v8::Local<v8::Name> property, v8::Local
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_parent_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12278,7 +12278,7 @@ static SwigV8ReturnValue _wrap__xmlElement_parent_get(v8::Local<v8::Name> proper
   void *arg10 ;
   _xmlDtd *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_parent_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12305,7 +12305,7 @@ static void _wrap__xmlElement_next_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_next_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12346,7 +12346,7 @@ static SwigV8ReturnValue _wrap__xmlElement_next_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_next_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12373,7 +12373,7 @@ static void _wrap__xmlElement_prev_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_prev_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12414,7 +12414,7 @@ static SwigV8ReturnValue _wrap__xmlElement_prev_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_prev_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12441,7 +12441,7 @@ static void _wrap__xmlElement_doc_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_doc_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12470,7 +12470,7 @@ static SwigV8ReturnValue _wrap__xmlElement_doc_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_doc_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12497,7 +12497,7 @@ static void _wrap__xmlElement_etype_set(v8::Local<v8::Name> property, v8::Local<
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_etype_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12526,7 +12526,7 @@ static SwigV8ReturnValue _wrap__xmlElement_etype_get(v8::Local<v8::Name> propert
   void *arg10 ;
   xmlElementTypeVal result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_etype_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12553,7 +12553,7 @@ static void _wrap__xmlElement_content_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_content_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12582,7 +12582,7 @@ static SwigV8ReturnValue _wrap__xmlElement_content_get(v8::Local<v8::Name> prope
   void *arg10 ;
   xmlElementContentPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_content_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12609,7 +12609,7 @@ static void _wrap__xmlElement_attributes_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_attributes_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12638,7 +12638,7 @@ static SwigV8ReturnValue _wrap__xmlElement_attributes_get(v8::Local<v8::Name> pr
   void *arg10 ;
   xmlAttributePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_attributes_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12667,7 +12667,7 @@ static void _wrap__xmlElement_prefix_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_prefix_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12702,7 +12702,7 @@ static SwigV8ReturnValue _wrap__xmlElement_prefix_get(v8::Local<v8::Name> proper
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_prefix_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12741,7 +12741,7 @@ static void _wrap__xmlElement_contModel_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_contModel_set', argument 1 of type '_xmlElement *'"); 
   }
@@ -12770,7 +12770,7 @@ static SwigV8ReturnValue _wrap__xmlElement_contModel_get(v8::Local<v8::Name> pro
   void *arg10 ;
   xmlRegexpPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlElement_contModel_get', argument 1 of type '_xmlElement *'"); 
   }
@@ -12804,7 +12804,7 @@ static void _wrap_delete__xmlElement(const v8::WeakCallbackInfo<SWIGV8_Proxy> &d
 static SwigV8ReturnValue _wrap_new__xmlElement(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlElement *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlElement.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlElement.");
@@ -12831,7 +12831,7 @@ static void _wrap__xmlNs_next_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_next_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -12860,7 +12860,7 @@ static SwigV8ReturnValue _wrap__xmlNs_next_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   _xmlNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_next_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -12887,7 +12887,7 @@ static void _wrap__xmlNs_type_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_type_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -12916,7 +12916,7 @@ static SwigV8ReturnValue _wrap__xmlNs_type_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   xmlNsType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_type_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -12945,7 +12945,7 @@ static void _wrap__xmlNs_href_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_href_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -12980,7 +12980,7 @@ static SwigV8ReturnValue _wrap__xmlNs_href_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_href_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -13021,7 +13021,7 @@ static void _wrap__xmlNs_prefix_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_prefix_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -13056,7 +13056,7 @@ static SwigV8ReturnValue _wrap__xmlNs_prefix_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_prefix_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -13095,7 +13095,7 @@ static void _wrap__xmlNs__private_set(v8::Local<v8::Name> property, v8::Local<v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs__private_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -13124,7 +13124,7 @@ static SwigV8ReturnValue _wrap__xmlNs__private_get(v8::Local<v8::Name> property,
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs__private_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -13151,7 +13151,7 @@ static void _wrap__xmlNs_context_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_context_set', argument 1 of type '_xmlNs *'"); 
   }
@@ -13180,7 +13180,7 @@ static SwigV8ReturnValue _wrap__xmlNs_context_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNs_context_get', argument 1 of type '_xmlNs *'"); 
   }
@@ -13224,7 +13224,7 @@ static void _wrap_delete__xmlNs(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) 
 static SwigV8ReturnValue _wrap_new__xmlNs(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlNs *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlNs.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlNs.");
@@ -13251,7 +13251,7 @@ static void _wrap__xmlDtd__private_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd__private_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13280,7 +13280,7 @@ static SwigV8ReturnValue _wrap__xmlDtd__private_get(v8::Local<v8::Name> property
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd__private_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13307,7 +13307,7 @@ static void _wrap__xmlDtd_type_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_type_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13336,7 +13336,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_type_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_type_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13365,7 +13365,7 @@ static void _wrap__xmlDtd_name_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_name_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13400,7 +13400,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_name_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_name_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13439,7 +13439,7 @@ static void _wrap__xmlDtd_children_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_children_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13480,7 +13480,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_children_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_children_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13507,7 +13507,7 @@ static void _wrap__xmlDtd_last_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_last_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13548,7 +13548,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_last_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_last_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13575,7 +13575,7 @@ static void _wrap__xmlDtd_parent_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_parent_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13604,7 +13604,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_parent_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_parent_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13631,7 +13631,7 @@ static void _wrap__xmlDtd_next_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_next_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13672,7 +13672,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_next_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_next_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13699,7 +13699,7 @@ static void _wrap__xmlDtd_prev_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_prev_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13740,7 +13740,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_prev_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_prev_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13767,7 +13767,7 @@ static void _wrap__xmlDtd_doc_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_doc_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13796,7 +13796,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_doc_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_doc_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13821,7 +13821,7 @@ static void _wrap__xmlDtd_notations_set(v8::Local<v8::Name> property, v8::Local<
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_notations_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13846,7 +13846,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_notations_get(v8::Local<v8::Name> propert
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_notations_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13871,7 +13871,7 @@ static void _wrap__xmlDtd_elements_set(v8::Local<v8::Name> property, v8::Local<v
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_elements_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13896,7 +13896,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_elements_get(v8::Local<v8::Name> property
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_elements_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13921,7 +13921,7 @@ static void _wrap__xmlDtd_attributes_set(v8::Local<v8::Name> property, v8::Local
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_attributes_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13946,7 +13946,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_attributes_get(v8::Local<v8::Name> proper
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_attributes_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13971,7 +13971,7 @@ static void _wrap__xmlDtd_entities_set(v8::Local<v8::Name> property, v8::Local<v
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_entities_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -13996,7 +13996,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_entities_get(v8::Local<v8::Name> property
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_entities_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14025,7 +14025,7 @@ static void _wrap__xmlDtd_ExternalID_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_ExternalID_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14060,7 +14060,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_ExternalID_get(v8::Local<v8::Name> proper
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_ExternalID_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14101,7 +14101,7 @@ static void _wrap__xmlDtd_SystemID_set(v8::Local<v8::Name> property, v8::Local<v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_SystemID_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14136,7 +14136,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_SystemID_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_SystemID_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14173,7 +14173,7 @@ static void _wrap__xmlDtd_pentities_set(v8::Local<v8::Name> property, v8::Local<
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_pentities_set', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14198,7 +14198,7 @@ static SwigV8ReturnValue _wrap__xmlDtd_pentities_get(v8::Local<v8::Name> propert
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDtd_pentities_get', argument 1 of type '_xmlDtd *'"); 
   }
@@ -14232,7 +14232,7 @@ static void _wrap_delete__xmlDtd(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data)
 static SwigV8ReturnValue _wrap_new__xmlDtd(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlDtd *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlDtd.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlDtd.");
@@ -14259,7 +14259,7 @@ static void _wrap__xmlAttr__private_set(v8::Local<v8::Name> property, v8::Local<
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr__private_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14288,7 +14288,7 @@ static SwigV8ReturnValue _wrap__xmlAttr__private_get(v8::Local<v8::Name> propert
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr__private_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14315,7 +14315,7 @@ static void _wrap__xmlAttr_type_set(v8::Local<v8::Name> property, v8::Local<v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_type_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14344,7 +14344,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_type_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_type_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14373,7 +14373,7 @@ static void _wrap__xmlAttr_name_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_name_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14408,7 +14408,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_name_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_name_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14447,7 +14447,7 @@ static void _wrap__xmlAttr_children_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_children_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14488,7 +14488,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_children_get(v8::Local<v8::Name> propert
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_children_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14515,7 +14515,7 @@ static void _wrap__xmlAttr_last_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_last_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14556,7 +14556,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_last_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_last_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14583,7 +14583,7 @@ static void _wrap__xmlAttr_parent_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_parent_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14624,7 +14624,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_parent_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_parent_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14651,7 +14651,7 @@ static void _wrap__xmlAttr_next_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_next_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14680,7 +14680,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_next_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlAttr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_next_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14707,7 +14707,7 @@ static void _wrap__xmlAttr_prev_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_prev_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14736,7 +14736,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_prev_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlAttr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_prev_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14763,7 +14763,7 @@ static void _wrap__xmlAttr_doc_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_doc_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14792,7 +14792,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_doc_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_doc_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14819,7 +14819,7 @@ static void _wrap__xmlAttr_ns_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_ns_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14848,7 +14848,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_ns_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   xmlNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_ns_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14875,7 +14875,7 @@ static void _wrap__xmlAttr_atype_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_atype_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14904,7 +14904,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_atype_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   xmlAttributeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_atype_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14929,7 +14929,7 @@ static void _wrap__xmlAttr_psvi_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_psvi_set', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14954,7 +14954,7 @@ static SwigV8ReturnValue _wrap__xmlAttr_psvi_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlAttr_psvi_get', argument 1 of type '_xmlAttr *'"); 
   }
@@ -14988,7 +14988,7 @@ static void _wrap_delete__xmlAttr(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data
 static SwigV8ReturnValue _wrap_new__xmlAttr(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlAttr *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlAttr.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlAttr.");
@@ -15015,7 +15015,7 @@ static void _wrap__xmlID_next_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_next_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15044,7 +15044,7 @@ static SwigV8ReturnValue _wrap__xmlID_next_get(v8::Local<v8::Name> property, con
   int res1 = 0 ;
   _xmlID *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_next_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15073,7 +15073,7 @@ static void _wrap__xmlID_value_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_value_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15108,7 +15108,7 @@ static SwigV8ReturnValue _wrap__xmlID_value_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_value_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15147,7 +15147,7 @@ static void _wrap__xmlID_attr_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_attr_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15176,7 +15176,7 @@ static SwigV8ReturnValue _wrap__xmlID_attr_get(v8::Local<v8::Name> property, con
   int res1 = 0 ;
   xmlAttrPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_attr_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15205,7 +15205,7 @@ static void _wrap__xmlID_name_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_name_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15240,7 +15240,7 @@ static SwigV8ReturnValue _wrap__xmlID_name_get(v8::Local<v8::Name> property, con
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_name_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15279,7 +15279,7 @@ static void _wrap__xmlID_lineno_set(v8::Local<v8::Name> property, v8::Local<v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_lineno_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15308,7 +15308,7 @@ static SwigV8ReturnValue _wrap__xmlID_lineno_get(v8::Local<v8::Name> property, c
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_lineno_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15335,7 +15335,7 @@ static void _wrap__xmlID_doc_set(v8::Local<v8::Name> property, v8::Local<v8::Val
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_doc_set" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15364,7 +15364,7 @@ static SwigV8ReturnValue _wrap__xmlID_doc_get(v8::Local<v8::Name> property, cons
   int res1 = 0 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlID, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlID_doc_get" "', argument " "1"" of type '" "_xmlID *""'"); 
   }
@@ -15384,7 +15384,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlID(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlID *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlID.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlID.");
@@ -15422,7 +15422,7 @@ static void _wrap__xmlRef_next_set(v8::Local<v8::Name> property, v8::Local<v8::V
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_next_set" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15451,7 +15451,7 @@ static SwigV8ReturnValue _wrap__xmlRef_next_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   _xmlRef *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_next_get" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15480,7 +15480,7 @@ static void _wrap__xmlRef_value_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_value_set" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15515,7 +15515,7 @@ static SwigV8ReturnValue _wrap__xmlRef_value_get(v8::Local<v8::Name> property, c
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_value_get" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15554,7 +15554,7 @@ static void _wrap__xmlRef_attr_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_attr_set" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15583,7 +15583,7 @@ static SwigV8ReturnValue _wrap__xmlRef_attr_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   xmlAttrPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_attr_get" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15612,7 +15612,7 @@ static void _wrap__xmlRef_name_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_name_set" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15647,7 +15647,7 @@ static SwigV8ReturnValue _wrap__xmlRef_name_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_name_get" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15686,7 +15686,7 @@ static void _wrap__xmlRef_lineno_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_lineno_set" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15715,7 +15715,7 @@ static SwigV8ReturnValue _wrap__xmlRef_lineno_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlRef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlRef_lineno_get" "', argument " "1"" of type '" "_xmlRef *""'"); 
   }
@@ -15735,7 +15735,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlRef(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlRef *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlRef.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlRef.");
@@ -15773,16 +15773,16 @@ static void _wrap__xmlNode__private_set(v8::Local<v8::Name> property, v8::Local<
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode__private_set', argument 1 of type '_xmlNode *'"); 
@@ -15814,16 +15814,16 @@ static SwigV8ReturnValue _wrap__xmlNode__private_get(v8::Local<v8::Name> propert
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode__private_get', argument 1 of type '_xmlNode *'"); 
@@ -15853,16 +15853,16 @@ static void _wrap__xmlNode_type_set(v8::Local<v8::Name> property, v8::Local<v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_type_set', argument 1 of type '_xmlNode *'"); 
@@ -15894,16 +15894,16 @@ static SwigV8ReturnValue _wrap__xmlNode_type_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_type_get', argument 1 of type '_xmlNode *'"); 
@@ -15935,16 +15935,16 @@ static void _wrap__xmlNode_name_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_name_set', argument 1 of type '_xmlNode *'"); 
@@ -15982,16 +15982,16 @@ static SwigV8ReturnValue _wrap__xmlNode_name_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_name_get', argument 1 of type '_xmlNode *'"); 
@@ -16033,16 +16033,16 @@ static void _wrap__xmlNode_children_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_children_set', argument 1 of type '_xmlNode *'"); 
@@ -16086,16 +16086,16 @@ static SwigV8ReturnValue _wrap__xmlNode_children_get(v8::Local<v8::Name> propert
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_children_get', argument 1 of type '_xmlNode *'"); 
@@ -16125,16 +16125,16 @@ static void _wrap__xmlNode_last_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_last_set', argument 1 of type '_xmlNode *'"); 
@@ -16178,16 +16178,16 @@ static SwigV8ReturnValue _wrap__xmlNode_last_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_last_get', argument 1 of type '_xmlNode *'"); 
@@ -16217,16 +16217,16 @@ static void _wrap__xmlNode_parent_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_parent_set', argument 1 of type '_xmlNode *'"); 
@@ -16270,16 +16270,16 @@ static SwigV8ReturnValue _wrap__xmlNode_parent_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_parent_get', argument 1 of type '_xmlNode *'"); 
@@ -16309,16 +16309,16 @@ static void _wrap__xmlNode_next_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_next_set', argument 1 of type '_xmlNode *'"); 
@@ -16362,16 +16362,16 @@ static SwigV8ReturnValue _wrap__xmlNode_next_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_next_get', argument 1 of type '_xmlNode *'"); 
@@ -16401,16 +16401,16 @@ static void _wrap__xmlNode_prev_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_prev_set', argument 1 of type '_xmlNode *'"); 
@@ -16454,16 +16454,16 @@ static SwigV8ReturnValue _wrap__xmlNode_prev_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_prev_get', argument 1 of type '_xmlNode *'"); 
@@ -16493,16 +16493,16 @@ static void _wrap__xmlNode_doc_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_doc_set', argument 1 of type '_xmlNode *'"); 
@@ -16534,16 +16534,16 @@ static SwigV8ReturnValue _wrap__xmlNode_doc_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_doc_get', argument 1 of type '_xmlNode *'"); 
@@ -16573,16 +16573,16 @@ static void _wrap__xmlNode_ns_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_ns_set', argument 1 of type '_xmlNode *'"); 
@@ -16614,16 +16614,16 @@ static SwigV8ReturnValue _wrap__xmlNode_ns_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   xmlNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_ns_get', argument 1 of type '_xmlNode *'"); 
@@ -16655,16 +16655,16 @@ static void _wrap__xmlNode_content_set(v8::Local<v8::Name> property, v8::Local<v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_content_set', argument 1 of type '_xmlNode *'"); 
@@ -16702,16 +16702,16 @@ static SwigV8ReturnValue _wrap__xmlNode_content_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_content_get', argument 1 of type '_xmlNode *'"); 
@@ -16753,16 +16753,16 @@ static void _wrap__xmlNode_properties_set(v8::Local<v8::Name> property, v8::Loca
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_properties_set', argument 1 of type '_xmlNode *'"); 
@@ -16794,16 +16794,16 @@ static SwigV8ReturnValue _wrap__xmlNode_properties_get(v8::Local<v8::Name> prope
   void *arg10 ;
   _xmlAttr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_properties_get', argument 1 of type '_xmlNode *'"); 
@@ -16833,16 +16833,16 @@ static void _wrap__xmlNode_nsDef_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_nsDef_set', argument 1 of type '_xmlNode *'"); 
@@ -16874,16 +16874,16 @@ static SwigV8ReturnValue _wrap__xmlNode_nsDef_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   xmlNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_nsDef_get', argument 1 of type '_xmlNode *'"); 
@@ -16911,16 +16911,16 @@ static void _wrap__xmlNode_psvi_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_psvi_set', argument 1 of type '_xmlNode *'"); 
@@ -16948,16 +16948,16 @@ static SwigV8ReturnValue _wrap__xmlNode_psvi_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_psvi_get', argument 1 of type '_xmlNode *'"); 
@@ -16987,16 +16987,16 @@ static void _wrap__xmlNode_line_set(v8::Local<v8::Name> property, v8::Local<v8::
   unsigned short val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_line_set', argument 1 of type '_xmlNode *'"); 
@@ -17028,16 +17028,16 @@ static SwigV8ReturnValue _wrap__xmlNode_line_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   unsigned short result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_line_get', argument 1 of type '_xmlNode *'"); 
@@ -17067,16 +17067,16 @@ static void _wrap__xmlNode_extra_set(v8::Local<v8::Name> property, v8::Local<v8:
   unsigned short val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_extra_set', argument 1 of type '_xmlNode *'"); 
@@ -17108,16 +17108,16 @@ static SwigV8ReturnValue _wrap__xmlNode_extra_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   unsigned short result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlNode, 0 | 0 );
   
   if (!SWIG_IsOK(res1)) {
-    if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
+    if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlAttr, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDtd, 0 | 0))) {
       
-    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
+    } else if (SWIG_IsOK(SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlElement, 0 | 0))) {
       
     } else {
       SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlNode_extra_get', argument 1 of type '_xmlNode *'"); 
@@ -17154,7 +17154,7 @@ static void _wrap_delete__xmlNode(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data
 static SwigV8ReturnValue _wrap_new__xmlNode(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlNode *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlNode.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlNode.");
@@ -17301,7 +17301,7 @@ static void _wrap__xmlDoc__private_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc__private_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17330,7 +17330,7 @@ static SwigV8ReturnValue _wrap__xmlDoc__private_get(v8::Local<v8::Name> property
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc__private_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17357,7 +17357,7 @@ static void _wrap__xmlDoc_type_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_type_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17386,7 +17386,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_type_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_type_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17415,7 +17415,7 @@ static void _wrap__xmlDoc_name_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_name_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17453,7 +17453,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_name_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_name_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17480,7 +17480,7 @@ static void _wrap__xmlDoc_children_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_children_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17521,7 +17521,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_children_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_children_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17548,7 +17548,7 @@ static void _wrap__xmlDoc_last_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_last_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17589,7 +17589,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_last_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_last_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17616,7 +17616,7 @@ static void _wrap__xmlDoc_parent_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_parent_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17657,7 +17657,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_parent_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_parent_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17684,7 +17684,7 @@ static void _wrap__xmlDoc_next_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_next_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17725,7 +17725,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_next_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_next_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17752,7 +17752,7 @@ static void _wrap__xmlDoc_prev_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_prev_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17793,7 +17793,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_prev_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_prev_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17820,7 +17820,7 @@ static void _wrap__xmlDoc_doc_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_doc_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17849,7 +17849,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_doc_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_doc_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17876,7 +17876,7 @@ static void _wrap__xmlDoc_compression_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_compression_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17905,7 +17905,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_compression_get(v8::Local<v8::Name> prope
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_compression_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17932,7 +17932,7 @@ static void _wrap__xmlDoc_standalone_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_standalone_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17961,7 +17961,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_standalone_get(v8::Local<v8::Name> proper
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_standalone_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -17988,7 +17988,7 @@ static void _wrap__xmlDoc_intSubset_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_intSubset_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18017,7 +18017,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_intSubset_get(v8::Local<v8::Name> propert
   void *arg10 ;
   _xmlDtd *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_intSubset_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18044,7 +18044,7 @@ static void _wrap__xmlDoc_extSubset_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_extSubset_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18073,7 +18073,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_extSubset_get(v8::Local<v8::Name> propert
   void *arg10 ;
   _xmlDtd *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_extSubset_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18100,7 +18100,7 @@ static void _wrap__xmlDoc_oldNs_set(v8::Local<v8::Name> property, v8::Local<v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_oldNs_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18129,7 +18129,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_oldNs_get(v8::Local<v8::Name> property, c
   void *arg10 ;
   _xmlNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_oldNs_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18158,7 +18158,7 @@ static void _wrap__xmlDoc_version_set(v8::Local<v8::Name> property, v8::Local<v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_version_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18193,7 +18193,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_version_get(v8::Local<v8::Name> property,
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_version_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18234,7 +18234,7 @@ static void _wrap__xmlDoc_encoding_set(v8::Local<v8::Name> property, v8::Local<v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_encoding_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18269,7 +18269,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_encoding_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_encoding_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18306,7 +18306,7 @@ static void _wrap__xmlDoc_ids_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_ids_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18331,7 +18331,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_ids_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_ids_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18356,7 +18356,7 @@ static void _wrap__xmlDoc_refs_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_refs_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18381,7 +18381,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_refs_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_refs_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18410,7 +18410,7 @@ static void _wrap__xmlDoc_URL_set(v8::Local<v8::Name> property, v8::Local<v8::Va
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_URL_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18445,7 +18445,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_URL_get(v8::Local<v8::Name> property, con
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_URL_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18484,7 +18484,7 @@ static void _wrap__xmlDoc_charset_set(v8::Local<v8::Name> property, v8::Local<v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_charset_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18513,7 +18513,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_charset_get(v8::Local<v8::Name> property,
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_charset_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18540,7 +18540,7 @@ static void _wrap__xmlDoc_dict_set(v8::Local<v8::Name> property, v8::Local<v8::V
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_dict_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18569,7 +18569,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_dict_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   _xmlDict *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_dict_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18594,7 +18594,7 @@ static void _wrap__xmlDoc_psvi_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int res1 ;
   void *arg10 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_psvi_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18619,7 +18619,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_psvi_get(v8::Local<v8::Name> property, co
   void *arg10 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_psvi_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18646,7 +18646,7 @@ static void _wrap__xmlDoc_parseFlags_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_parseFlags_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18675,7 +18675,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_parseFlags_get(v8::Local<v8::Name> proper
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_parseFlags_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18702,7 +18702,7 @@ static void _wrap__xmlDoc_properties_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_properties_set', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18731,7 +18731,7 @@ static SwigV8ReturnValue _wrap__xmlDoc_properties_get(v8::Local<v8::Name> proper
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlDoc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlDoc_properties_get', argument 1 of type '_xmlDoc *'"); 
   }
@@ -18765,7 +18765,7 @@ static void _wrap_delete__xmlDoc(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data)
 static SwigV8ReturnValue _wrap_new__xmlDoc(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlDoc *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlDoc.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlDoc.");
@@ -18790,7 +18790,7 @@ static void _wrap__xmlDOMWrapCtxt__private_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt__private_set" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18815,7 +18815,7 @@ static SwigV8ReturnValue _wrap__xmlDOMWrapCtxt__private_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt__private_get" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18842,7 +18842,7 @@ static void _wrap__xmlDOMWrapCtxt_type_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_type_set" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18871,7 +18871,7 @@ static SwigV8ReturnValue _wrap__xmlDOMWrapCtxt_type_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_type_get" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18896,7 +18896,7 @@ static void _wrap__xmlDOMWrapCtxt_namespaceMap_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_namespaceMap_set" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18921,7 +18921,7 @@ static SwigV8ReturnValue _wrap__xmlDOMWrapCtxt_namespaceMap_get(v8::Local<v8::Na
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_namespaceMap_get" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18946,7 +18946,7 @@ static void _wrap__xmlDOMWrapCtxt_getNsForNodeFunc_set(v8::Local<v8::Name> prope
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_getNsForNodeFunc_set" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18976,7 +18976,7 @@ static SwigV8ReturnValue _wrap__xmlDOMWrapCtxt_getNsForNodeFunc_get(v8::Local<v8
   int res1 = 0 ;
   xmlDOMWrapAcquireNsFunction result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlDOMWrapCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlDOMWrapCtxt_getNsForNodeFunc_get" "', argument " "1"" of type '" "_xmlDOMWrapCtxt *""'"); 
   }
@@ -18996,7 +18996,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlDOMWrapCtxt(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlDOMWrapCtxt *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlDOMWrapCtxt.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlDOMWrapCtxt.");
@@ -29270,7 +29270,7 @@ static void _wrap__xmlError_domain_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_domain_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29299,7 +29299,7 @@ static SwigV8ReturnValue _wrap__xmlError_domain_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_domain_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29326,7 +29326,7 @@ static void _wrap__xmlError_code_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_code_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29355,7 +29355,7 @@ static SwigV8ReturnValue _wrap__xmlError_code_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_code_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29384,7 +29384,7 @@ static void _wrap__xmlError_message_set(v8::Local<v8::Name> property, v8::Local<
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_message_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29428,7 +29428,7 @@ static SwigV8ReturnValue _wrap__xmlError_message_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_message_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29455,7 +29455,7 @@ static void _wrap__xmlError_level_set(v8::Local<v8::Name> property, v8::Local<v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_level_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29484,7 +29484,7 @@ static SwigV8ReturnValue _wrap__xmlError_level_get(v8::Local<v8::Name> property,
   int res1 = 0 ;
   xmlErrorLevel result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_level_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29513,7 +29513,7 @@ static void _wrap__xmlError_file_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_file_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29557,7 +29557,7 @@ static SwigV8ReturnValue _wrap__xmlError_file_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_file_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29584,7 +29584,7 @@ static void _wrap__xmlError_line_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_line_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29613,7 +29613,7 @@ static SwigV8ReturnValue _wrap__xmlError_line_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_line_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29642,7 +29642,7 @@ static void _wrap__xmlError_str1_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str1_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29686,7 +29686,7 @@ static SwigV8ReturnValue _wrap__xmlError_str1_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str1_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29715,7 +29715,7 @@ static void _wrap__xmlError_str2_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str2_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29759,7 +29759,7 @@ static SwigV8ReturnValue _wrap__xmlError_str2_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str2_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29788,7 +29788,7 @@ static void _wrap__xmlError_str3_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str3_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29832,7 +29832,7 @@ static SwigV8ReturnValue _wrap__xmlError_str3_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_str3_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29859,7 +29859,7 @@ static void _wrap__xmlError_int1_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_int1_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29888,7 +29888,7 @@ static SwigV8ReturnValue _wrap__xmlError_int1_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_int1_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29915,7 +29915,7 @@ static void _wrap__xmlError_int2_set(v8::Local<v8::Name> property, v8::Local<v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_int2_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29944,7 +29944,7 @@ static SwigV8ReturnValue _wrap__xmlError_int2_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_int2_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29969,7 +29969,7 @@ static void _wrap__xmlError_ctxt_set(v8::Local<v8::Name> property, v8::Local<v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_ctxt_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -29994,7 +29994,7 @@ static SwigV8ReturnValue _wrap__xmlError_ctxt_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_ctxt_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -30019,7 +30019,7 @@ static void _wrap__xmlError_node_set(v8::Local<v8::Name> property, v8::Local<v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_node_set" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -30044,7 +30044,7 @@ static SwigV8ReturnValue _wrap__xmlError_node_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlError, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlError_node_get" "', argument " "1"" of type '" "_xmlError *""'"); 
   }
@@ -30064,7 +30064,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlError(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlError *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlError.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlError.");
@@ -43408,7 +43408,7 @@ static void _wrap__xmlValidCtxt_userData_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_userData_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43433,7 +43433,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_userData_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_userData_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43458,7 +43458,7 @@ static void _wrap__xmlValidCtxt_error_set(v8::Local<v8::Name> property, v8::Loca
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_error_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43488,7 +43488,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_error_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlValidityErrorFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_error_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43513,7 +43513,7 @@ static void _wrap__xmlValidCtxt_warning_set(v8::Local<v8::Name> property, v8::Lo
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_warning_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43543,7 +43543,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_warning_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlValidityWarningFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_warning_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43570,7 +43570,7 @@ static void _wrap__xmlValidCtxt_node_set(v8::Local<v8::Name> property, v8::Local
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_node_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43611,7 +43611,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_node_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_node_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43638,7 +43638,7 @@ static void _wrap__xmlValidCtxt_nodeNr_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeNr_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43667,7 +43667,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_nodeNr_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeNr_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43694,7 +43694,7 @@ static void _wrap__xmlValidCtxt_nodeMax_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeMax_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43723,7 +43723,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_nodeMax_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeMax_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43750,7 +43750,7 @@ static void _wrap__xmlValidCtxt_nodeTab_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeTab_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43779,7 +43779,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_nodeTab_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlNodePtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_nodeTab_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43806,7 +43806,7 @@ static void _wrap__xmlValidCtxt_finishDtd_set(v8::Local<v8::Name> property, v8::
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_finishDtd_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43835,7 +43835,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_finishDtd_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_finishDtd_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43862,7 +43862,7 @@ static void _wrap__xmlValidCtxt_doc_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_doc_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43891,7 +43891,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_doc_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xmlDocPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_doc_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43918,7 +43918,7 @@ static void _wrap__xmlValidCtxt_valid_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_valid_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43947,7 +43947,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_valid_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_valid_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -43974,7 +43974,7 @@ static void _wrap__xmlValidCtxt_vstate_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstate_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44003,7 +44003,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_vstate_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlValidState *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstate_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44030,7 +44030,7 @@ static void _wrap__xmlValidCtxt_vstateNr_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateNr_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44059,7 +44059,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_vstateNr_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateNr_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44086,7 +44086,7 @@ static void _wrap__xmlValidCtxt_vstateMax_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateMax_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44115,7 +44115,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_vstateMax_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateMax_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44142,7 +44142,7 @@ static void _wrap__xmlValidCtxt_vstateTab_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateTab_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44171,7 +44171,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_vstateTab_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlValidState *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_vstateTab_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44198,7 +44198,7 @@ static void _wrap__xmlValidCtxt_am_set(v8::Local<v8::Name> property, v8::Local<v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_am_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44227,7 +44227,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_am_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   xmlAutomataPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_am_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44254,7 +44254,7 @@ static void _wrap__xmlValidCtxt_state_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_state_set" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44283,7 +44283,7 @@ static SwigV8ReturnValue _wrap__xmlValidCtxt_state_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlAutomataStatePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlValidCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlValidCtxt_state_get" "', argument " "1"" of type '" "_xmlValidCtxt *""'"); 
   }
@@ -44303,7 +44303,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlValidCtxt(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlValidCtxt *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlValidCtxt.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlValidCtxt.");
@@ -47837,7 +47837,7 @@ static void _wrap__xmlEntity__private_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity__private_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -47866,7 +47866,7 @@ static SwigV8ReturnValue _wrap__xmlEntity__private_get(v8::Local<v8::Name> prope
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity__private_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -47893,7 +47893,7 @@ static void _wrap__xmlEntity_type_set(v8::Local<v8::Name> property, v8::Local<v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_type_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -47922,7 +47922,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_type_get(v8::Local<v8::Name> property,
   void *arg10 ;
   xmlElementType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_type_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -47951,7 +47951,7 @@ static void _wrap__xmlEntity_name_set(v8::Local<v8::Name> property, v8::Local<v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_name_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -47986,7 +47986,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_name_get(v8::Local<v8::Name> property,
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_name_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48025,7 +48025,7 @@ static void _wrap__xmlEntity_children_set(v8::Local<v8::Name> property, v8::Loca
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_children_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48066,7 +48066,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_children_get(v8::Local<v8::Name> prope
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_children_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48093,7 +48093,7 @@ static void _wrap__xmlEntity_last_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_last_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48134,7 +48134,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_last_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_last_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48161,7 +48161,7 @@ static void _wrap__xmlEntity_parent_set(v8::Local<v8::Name> property, v8::Local<
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_parent_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48190,7 +48190,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_parent_get(v8::Local<v8::Name> propert
   void *arg10 ;
   _xmlDtd *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_parent_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48217,7 +48217,7 @@ static void _wrap__xmlEntity_next_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_next_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48258,7 +48258,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_next_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_next_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48285,7 +48285,7 @@ static void _wrap__xmlEntity_prev_set(v8::Local<v8::Name> property, v8::Local<v8
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_prev_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48326,7 +48326,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_prev_get(v8::Local<v8::Name> property,
   void *arg10 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_prev_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48353,7 +48353,7 @@ static void _wrap__xmlEntity_doc_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_doc_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48382,7 +48382,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_doc_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   _xmlDoc *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_doc_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48411,7 +48411,7 @@ static void _wrap__xmlEntity_orig_set(v8::Local<v8::Name> property, v8::Local<v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_orig_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48446,7 +48446,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_orig_get(v8::Local<v8::Name> property,
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_orig_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48487,7 +48487,7 @@ static void _wrap__xmlEntity_content_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_content_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48522,7 +48522,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_content_get(v8::Local<v8::Name> proper
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_content_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48561,7 +48561,7 @@ static void _wrap__xmlEntity_length_set(v8::Local<v8::Name> property, v8::Local<
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_length_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48590,7 +48590,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_length_get(v8::Local<v8::Name> propert
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_length_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48617,7 +48617,7 @@ static void _wrap__xmlEntity_etype_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_etype_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48646,7 +48646,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_etype_get(v8::Local<v8::Name> property
   void *arg10 ;
   xmlEntityType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_etype_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48675,7 +48675,7 @@ static void _wrap__xmlEntity_ExternalID_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_ExternalID_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48710,7 +48710,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_ExternalID_get(v8::Local<v8::Name> pro
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_ExternalID_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48751,7 +48751,7 @@ static void _wrap__xmlEntity_SystemID_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_SystemID_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48786,7 +48786,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_SystemID_get(v8::Local<v8::Name> prope
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_SystemID_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48825,7 +48825,7 @@ static void _wrap__xmlEntity_nexte_set(v8::Local<v8::Name> property, v8::Local<v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_nexte_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48854,7 +48854,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_nexte_get(v8::Local<v8::Name> property
   void *arg10 ;
   _xmlEntity *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_nexte_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48883,7 +48883,7 @@ static void _wrap__xmlEntity_URI_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_URI_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48918,7 +48918,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_URI_get(v8::Local<v8::Name> property, 
   void *arg10 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_URI_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48957,7 +48957,7 @@ static void _wrap__xmlEntity_owner_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_owner_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -48986,7 +48986,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_owner_get(v8::Local<v8::Name> property
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_owner_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -49013,7 +49013,7 @@ static void _wrap__xmlEntity_checked_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_checked_set', argument 1 of type '_xmlEntity *'"); 
   }
@@ -49042,7 +49042,7 @@ static SwigV8ReturnValue _wrap__xmlEntity_checked_get(v8::Local<v8::Name> proper
   void *arg10 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &arg10, SWIGTYPE_p__xmlEntity, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '_xmlEntity_checked_get', argument 1 of type '_xmlEntity *'"); 
   }
@@ -49076,7 +49076,7 @@ static void _wrap_delete__xmlEntity(const v8::WeakCallbackInfo<SWIGV8_Proxy> &da
 static SwigV8ReturnValue _wrap_new__xmlEntity(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlEntity *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlEntity.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlEntity.");
@@ -49957,7 +49957,7 @@ static void _wrap__xmlParserInput_buf_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_buf_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -49986,7 +49986,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_buf_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlParserInputBufferPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_buf_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50015,7 +50015,7 @@ static void _wrap__xmlParserInput_filename_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_filename_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50058,7 +50058,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_filename_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_filename_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50087,7 +50087,7 @@ static void _wrap__xmlParserInput_directory_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_directory_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50130,7 +50130,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_directory_get(v8::Local<v8::Name>
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_directory_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50159,7 +50159,7 @@ static void _wrap__xmlParserInput_base_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_base_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50194,7 +50194,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_base_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_base_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50235,7 +50235,7 @@ static void _wrap__xmlParserInput_cur_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_cur_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50270,7 +50270,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_cur_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_cur_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50311,7 +50311,7 @@ static void _wrap__xmlParserInput_end_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_end_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50346,7 +50346,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_end_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_end_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50385,7 +50385,7 @@ static void _wrap__xmlParserInput_length_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_length_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50414,7 +50414,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_length_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_length_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50441,7 +50441,7 @@ static void _wrap__xmlParserInput_line_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_line_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50470,7 +50470,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_line_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_line_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50497,7 +50497,7 @@ static void _wrap__xmlParserInput_col_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_col_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50526,7 +50526,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_col_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_col_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50553,7 +50553,7 @@ static void _wrap__xmlParserInput_consumed_set(v8::Local<v8::Name> property, v8:
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_consumed_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50582,7 +50582,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_consumed_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_consumed_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50607,7 +50607,7 @@ static void _wrap__xmlParserInput_free_set(v8::Local<v8::Name> property, v8::Loc
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_free_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50637,7 +50637,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_free_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlParserInputDeallocate result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_free_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50666,7 +50666,7 @@ static void _wrap__xmlParserInput_encoding_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_encoding_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50701,7 +50701,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_encoding_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_encoding_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50742,7 +50742,7 @@ static void _wrap__xmlParserInput_version_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_version_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50777,7 +50777,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_version_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_version_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50816,7 +50816,7 @@ static void _wrap__xmlParserInput_standalone_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_standalone_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50845,7 +50845,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_standalone_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_standalone_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50872,7 +50872,7 @@ static void _wrap__xmlParserInput_id_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_id_set" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50901,7 +50901,7 @@ static SwigV8ReturnValue _wrap__xmlParserInput_id_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInput, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInput_id_get" "', argument " "1"" of type '" "_xmlParserInput *""'"); 
   }
@@ -50921,7 +50921,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlParserInput(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlParserInput *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlParserInput.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlParserInput.");
@@ -50959,7 +50959,7 @@ static void _wrap__xmlParserNodeInfo_node_set(v8::Local<v8::Name> property, v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_node_set" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51000,7 +51000,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfo_node_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   _xmlNode *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_node_get" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51027,7 +51027,7 @@ static void _wrap__xmlParserNodeInfo_begin_pos_set(v8::Local<v8::Name> property,
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_begin_pos_set" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51056,7 +51056,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfo_begin_pos_get(v8::Local<v8::Na
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_begin_pos_get" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51083,7 +51083,7 @@ static void _wrap__xmlParserNodeInfo_begin_line_set(v8::Local<v8::Name> property
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_begin_line_set" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51112,7 +51112,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfo_begin_line_get(v8::Local<v8::N
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_begin_line_get" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51139,7 +51139,7 @@ static void _wrap__xmlParserNodeInfo_end_pos_set(v8::Local<v8::Name> property, v
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_end_pos_set" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51168,7 +51168,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfo_end_pos_get(v8::Local<v8::Name
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_end_pos_get" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51195,7 +51195,7 @@ static void _wrap__xmlParserNodeInfo_end_line_set(v8::Local<v8::Name> property, 
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_end_line_set" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51224,7 +51224,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfo_end_line_get(v8::Local<v8::Nam
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfo, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfo_end_line_get" "', argument " "1"" of type '" "_xmlParserNodeInfo *""'"); 
   }
@@ -51244,7 +51244,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlParserNodeInfo(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlParserNodeInfo *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlParserNodeInfo.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlParserNodeInfo.");
@@ -51282,7 +51282,7 @@ static void _wrap__xmlParserNodeInfoSeq_maximum_set(v8::Local<v8::Name> property
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_maximum_set" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51311,7 +51311,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfoSeq_maximum_get(v8::Local<v8::N
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_maximum_get" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51338,7 +51338,7 @@ static void _wrap__xmlParserNodeInfoSeq_length_set(v8::Local<v8::Name> property,
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_length_set" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51367,7 +51367,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfoSeq_length_get(v8::Local<v8::Na
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_length_get" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51394,7 +51394,7 @@ static void _wrap__xmlParserNodeInfoSeq_buffer_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_buffer_set" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51423,7 +51423,7 @@ static SwigV8ReturnValue _wrap__xmlParserNodeInfoSeq_buffer_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlParserNodeInfo *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserNodeInfoSeq, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserNodeInfoSeq_buffer_get" "', argument " "1"" of type '" "_xmlParserNodeInfoSeq *""'"); 
   }
@@ -51443,7 +51443,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlParserNodeInfoSeq(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlParserNodeInfoSeq *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlParserNodeInfoSeq.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlParserNodeInfoSeq.");
@@ -51886,7 +51886,7 @@ static void _wrap__xmlParserCtxt_sax_set(v8::Local<v8::Name> property, v8::Local
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -51915,7 +51915,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_sax_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   _xmlSAXHandler *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -51940,7 +51940,7 @@ static void _wrap__xmlParserCtxt_userData_set(v8::Local<v8::Name> property, v8::
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_userData_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -51965,7 +51965,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_userData_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_userData_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -51992,7 +51992,7 @@ static void _wrap__xmlParserCtxt_myDoc_set(v8::Local<v8::Name> property, v8::Loc
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_myDoc_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52021,7 +52021,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_myDoc_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlDocPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_myDoc_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52048,7 +52048,7 @@ static void _wrap__xmlParserCtxt_wellFormed_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_wellFormed_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52077,7 +52077,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_wellFormed_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_wellFormed_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52104,7 +52104,7 @@ static void _wrap__xmlParserCtxt_replaceEntities_set(v8::Local<v8::Name> propert
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_replaceEntities_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52133,7 +52133,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_replaceEntities_get(v8::Local<v8::
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_replaceEntities_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52162,7 +52162,7 @@ static void _wrap__xmlParserCtxt_version_set(v8::Local<v8::Name> property, v8::L
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_version_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52197,7 +52197,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_version_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_version_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52238,7 +52238,7 @@ static void _wrap__xmlParserCtxt_encoding_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_encoding_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52273,7 +52273,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_encoding_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_encoding_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52312,7 +52312,7 @@ static void _wrap__xmlParserCtxt_standalone_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_standalone_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52341,7 +52341,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_standalone_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_standalone_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52368,7 +52368,7 @@ static void _wrap__xmlParserCtxt_html_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_html_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52397,7 +52397,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_html_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_html_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52424,7 +52424,7 @@ static void _wrap__xmlParserCtxt_input_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_input_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52453,7 +52453,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_input_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlParserInputPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_input_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52480,7 +52480,7 @@ static void _wrap__xmlParserCtxt_inputNr_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52509,7 +52509,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_inputNr_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52536,7 +52536,7 @@ static void _wrap__xmlParserCtxt_inputMax_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52565,7 +52565,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_inputMax_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52592,7 +52592,7 @@ static void _wrap__xmlParserCtxt_inputTab_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52621,7 +52621,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_inputTab_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlParserInputPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inputTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52648,7 +52648,7 @@ static void _wrap__xmlParserCtxt_node_set(v8::Local<v8::Name> property, v8::Loca
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_node_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52689,7 +52689,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_node_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_node_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52716,7 +52716,7 @@ static void _wrap__xmlParserCtxt_nodeNr_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52745,7 +52745,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeNr_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52772,7 +52772,7 @@ static void _wrap__xmlParserCtxt_nodeMax_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52801,7 +52801,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeMax_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52828,7 +52828,7 @@ static void _wrap__xmlParserCtxt_nodeTab_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52857,7 +52857,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeTab_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlNodePtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52884,7 +52884,7 @@ static void _wrap__xmlParserCtxt_record_info_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_record_info_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52913,7 +52913,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_record_info_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_record_info_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52940,7 +52940,7 @@ static void _wrap__xmlParserCtxt_node_seq_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_node_seq_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52969,7 +52969,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_node_seq_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlParserNodeInfoSeq *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_node_seq_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -52996,7 +52996,7 @@ static void _wrap__xmlParserCtxt_errNo_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_errNo_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53025,7 +53025,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_errNo_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_errNo_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53052,7 +53052,7 @@ static void _wrap__xmlParserCtxt_hasExternalSubset_set(v8::Local<v8::Name> prope
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_hasExternalSubset_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53081,7 +53081,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_hasExternalSubset_get(v8::Local<v8
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_hasExternalSubset_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53108,7 +53108,7 @@ static void _wrap__xmlParserCtxt_hasPErefs_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_hasPErefs_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53137,7 +53137,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_hasPErefs_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_hasPErefs_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53164,7 +53164,7 @@ static void _wrap__xmlParserCtxt_external_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_external_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53193,7 +53193,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_external_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_external_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53220,7 +53220,7 @@ static void _wrap__xmlParserCtxt_valid_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_valid_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53249,7 +53249,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_valid_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_valid_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53276,7 +53276,7 @@ static void _wrap__xmlParserCtxt_validate_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_validate_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53305,7 +53305,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_validate_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_validate_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53332,7 +53332,7 @@ static void _wrap__xmlParserCtxt_vctxt_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_vctxt_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53361,7 +53361,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_vctxt_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlValidCtxt *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_vctxt_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53388,7 +53388,7 @@ static void _wrap__xmlParserCtxt_instate_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_instate_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53417,7 +53417,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_instate_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlParserInputState result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_instate_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53444,7 +53444,7 @@ static void _wrap__xmlParserCtxt_token_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_token_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53473,7 +53473,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_token_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_token_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53502,7 +53502,7 @@ static void _wrap__xmlParserCtxt_directory_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_directory_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53546,7 +53546,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_directory_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_directory_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53575,7 +53575,7 @@ static void _wrap__xmlParserCtxt_name_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_name_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53610,7 +53610,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_name_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_name_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53649,7 +53649,7 @@ static void _wrap__xmlParserCtxt_nameNr_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53678,7 +53678,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nameNr_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53705,7 +53705,7 @@ static void _wrap__xmlParserCtxt_nameMax_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53734,7 +53734,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nameMax_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53761,7 +53761,7 @@ static void _wrap__xmlParserCtxt_nameTab_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53790,7 +53790,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nameTab_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar **result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nameTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53817,7 +53817,7 @@ static void _wrap__xmlParserCtxt_nbChars_set(v8::Local<v8::Name> property, v8::L
   long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nbChars_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53846,7 +53846,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nbChars_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nbChars_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53873,7 +53873,7 @@ static void _wrap__xmlParserCtxt_checkIndex_set(v8::Local<v8::Name> property, v8
   long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_checkIndex_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53902,7 +53902,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_checkIndex_get(v8::Local<v8::Name>
   int res1 = 0 ;
   long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_checkIndex_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53929,7 +53929,7 @@ static void _wrap__xmlParserCtxt_keepBlanks_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_keepBlanks_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53958,7 +53958,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_keepBlanks_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_keepBlanks_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -53985,7 +53985,7 @@ static void _wrap__xmlParserCtxt_disableSAX_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_disableSAX_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54014,7 +54014,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_disableSAX_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_disableSAX_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54041,7 +54041,7 @@ static void _wrap__xmlParserCtxt_inSubset_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inSubset_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54070,7 +54070,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_inSubset_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_inSubset_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54099,7 +54099,7 @@ static void _wrap__xmlParserCtxt_intSubName_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_intSubName_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54134,7 +54134,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_intSubName_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_intSubName_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54175,7 +54175,7 @@ static void _wrap__xmlParserCtxt_extSubURI_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_extSubURI_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54210,7 +54210,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_extSubURI_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_extSubURI_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54251,7 +54251,7 @@ static void _wrap__xmlParserCtxt_extSubSystem_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_extSubSystem_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54286,7 +54286,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_extSubSystem_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_extSubSystem_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54325,7 +54325,7 @@ static void _wrap__xmlParserCtxt_space_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_space_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54354,7 +54354,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_space_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_space_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54381,7 +54381,7 @@ static void _wrap__xmlParserCtxt_spaceNr_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54410,7 +54410,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_spaceNr_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54437,7 +54437,7 @@ static void _wrap__xmlParserCtxt_spaceMax_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54466,7 +54466,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_spaceMax_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54493,7 +54493,7 @@ static void _wrap__xmlParserCtxt_spaceTab_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54522,7 +54522,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_spaceTab_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_spaceTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54549,7 +54549,7 @@ static void _wrap__xmlParserCtxt_depth_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_depth_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54578,7 +54578,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_depth_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_depth_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54605,7 +54605,7 @@ static void _wrap__xmlParserCtxt_entity_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_entity_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54634,7 +54634,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_entity_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlParserInputPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_entity_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54661,7 +54661,7 @@ static void _wrap__xmlParserCtxt_charset_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_charset_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54690,7 +54690,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_charset_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_charset_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54717,7 +54717,7 @@ static void _wrap__xmlParserCtxt_nodelen_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodelen_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54746,7 +54746,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodelen_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodelen_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54773,7 +54773,7 @@ static void _wrap__xmlParserCtxt_nodemem_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodemem_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54802,7 +54802,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodemem_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodemem_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54829,7 +54829,7 @@ static void _wrap__xmlParserCtxt_pedantic_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_pedantic_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54858,7 +54858,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_pedantic_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_pedantic_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54883,7 +54883,7 @@ static void _wrap__xmlParserCtxt__private_set(v8::Local<v8::Name> property, v8::
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt__private_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54908,7 +54908,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt__private_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt__private_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54935,7 +54935,7 @@ static void _wrap__xmlParserCtxt_loadsubset_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_loadsubset_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54964,7 +54964,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_loadsubset_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_loadsubset_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -54991,7 +54991,7 @@ static void _wrap__xmlParserCtxt_linenumbers_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_linenumbers_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55020,7 +55020,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_linenumbers_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_linenumbers_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55045,7 +55045,7 @@ static void _wrap__xmlParserCtxt_catalogs_set(v8::Local<v8::Name> property, v8::
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_catalogs_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55070,7 +55070,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_catalogs_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_catalogs_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55097,7 +55097,7 @@ static void _wrap__xmlParserCtxt_recovery_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_recovery_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55126,7 +55126,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_recovery_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_recovery_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55153,7 +55153,7 @@ static void _wrap__xmlParserCtxt_progressive_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_progressive_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55182,7 +55182,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_progressive_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_progressive_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55209,7 +55209,7 @@ static void _wrap__xmlParserCtxt_dict_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_dict_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55238,7 +55238,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_dict_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlDictPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_dict_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55265,7 +55265,7 @@ static void _wrap__xmlParserCtxt_atts_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_atts_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55294,7 +55294,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_atts_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar **result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_atts_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55321,7 +55321,7 @@ static void _wrap__xmlParserCtxt_maxatts_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_maxatts_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55350,7 +55350,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_maxatts_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_maxatts_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55377,7 +55377,7 @@ static void _wrap__xmlParserCtxt_docdict_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_docdict_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55406,7 +55406,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_docdict_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_docdict_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55435,7 +55435,7 @@ static void _wrap__xmlParserCtxt_str_xml_set(v8::Local<v8::Name> property, v8::L
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xml_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55470,7 +55470,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_str_xml_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xml_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55511,7 +55511,7 @@ static void _wrap__xmlParserCtxt_str_xmlns_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xmlns_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55546,7 +55546,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_str_xmlns_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xmlns_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55587,7 +55587,7 @@ static void _wrap__xmlParserCtxt_str_xml_ns_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xml_ns_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55622,7 +55622,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_str_xml_ns_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_str_xml_ns_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55661,7 +55661,7 @@ static void _wrap__xmlParserCtxt_sax2_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sax2_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55690,7 +55690,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_sax2_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sax2_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55717,7 +55717,7 @@ static void _wrap__xmlParserCtxt_nsNr_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55746,7 +55746,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nsNr_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55773,7 +55773,7 @@ static void _wrap__xmlParserCtxt_nsMax_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55802,7 +55802,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nsMax_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55829,7 +55829,7 @@ static void _wrap__xmlParserCtxt_nsTab_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55858,7 +55858,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nsTab_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar **result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55885,7 +55885,7 @@ static void _wrap__xmlParserCtxt_attallocs_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attallocs_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55914,7 +55914,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_attallocs_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attallocs_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55941,7 +55941,7 @@ static void _wrap__xmlParserCtxt_pushTab_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_pushTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55970,7 +55970,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_pushTab_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlStartTag *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_pushTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -55997,7 +55997,7 @@ static void _wrap__xmlParserCtxt_attsDefault_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attsDefault_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56026,7 +56026,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_attsDefault_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attsDefault_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56053,7 +56053,7 @@ static void _wrap__xmlParserCtxt_attsSpecial_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attsSpecial_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56082,7 +56082,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_attsSpecial_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_attsSpecial_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56109,7 +56109,7 @@ static void _wrap__xmlParserCtxt_nsWellFormed_set(v8::Local<v8::Name> property, 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsWellFormed_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56138,7 +56138,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nsWellFormed_get(v8::Local<v8::Nam
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nsWellFormed_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56165,7 +56165,7 @@ static void _wrap__xmlParserCtxt_options_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_options_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56194,7 +56194,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_options_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_options_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56221,7 +56221,7 @@ static void _wrap__xmlParserCtxt_dictNames_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_dictNames_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56250,7 +56250,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_dictNames_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_dictNames_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56277,7 +56277,7 @@ static void _wrap__xmlParserCtxt_freeElemsNr_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeElemsNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56306,7 +56306,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_freeElemsNr_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeElemsNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56333,7 +56333,7 @@ static void _wrap__xmlParserCtxt_freeElems_set(v8::Local<v8::Name> property, v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeElems_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56374,7 +56374,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_freeElems_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeElems_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56401,7 +56401,7 @@ static void _wrap__xmlParserCtxt_freeAttrsNr_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeAttrsNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56430,7 +56430,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_freeAttrsNr_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeAttrsNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56457,7 +56457,7 @@ static void _wrap__xmlParserCtxt_freeAttrs_set(v8::Local<v8::Name> property, v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeAttrs_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56486,7 +56486,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_freeAttrs_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlAttrPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_freeAttrs_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56513,7 +56513,7 @@ static void _wrap__xmlParserCtxt_lastError_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_lastError_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56542,7 +56542,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_lastError_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlError *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_lastError_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56569,7 +56569,7 @@ static void _wrap__xmlParserCtxt_parseMode_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_parseMode_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56598,7 +56598,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_parseMode_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlParserMode result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_parseMode_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56625,7 +56625,7 @@ static void _wrap__xmlParserCtxt_nbentities_set(v8::Local<v8::Name> property, v8
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nbentities_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56654,7 +56654,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nbentities_get(v8::Local<v8::Name>
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nbentities_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56681,7 +56681,7 @@ static void _wrap__xmlParserCtxt_sizeentities_set(v8::Local<v8::Name> property, 
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sizeentities_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56710,7 +56710,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_sizeentities_get(v8::Local<v8::Nam
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sizeentities_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56737,7 +56737,7 @@ static void _wrap__xmlParserCtxt_nodeInfo_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfo_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56766,7 +56766,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeInfo_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlParserNodeInfo *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfo_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56793,7 +56793,7 @@ static void _wrap__xmlParserCtxt_nodeInfoNr_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoNr_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56822,7 +56822,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeInfoNr_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoNr_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56849,7 +56849,7 @@ static void _wrap__xmlParserCtxt_nodeInfoMax_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoMax_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56878,7 +56878,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeInfoMax_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoMax_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56905,7 +56905,7 @@ static void _wrap__xmlParserCtxt_nodeInfoTab_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoTab_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56934,7 +56934,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_nodeInfoTab_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlParserNodeInfo *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_nodeInfoTab_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56961,7 +56961,7 @@ static void _wrap__xmlParserCtxt_input_id_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_input_id_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -56990,7 +56990,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_input_id_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_input_id_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -57017,7 +57017,7 @@ static void _wrap__xmlParserCtxt_sizeentcopy_set(v8::Local<v8::Name> property, v
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sizeentcopy_set" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -57046,7 +57046,7 @@ static SwigV8ReturnValue _wrap__xmlParserCtxt_sizeentcopy_get(v8::Local<v8::Name
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserCtxt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserCtxt_sizeentcopy_get" "', argument " "1"" of type '" "_xmlParserCtxt *""'"); 
   }
@@ -57066,7 +57066,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlParserCtxt(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlParserCtxt *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlParserCtxt.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlParserCtxt.");
@@ -57102,7 +57102,7 @@ static void _wrap__xmlSAXLocator_getPublicId_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getPublicId_set" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57132,7 +57132,7 @@ static SwigV8ReturnValue _wrap__xmlSAXLocator_getPublicId_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *(*result)(void *) = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getPublicId_get" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57157,7 +57157,7 @@ static void _wrap__xmlSAXLocator_getSystemId_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getSystemId_set" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57187,7 +57187,7 @@ static SwigV8ReturnValue _wrap__xmlSAXLocator_getSystemId_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *(*result)(void *) = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getSystemId_get" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57212,7 +57212,7 @@ static void _wrap__xmlSAXLocator_getLineNumber_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getLineNumber_set" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57242,7 +57242,7 @@ static SwigV8ReturnValue _wrap__xmlSAXLocator_getLineNumber_get(v8::Local<v8::Na
   int res1 = 0 ;
   int (*result)(void *) = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getLineNumber_get" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57267,7 +57267,7 @@ static void _wrap__xmlSAXLocator_getColumnNumber_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getColumnNumber_set" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57297,7 +57297,7 @@ static SwigV8ReturnValue _wrap__xmlSAXLocator_getColumnNumber_get(v8::Local<v8::
   int res1 = 0 ;
   int (*result)(void *) = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXLocator, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXLocator_getColumnNumber_get" "', argument " "1"" of type '" "_xmlSAXLocator *""'"); 
   }
@@ -57317,7 +57317,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSAXLocator(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSAXLocator *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSAXLocator.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSAXLocator.");
@@ -57368,7 +57368,7 @@ static void _wrap__xmlSAXHandler_internalSubset_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_internalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57398,7 +57398,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_internalSubset_get(v8::Local<v8::N
   int res1 = 0 ;
   internalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_internalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57423,7 +57423,7 @@ static void _wrap__xmlSAXHandler_isStandalone_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_isStandalone_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57453,7 +57453,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_isStandalone_get(v8::Local<v8::Nam
   int res1 = 0 ;
   isStandaloneSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_isStandalone_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57478,7 +57478,7 @@ static void _wrap__xmlSAXHandler_hasInternalSubset_set(v8::Local<v8::Name> prope
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_hasInternalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57508,7 +57508,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_hasInternalSubset_get(v8::Local<v8
   int res1 = 0 ;
   hasInternalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_hasInternalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57533,7 +57533,7 @@ static void _wrap__xmlSAXHandler_hasExternalSubset_set(v8::Local<v8::Name> prope
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_hasExternalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57563,7 +57563,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_hasExternalSubset_get(v8::Local<v8
   int res1 = 0 ;
   hasExternalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_hasExternalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57588,7 +57588,7 @@ static void _wrap__xmlSAXHandler_resolveEntity_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_resolveEntity_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57618,7 +57618,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_resolveEntity_get(v8::Local<v8::Na
   int res1 = 0 ;
   resolveEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_resolveEntity_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57643,7 +57643,7 @@ static void _wrap__xmlSAXHandler_getEntity_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_getEntity_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57673,7 +57673,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_getEntity_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   getEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_getEntity_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57698,7 +57698,7 @@ static void _wrap__xmlSAXHandler_entityDecl_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_entityDecl_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57728,7 +57728,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_entityDecl_get(v8::Local<v8::Name>
   int res1 = 0 ;
   entityDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_entityDecl_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57753,7 +57753,7 @@ static void _wrap__xmlSAXHandler_notationDecl_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_notationDecl_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57783,7 +57783,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_notationDecl_get(v8::Local<v8::Nam
   int res1 = 0 ;
   notationDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_notationDecl_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57808,7 +57808,7 @@ static void _wrap__xmlSAXHandler_attributeDecl_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_attributeDecl_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57838,7 +57838,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_attributeDecl_get(v8::Local<v8::Na
   int res1 = 0 ;
   attributeDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_attributeDecl_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57863,7 +57863,7 @@ static void _wrap__xmlSAXHandler_elementDecl_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_elementDecl_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57893,7 +57893,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_elementDecl_get(v8::Local<v8::Name
   int res1 = 0 ;
   elementDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_elementDecl_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57918,7 +57918,7 @@ static void _wrap__xmlSAXHandler_unparsedEntityDecl_set(v8::Local<v8::Name> prop
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_unparsedEntityDecl_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57948,7 +57948,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_unparsedEntityDecl_get(v8::Local<v
   int res1 = 0 ;
   unparsedEntityDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_unparsedEntityDecl_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -57973,7 +57973,7 @@ static void _wrap__xmlSAXHandler_setDocumentLocator_set(v8::Local<v8::Name> prop
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_setDocumentLocator_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58003,7 +58003,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_setDocumentLocator_get(v8::Local<v
   int res1 = 0 ;
   setDocumentLocatorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_setDocumentLocator_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58028,7 +58028,7 @@ static void _wrap__xmlSAXHandler_startDocument_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startDocument_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58058,7 +58058,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_startDocument_get(v8::Local<v8::Na
   int res1 = 0 ;
   startDocumentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startDocument_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58083,7 +58083,7 @@ static void _wrap__xmlSAXHandler_endDocument_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endDocument_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58113,7 +58113,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_endDocument_get(v8::Local<v8::Name
   int res1 = 0 ;
   endDocumentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endDocument_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58138,7 +58138,7 @@ static void _wrap__xmlSAXHandler_startElement_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startElement_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58168,7 +58168,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_startElement_get(v8::Local<v8::Nam
   int res1 = 0 ;
   startElementSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startElement_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58193,7 +58193,7 @@ static void _wrap__xmlSAXHandler_endElement_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endElement_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58223,7 +58223,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_endElement_get(v8::Local<v8::Name>
   int res1 = 0 ;
   endElementSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endElement_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58248,7 +58248,7 @@ static void _wrap__xmlSAXHandler_reference_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_reference_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58278,7 +58278,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_reference_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   referenceSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_reference_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58303,7 +58303,7 @@ static void _wrap__xmlSAXHandler_characters_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_characters_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58333,7 +58333,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_characters_get(v8::Local<v8::Name>
   int res1 = 0 ;
   charactersSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_characters_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58358,7 +58358,7 @@ static void _wrap__xmlSAXHandler_ignorableWhitespace_set(v8::Local<v8::Name> pro
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_ignorableWhitespace_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58388,7 +58388,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_ignorableWhitespace_get(v8::Local<
   int res1 = 0 ;
   ignorableWhitespaceSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_ignorableWhitespace_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58413,7 +58413,7 @@ static void _wrap__xmlSAXHandler_processingInstruction_set(v8::Local<v8::Name> p
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_processingInstruction_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58443,7 +58443,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_processingInstruction_get(v8::Loca
   int res1 = 0 ;
   processingInstructionSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_processingInstruction_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58468,7 +58468,7 @@ static void _wrap__xmlSAXHandler_comment_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_comment_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58498,7 +58498,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_comment_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   commentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_comment_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58523,7 +58523,7 @@ static void _wrap__xmlSAXHandler_warning_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_warning_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58553,7 +58553,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_warning_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   warningSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_warning_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58578,7 +58578,7 @@ static void _wrap__xmlSAXHandler_error_set(v8::Local<v8::Name> property, v8::Loc
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_error_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58608,7 +58608,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_error_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   errorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_error_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58633,7 +58633,7 @@ static void _wrap__xmlSAXHandler_fatalError_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_fatalError_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58663,7 +58663,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_fatalError_get(v8::Local<v8::Name>
   int res1 = 0 ;
   fatalErrorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_fatalError_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58688,7 +58688,7 @@ static void _wrap__xmlSAXHandler_getParameterEntity_set(v8::Local<v8::Name> prop
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_getParameterEntity_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58718,7 +58718,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_getParameterEntity_get(v8::Local<v
   int res1 = 0 ;
   getParameterEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_getParameterEntity_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58743,7 +58743,7 @@ static void _wrap__xmlSAXHandler_cdataBlock_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_cdataBlock_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58773,7 +58773,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_cdataBlock_get(v8::Local<v8::Name>
   int res1 = 0 ;
   cdataBlockSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_cdataBlock_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58798,7 +58798,7 @@ static void _wrap__xmlSAXHandler_externalSubset_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_externalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58828,7 +58828,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_externalSubset_get(v8::Local<v8::N
   int res1 = 0 ;
   externalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_externalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58855,7 +58855,7 @@ static void _wrap__xmlSAXHandler_initialized_set(v8::Local<v8::Name> property, v
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_initialized_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58884,7 +58884,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_initialized_get(v8::Local<v8::Name
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_initialized_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58909,7 +58909,7 @@ static void _wrap__xmlSAXHandler__private_set(v8::Local<v8::Name> property, v8::
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler__private_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58934,7 +58934,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler__private_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler__private_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58959,7 +58959,7 @@ static void _wrap__xmlSAXHandler_startElementNs_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startElementNs_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -58989,7 +58989,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_startElementNs_get(v8::Local<v8::N
   int res1 = 0 ;
   startElementNsSAX2Func result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_startElementNs_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -59014,7 +59014,7 @@ static void _wrap__xmlSAXHandler_endElementNs_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endElementNs_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -59044,7 +59044,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_endElementNs_get(v8::Local<v8::Nam
   int res1 = 0 ;
   endElementNsSAX2Func result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_endElementNs_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -59069,7 +59069,7 @@ static void _wrap__xmlSAXHandler_serror_set(v8::Local<v8::Name> property, v8::Lo
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_serror_set" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -59099,7 +59099,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandler_serror_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlStructuredErrorFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandler_serror_get" "', argument " "1"" of type '" "_xmlSAXHandler *""'"); 
   }
@@ -59119,7 +59119,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSAXHandler(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSAXHandler *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSAXHandler.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSAXHandler.");
@@ -59155,7 +59155,7 @@ static void _wrap__xmlSAXHandlerV1_internalSubset_set(v8::Local<v8::Name> proper
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_internalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59185,7 +59185,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_internalSubset_get(v8::Local<v8:
   int res1 = 0 ;
   internalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_internalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59210,7 +59210,7 @@ static void _wrap__xmlSAXHandlerV1_isStandalone_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_isStandalone_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59240,7 +59240,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_isStandalone_get(v8::Local<v8::N
   int res1 = 0 ;
   isStandaloneSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_isStandalone_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59265,7 +59265,7 @@ static void _wrap__xmlSAXHandlerV1_hasInternalSubset_set(v8::Local<v8::Name> pro
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_hasInternalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59295,7 +59295,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_hasInternalSubset_get(v8::Local<
   int res1 = 0 ;
   hasInternalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_hasInternalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59320,7 +59320,7 @@ static void _wrap__xmlSAXHandlerV1_hasExternalSubset_set(v8::Local<v8::Name> pro
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_hasExternalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59350,7 +59350,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_hasExternalSubset_get(v8::Local<
   int res1 = 0 ;
   hasExternalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_hasExternalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59375,7 +59375,7 @@ static void _wrap__xmlSAXHandlerV1_resolveEntity_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_resolveEntity_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59405,7 +59405,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_resolveEntity_get(v8::Local<v8::
   int res1 = 0 ;
   resolveEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_resolveEntity_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59430,7 +59430,7 @@ static void _wrap__xmlSAXHandlerV1_getEntity_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_getEntity_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59460,7 +59460,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_getEntity_get(v8::Local<v8::Name
   int res1 = 0 ;
   getEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_getEntity_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59485,7 +59485,7 @@ static void _wrap__xmlSAXHandlerV1_entityDecl_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_entityDecl_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59515,7 +59515,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_entityDecl_get(v8::Local<v8::Nam
   int res1 = 0 ;
   entityDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_entityDecl_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59540,7 +59540,7 @@ static void _wrap__xmlSAXHandlerV1_notationDecl_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_notationDecl_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59570,7 +59570,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_notationDecl_get(v8::Local<v8::N
   int res1 = 0 ;
   notationDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_notationDecl_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59595,7 +59595,7 @@ static void _wrap__xmlSAXHandlerV1_attributeDecl_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_attributeDecl_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59625,7 +59625,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_attributeDecl_get(v8::Local<v8::
   int res1 = 0 ;
   attributeDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_attributeDecl_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59650,7 +59650,7 @@ static void _wrap__xmlSAXHandlerV1_elementDecl_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_elementDecl_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59680,7 +59680,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_elementDecl_get(v8::Local<v8::Na
   int res1 = 0 ;
   elementDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_elementDecl_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59705,7 +59705,7 @@ static void _wrap__xmlSAXHandlerV1_unparsedEntityDecl_set(v8::Local<v8::Name> pr
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_unparsedEntityDecl_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59735,7 +59735,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_unparsedEntityDecl_get(v8::Local
   int res1 = 0 ;
   unparsedEntityDeclSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_unparsedEntityDecl_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59760,7 +59760,7 @@ static void _wrap__xmlSAXHandlerV1_setDocumentLocator_set(v8::Local<v8::Name> pr
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_setDocumentLocator_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59790,7 +59790,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_setDocumentLocator_get(v8::Local
   int res1 = 0 ;
   setDocumentLocatorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_setDocumentLocator_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59815,7 +59815,7 @@ static void _wrap__xmlSAXHandlerV1_startDocument_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_startDocument_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59845,7 +59845,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_startDocument_get(v8::Local<v8::
   int res1 = 0 ;
   startDocumentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_startDocument_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59870,7 +59870,7 @@ static void _wrap__xmlSAXHandlerV1_endDocument_set(v8::Local<v8::Name> property,
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_endDocument_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59900,7 +59900,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_endDocument_get(v8::Local<v8::Na
   int res1 = 0 ;
   endDocumentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_endDocument_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59925,7 +59925,7 @@ static void _wrap__xmlSAXHandlerV1_startElement_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_startElement_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59955,7 +59955,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_startElement_get(v8::Local<v8::N
   int res1 = 0 ;
   startElementSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_startElement_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -59980,7 +59980,7 @@ static void _wrap__xmlSAXHandlerV1_endElement_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_endElement_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60010,7 +60010,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_endElement_get(v8::Local<v8::Nam
   int res1 = 0 ;
   endElementSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_endElement_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60035,7 +60035,7 @@ static void _wrap__xmlSAXHandlerV1_reference_set(v8::Local<v8::Name> property, v
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_reference_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60065,7 +60065,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_reference_get(v8::Local<v8::Name
   int res1 = 0 ;
   referenceSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_reference_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60090,7 +60090,7 @@ static void _wrap__xmlSAXHandlerV1_characters_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_characters_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60120,7 +60120,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_characters_get(v8::Local<v8::Nam
   int res1 = 0 ;
   charactersSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_characters_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60145,7 +60145,7 @@ static void _wrap__xmlSAXHandlerV1_ignorableWhitespace_set(v8::Local<v8::Name> p
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_ignorableWhitespace_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60175,7 +60175,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_ignorableWhitespace_get(v8::Loca
   int res1 = 0 ;
   ignorableWhitespaceSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_ignorableWhitespace_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60200,7 +60200,7 @@ static void _wrap__xmlSAXHandlerV1_processingInstruction_set(v8::Local<v8::Name>
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_processingInstruction_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60230,7 +60230,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_processingInstruction_get(v8::Lo
   int res1 = 0 ;
   processingInstructionSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_processingInstruction_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60255,7 +60255,7 @@ static void _wrap__xmlSAXHandlerV1_comment_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_comment_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60285,7 +60285,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_comment_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   commentSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_comment_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60310,7 +60310,7 @@ static void _wrap__xmlSAXHandlerV1_warning_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_warning_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60340,7 +60340,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_warning_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   warningSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_warning_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60365,7 +60365,7 @@ static void _wrap__xmlSAXHandlerV1_error_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_error_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60395,7 +60395,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_error_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   errorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_error_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60420,7 +60420,7 @@ static void _wrap__xmlSAXHandlerV1_fatalError_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_fatalError_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60450,7 +60450,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_fatalError_get(v8::Local<v8::Nam
   int res1 = 0 ;
   fatalErrorSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_fatalError_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60475,7 +60475,7 @@ static void _wrap__xmlSAXHandlerV1_getParameterEntity_set(v8::Local<v8::Name> pr
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_getParameterEntity_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60505,7 +60505,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_getParameterEntity_get(v8::Local
   int res1 = 0 ;
   getParameterEntitySAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_getParameterEntity_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60530,7 +60530,7 @@ static void _wrap__xmlSAXHandlerV1_cdataBlock_set(v8::Local<v8::Name> property, 
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_cdataBlock_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60560,7 +60560,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_cdataBlock_get(v8::Local<v8::Nam
   int res1 = 0 ;
   cdataBlockSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_cdataBlock_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60585,7 +60585,7 @@ static void _wrap__xmlSAXHandlerV1_externalSubset_set(v8::Local<v8::Name> proper
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_externalSubset_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60615,7 +60615,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_externalSubset_get(v8::Local<v8:
   int res1 = 0 ;
   externalSubsetSAXFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_externalSubset_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60642,7 +60642,7 @@ static void _wrap__xmlSAXHandlerV1_initialized_set(v8::Local<v8::Name> property,
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_initialized_set" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60671,7 +60671,7 @@ static SwigV8ReturnValue _wrap__xmlSAXHandlerV1_initialized_get(v8::Local<v8::Na
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSAXHandlerV1, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSAXHandlerV1_initialized_get" "', argument " "1"" of type '" "_xmlSAXHandlerV1 *""'"); 
   }
@@ -60691,7 +60691,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSAXHandlerV1(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSAXHandlerV1 *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSAXHandlerV1.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSAXHandlerV1.");
@@ -61091,7 +61091,7 @@ static void _wrap__xmlCharEncodingHandler_name_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_name_set" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61135,7 +61135,7 @@ static SwigV8ReturnValue _wrap__xmlCharEncodingHandler_name_get(v8::Local<v8::Na
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_name_get" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61160,7 +61160,7 @@ static void _wrap__xmlCharEncodingHandler_input_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_input_set" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61190,7 +61190,7 @@ static SwigV8ReturnValue _wrap__xmlCharEncodingHandler_input_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlCharEncodingInputFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_input_get" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61215,7 +61215,7 @@ static void _wrap__xmlCharEncodingHandler_output_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_output_set" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61245,7 +61245,7 @@ static SwigV8ReturnValue _wrap__xmlCharEncodingHandler_output_get(v8::Local<v8::
   int res1 = 0 ;
   xmlCharEncodingOutputFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlCharEncodingHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlCharEncodingHandler_output_get" "', argument " "1"" of type '" "_xmlCharEncodingHandler *""'"); 
   }
@@ -61265,7 +61265,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlCharEncodingHandler(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlCharEncodingHandler *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlCharEncodingHandler.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlCharEncodingHandler.");
@@ -62186,7 +62186,7 @@ static void _wrap__xlinkHandler_simple_set(v8::Local<v8::Name> property, v8::Loc
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_simple_set" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62216,7 +62216,7 @@ static SwigV8ReturnValue _wrap__xlinkHandler_simple_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xlinkSimpleLinkFunk result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_simple_get" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62241,7 +62241,7 @@ static void _wrap__xlinkHandler_extended_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_extended_set" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62271,7 +62271,7 @@ static SwigV8ReturnValue _wrap__xlinkHandler_extended_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xlinkExtendedLinkFunk result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_extended_get" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62296,7 +62296,7 @@ static void _wrap__xlinkHandler_set_set(v8::Local<v8::Name> property, v8::Local<
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_set_set" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62326,7 +62326,7 @@ static SwigV8ReturnValue _wrap__xlinkHandler_set_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xlinkExtendedLinkSetFunk result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xlinkHandler, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xlinkHandler_set_get" "', argument " "1"" of type '" "_xlinkHandler *""'"); 
   }
@@ -62346,7 +62346,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xlinkHandler(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xlinkHandler *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xlinkHandler.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xlinkHandler.");
@@ -67845,7 +67845,7 @@ static void _wrap__xmlParserInputBuffer_context_set(v8::Local<v8::Name> property
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_context_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -67870,7 +67870,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_context_get(v8::Local<v8::N
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_context_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -67895,7 +67895,7 @@ static void _wrap__xmlParserInputBuffer_readcallback_set(v8::Local<v8::Name> pro
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_readcallback_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -67925,7 +67925,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_readcallback_get(v8::Local<
   int res1 = 0 ;
   xmlInputReadCallback result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_readcallback_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -67950,7 +67950,7 @@ static void _wrap__xmlParserInputBuffer_closecallback_set(v8::Local<v8::Name> pr
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_closecallback_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -67980,7 +67980,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_closecallback_get(v8::Local
   int res1 = 0 ;
   xmlInputCloseCallback result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_closecallback_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68007,7 +68007,7 @@ static void _wrap__xmlParserInputBuffer_encoder_set(v8::Local<v8::Name> property
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_encoder_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68036,7 +68036,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_encoder_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlCharEncodingHandlerPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_encoder_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68063,7 +68063,7 @@ static void _wrap__xmlParserInputBuffer_buffer_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_buffer_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68092,7 +68092,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_buffer_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlBufPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_buffer_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68119,7 +68119,7 @@ static void _wrap__xmlParserInputBuffer_raw_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_raw_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68148,7 +68148,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_raw_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlBufPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_raw_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68175,7 +68175,7 @@ static void _wrap__xmlParserInputBuffer_compressed_set(v8::Local<v8::Name> prope
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_compressed_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68204,7 +68204,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_compressed_get(v8::Local<v8
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_compressed_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68231,7 +68231,7 @@ static void _wrap__xmlParserInputBuffer_error_set(v8::Local<v8::Name> property, 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_error_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68260,7 +68260,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_error_get(v8::Local<v8::Nam
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_error_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68287,7 +68287,7 @@ static void _wrap__xmlParserInputBuffer_rawconsumed_set(v8::Local<v8::Name> prop
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_rawconsumed_set" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68316,7 +68316,7 @@ static SwigV8ReturnValue _wrap__xmlParserInputBuffer_rawconsumed_get(v8::Local<v
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlParserInputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlParserInputBuffer_rawconsumed_get" "', argument " "1"" of type '" "_xmlParserInputBuffer *""'"); 
   }
@@ -68336,7 +68336,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlParserInputBuffer(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlParserInputBuffer *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlParserInputBuffer.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlParserInputBuffer.");
@@ -68372,7 +68372,7 @@ static void _wrap__xmlOutputBuffer_context_set(v8::Local<v8::Name> property, v8:
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_context_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68397,7 +68397,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_context_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_context_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68422,7 +68422,7 @@ static void _wrap__xmlOutputBuffer_writecallback_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_writecallback_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68452,7 +68452,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_writecallback_get(v8::Local<v8::
   int res1 = 0 ;
   xmlOutputWriteCallback result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_writecallback_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68477,7 +68477,7 @@ static void _wrap__xmlOutputBuffer_closecallback_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_closecallback_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68507,7 +68507,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_closecallback_get(v8::Local<v8::
   int res1 = 0 ;
   xmlOutputCloseCallback result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_closecallback_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68534,7 +68534,7 @@ static void _wrap__xmlOutputBuffer_encoder_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_encoder_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68563,7 +68563,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_encoder_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlCharEncodingHandlerPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_encoder_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68590,7 +68590,7 @@ static void _wrap__xmlOutputBuffer_buffer_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_buffer_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68619,7 +68619,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_buffer_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlBufPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_buffer_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68646,7 +68646,7 @@ static void _wrap__xmlOutputBuffer_conv_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_conv_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68675,7 +68675,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_conv_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlBufPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_conv_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68702,7 +68702,7 @@ static void _wrap__xmlOutputBuffer_written_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_written_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68731,7 +68731,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_written_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_written_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68758,7 +68758,7 @@ static void _wrap__xmlOutputBuffer_error_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_error_set" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68787,7 +68787,7 @@ static SwigV8ReturnValue _wrap__xmlOutputBuffer_error_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlOutputBuffer, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlOutputBuffer_error_get" "', argument " "1"" of type '" "_xmlOutputBuffer *""'"); 
   }
@@ -68807,7 +68807,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlOutputBuffer(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlOutputBuffer *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlOutputBuffer.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlOutputBuffer.");
@@ -75405,7 +75405,7 @@ static void _wrap__xmlNodeSet_nodeNr_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeNr_set" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75434,7 +75434,7 @@ static SwigV8ReturnValue _wrap__xmlNodeSet_nodeNr_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeNr_get" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75461,7 +75461,7 @@ static void _wrap__xmlNodeSet_nodeMax_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeMax_set" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75490,7 +75490,7 @@ static SwigV8ReturnValue _wrap__xmlNodeSet_nodeMax_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeMax_get" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75517,7 +75517,7 @@ static void _wrap__xmlNodeSet_nodeTab_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeTab_set" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75546,7 +75546,7 @@ static SwigV8ReturnValue _wrap__xmlNodeSet_nodeTab_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlNodePtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlNodeSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlNodeSet_nodeTab_get" "', argument " "1"" of type '" "_xmlNodeSet *""'"); 
   }
@@ -75566,7 +75566,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlNodeSet(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlNodeSet *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlNodeSet.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlNodeSet.");
@@ -75754,7 +75754,7 @@ static void _wrap__xmlXPathObject_type_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_type_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75783,7 +75783,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_type_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlXPathObjectType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_type_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75810,7 +75810,7 @@ static void _wrap__xmlXPathObject_nodesetval_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_nodesetval_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75839,7 +75839,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_nodesetval_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlNodeSetPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_nodesetval_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75874,7 +75874,7 @@ static void _wrap__xmlXPathObject_boolval_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_boolval_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75903,7 +75903,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_boolval_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_boolval_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75930,7 +75930,7 @@ static void _wrap__xmlXPathObject_floatval_set(v8::Local<v8::Name> property, v8:
   double val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_floatval_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75959,7 +75959,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_floatval_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   double result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_floatval_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -75988,7 +75988,7 @@ static void _wrap__xmlXPathObject_stringval_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_stringval_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76023,7 +76023,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_stringval_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_stringval_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76060,7 +76060,7 @@ static void _wrap__xmlXPathObject_user_set(v8::Local<v8::Name> property, v8::Loc
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_user_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76085,7 +76085,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_user_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_user_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76112,7 +76112,7 @@ static void _wrap__xmlXPathObject_index_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_index_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76141,7 +76141,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_index_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_index_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76166,7 +76166,7 @@ static void _wrap__xmlXPathObject_user2_set(v8::Local<v8::Name> property, v8::Lo
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_user2_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76191,7 +76191,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_user2_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_user2_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76218,7 +76218,7 @@ static void _wrap__xmlXPathObject_index2_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_index2_set" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76247,7 +76247,7 @@ static SwigV8ReturnValue _wrap__xmlXPathObject_index2_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathObject_index2_get" "', argument " "1"" of type '" "_xmlXPathObject *""'"); 
   }
@@ -76267,7 +76267,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathObject(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathObject *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathObject.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathObject.");
@@ -76307,7 +76307,7 @@ static void _wrap__xmlXPathType_name_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathType_name_set" "', argument " "1"" of type '" "_xmlXPathType *""'"); 
   }
@@ -76342,7 +76342,7 @@ static SwigV8ReturnValue _wrap__xmlXPathType_name_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathType_name_get" "', argument " "1"" of type '" "_xmlXPathType *""'"); 
   }
@@ -76379,7 +76379,7 @@ static void _wrap__xmlXPathType_func_set(v8::Local<v8::Name> property, v8::Local
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathType_func_set" "', argument " "1"" of type '" "_xmlXPathType *""'"); 
   }
@@ -76409,7 +76409,7 @@ static SwigV8ReturnValue _wrap__xmlXPathType_func_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlXPathConvertFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathType_func_get" "', argument " "1"" of type '" "_xmlXPathType *""'"); 
   }
@@ -76429,7 +76429,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathType(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathType *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathType.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathType.");
@@ -76469,7 +76469,7 @@ static void _wrap__xmlXPathVariable_name_set(v8::Local<v8::Name> property, v8::L
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathVariable_name_set" "', argument " "1"" of type '" "_xmlXPathVariable *""'"); 
   }
@@ -76504,7 +76504,7 @@ static SwigV8ReturnValue _wrap__xmlXPathVariable_name_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathVariable_name_get" "', argument " "1"" of type '" "_xmlXPathVariable *""'"); 
   }
@@ -76543,7 +76543,7 @@ static void _wrap__xmlXPathVariable_value_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathVariable_value_set" "', argument " "1"" of type '" "_xmlXPathVariable *""'"); 
   }
@@ -76572,7 +76572,7 @@ static SwigV8ReturnValue _wrap__xmlXPathVariable_value_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlXPathObjectPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathVariable, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathVariable_value_get" "', argument " "1"" of type '" "_xmlXPathVariable *""'"); 
   }
@@ -76592,7 +76592,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathVariable(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathVariable *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathVariable.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathVariable.");
@@ -76632,7 +76632,7 @@ static void _wrap__xmlXPathFunct_name_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathFunct_name_set" "', argument " "1"" of type '" "_xmlXPathFunct *""'"); 
   }
@@ -76667,7 +76667,7 @@ static SwigV8ReturnValue _wrap__xmlXPathFunct_name_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathFunct_name_get" "', argument " "1"" of type '" "_xmlXPathFunct *""'"); 
   }
@@ -76704,7 +76704,7 @@ static void _wrap__xmlXPathFunct_func_set(v8::Local<v8::Name> property, v8::Loca
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathFunct_func_set" "', argument " "1"" of type '" "_xmlXPathFunct *""'"); 
   }
@@ -76734,7 +76734,7 @@ static SwigV8ReturnValue _wrap__xmlXPathFunct_func_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlXPathEvalFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathFunct, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathFunct_func_get" "', argument " "1"" of type '" "_xmlXPathFunct *""'"); 
   }
@@ -76754,7 +76754,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathFunct(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathFunct *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathFunct.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathFunct.");
@@ -76794,7 +76794,7 @@ static void _wrap__xmlXPathAxis_name_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathAxis_name_set" "', argument " "1"" of type '" "_xmlXPathAxis *""'"); 
   }
@@ -76829,7 +76829,7 @@ static SwigV8ReturnValue _wrap__xmlXPathAxis_name_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathAxis_name_get" "', argument " "1"" of type '" "_xmlXPathAxis *""'"); 
   }
@@ -76866,7 +76866,7 @@ static void _wrap__xmlXPathAxis_func_set(v8::Local<v8::Name> property, v8::Local
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathAxis_func_set" "', argument " "1"" of type '" "_xmlXPathAxis *""'"); 
   }
@@ -76896,7 +76896,7 @@ static SwigV8ReturnValue _wrap__xmlXPathAxis_func_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlXPathAxisFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathAxis, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathAxis_func_get" "', argument " "1"" of type '" "_xmlXPathAxis *""'"); 
   }
@@ -76916,7 +76916,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathAxis(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathAxis *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathAxis.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathAxis.");
@@ -76984,7 +76984,7 @@ static void _wrap__xmlXPathContext_doc_set(v8::Local<v8::Name> property, v8::Loc
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_doc_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77013,7 +77013,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_doc_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlDocPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_doc_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77040,7 +77040,7 @@ static void _wrap__xmlXPathContext_node_set(v8::Local<v8::Name> property, v8::Lo
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_node_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77081,7 +77081,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_node_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_node_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77108,7 +77108,7 @@ static void _wrap__xmlXPathContext_nb_variables_unused_set(v8::Local<v8::Name> p
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_variables_unused_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77137,7 +77137,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nb_variables_unused_get(v8::Loca
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_variables_unused_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77164,7 +77164,7 @@ static void _wrap__xmlXPathContext_max_variables_unused_set(v8::Local<v8::Name> 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_variables_unused_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77193,7 +77193,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_max_variables_unused_get(v8::Loc
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_variables_unused_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77220,7 +77220,7 @@ static void _wrap__xmlXPathContext_varHash_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varHash_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77249,7 +77249,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_varHash_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varHash_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77276,7 +77276,7 @@ static void _wrap__xmlXPathContext_nb_types_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_types_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77305,7 +77305,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nb_types_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_types_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77332,7 +77332,7 @@ static void _wrap__xmlXPathContext_max_types_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_types_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77361,7 +77361,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_max_types_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_types_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77388,7 +77388,7 @@ static void _wrap__xmlXPathContext_types_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_types_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77417,7 +77417,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_types_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlXPathTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_types_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77444,7 +77444,7 @@ static void _wrap__xmlXPathContext_nb_funcs_unused_set(v8::Local<v8::Name> prope
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_funcs_unused_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77473,7 +77473,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nb_funcs_unused_get(v8::Local<v8
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_funcs_unused_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77500,7 +77500,7 @@ static void _wrap__xmlXPathContext_max_funcs_unused_set(v8::Local<v8::Name> prop
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_funcs_unused_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77529,7 +77529,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_max_funcs_unused_get(v8::Local<v
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_funcs_unused_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77556,7 +77556,7 @@ static void _wrap__xmlXPathContext_funcHash_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcHash_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77585,7 +77585,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_funcHash_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcHash_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77612,7 +77612,7 @@ static void _wrap__xmlXPathContext_nb_axis_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_axis_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77641,7 +77641,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nb_axis_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nb_axis_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77668,7 +77668,7 @@ static void _wrap__xmlXPathContext_max_axis_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_axis_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77697,7 +77697,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_max_axis_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_max_axis_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77724,7 +77724,7 @@ static void _wrap__xmlXPathContext_axis_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_axis_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77753,7 +77753,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_axis_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlXPathAxisPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_axis_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77780,7 +77780,7 @@ static void _wrap__xmlXPathContext_namespaces_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_namespaces_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77809,7 +77809,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_namespaces_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlNsPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_namespaces_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77845,7 +77845,7 @@ static void _wrap__xmlXPathContext_nsNr_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nsNr_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77874,7 +77874,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nsNr_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nsNr_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77899,7 +77899,7 @@ static void _wrap__xmlXPathContext_user_set(v8::Local<v8::Name> property, v8::Lo
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_user_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77924,7 +77924,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_user_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_user_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77951,7 +77951,7 @@ static void _wrap__xmlXPathContext_contextSize_set(v8::Local<v8::Name> property,
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_contextSize_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -77980,7 +77980,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_contextSize_get(v8::Local<v8::Na
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_contextSize_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78007,7 +78007,7 @@ static void _wrap__xmlXPathContext_proximityPosition_set(v8::Local<v8::Name> pro
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_proximityPosition_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78036,7 +78036,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_proximityPosition_get(v8::Local<
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_proximityPosition_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78063,7 +78063,7 @@ static void _wrap__xmlXPathContext_xptr_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_xptr_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78092,7 +78092,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_xptr_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_xptr_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78119,7 +78119,7 @@ static void _wrap__xmlXPathContext_here_set(v8::Local<v8::Name> property, v8::Lo
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_here_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78160,7 +78160,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_here_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_here_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78187,7 +78187,7 @@ static void _wrap__xmlXPathContext_origin_set(v8::Local<v8::Name> property, v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_origin_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78228,7 +78228,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_origin_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_origin_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78255,7 +78255,7 @@ static void _wrap__xmlXPathContext_nsHash_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nsHash_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78284,7 +78284,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_nsHash_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_nsHash_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78309,7 +78309,7 @@ static void _wrap__xmlXPathContext_varLookupFunc_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varLookupFunc_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78339,7 +78339,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_varLookupFunc_get(v8::Local<v8::
   int res1 = 0 ;
   xmlXPathVariableLookupFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varLookupFunc_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78364,7 +78364,7 @@ static void _wrap__xmlXPathContext_varLookupData_set(v8::Local<v8::Name> propert
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varLookupData_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78389,7 +78389,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_varLookupData_get(v8::Local<v8::
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_varLookupData_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78414,7 +78414,7 @@ static void _wrap__xmlXPathContext_extra_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_extra_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78439,7 +78439,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_extra_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_extra_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78468,7 +78468,7 @@ static void _wrap__xmlXPathContext__function_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext__function_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78503,7 +78503,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext__function_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext__function_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78544,7 +78544,7 @@ static void _wrap__xmlXPathContext_functionURI_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_functionURI_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78579,7 +78579,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_functionURI_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_functionURI_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78616,7 +78616,7 @@ static void _wrap__xmlXPathContext_funcLookupFunc_set(v8::Local<v8::Name> proper
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcLookupFunc_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78646,7 +78646,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_funcLookupFunc_get(v8::Local<v8:
   int res1 = 0 ;
   xmlXPathFuncLookupFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcLookupFunc_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78671,7 +78671,7 @@ static void _wrap__xmlXPathContext_funcLookupData_set(v8::Local<v8::Name> proper
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcLookupData_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78696,7 +78696,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_funcLookupData_get(v8::Local<v8:
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_funcLookupData_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78723,7 +78723,7 @@ static void _wrap__xmlXPathContext_tmpNsList_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_tmpNsList_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78752,7 +78752,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_tmpNsList_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlNsPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_tmpNsList_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78788,7 +78788,7 @@ static void _wrap__xmlXPathContext_tmpNsNr_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_tmpNsNr_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78817,7 +78817,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_tmpNsNr_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_tmpNsNr_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78842,7 +78842,7 @@ static void _wrap__xmlXPathContext_userData_set(v8::Local<v8::Name> property, v8
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_userData_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78867,7 +78867,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_userData_get(v8::Local<v8::Name>
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_userData_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78892,7 +78892,7 @@ static void _wrap__xmlXPathContext_error_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_error_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78922,7 +78922,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_error_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlStructuredErrorFunc result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_error_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78949,7 +78949,7 @@ static void _wrap__xmlXPathContext_lastError_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_lastError_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -78978,7 +78978,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_lastError_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlError *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_lastError_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79005,7 +79005,7 @@ static void _wrap__xmlXPathContext_debugNode_set(v8::Local<v8::Name> property, v
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_debugNode_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79046,7 +79046,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_debugNode_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_debugNode_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79073,7 +79073,7 @@ static void _wrap__xmlXPathContext_dict_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_dict_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79102,7 +79102,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_dict_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlDictPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_dict_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79129,7 +79129,7 @@ static void _wrap__xmlXPathContext_flags_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_flags_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79158,7 +79158,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_flags_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_flags_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79183,7 +79183,7 @@ static void _wrap__xmlXPathContext_cache_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_cache_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79208,7 +79208,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_cache_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_cache_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79235,7 +79235,7 @@ static void _wrap__xmlXPathContext_opLimit_set(v8::Local<v8::Name> property, v8:
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_opLimit_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79264,7 +79264,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_opLimit_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_opLimit_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79291,7 +79291,7 @@ static void _wrap__xmlXPathContext_opCount_set(v8::Local<v8::Name> property, v8:
   unsigned long val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_opCount_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79320,7 +79320,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_opCount_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   unsigned long result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_opCount_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79347,7 +79347,7 @@ static void _wrap__xmlXPathContext_depth_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_depth_set" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79376,7 +79376,7 @@ static SwigV8ReturnValue _wrap__xmlXPathContext_depth_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathContext_depth_get" "', argument " "1"" of type '" "_xmlXPathContext *""'"); 
   }
@@ -79396,7 +79396,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathContext(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathContext *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathContext.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathContext.");
@@ -79436,7 +79436,7 @@ static void _wrap__xmlXPathParserContext_cur_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_cur_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79471,7 +79471,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_cur_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_cur_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79512,7 +79512,7 @@ static void _wrap__xmlXPathParserContext_base_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_base_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79547,7 +79547,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_base_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_base_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79586,7 +79586,7 @@ static void _wrap__xmlXPathParserContext_error_set(v8::Local<v8::Name> property,
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_error_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79615,7 +79615,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_error_get(v8::Local<v8::Na
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_error_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79642,7 +79642,7 @@ static void _wrap__xmlXPathParserContext_context_set(v8::Local<v8::Name> propert
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_context_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79671,7 +79671,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_context_get(v8::Local<v8::
   int res1 = 0 ;
   xmlXPathContextPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_context_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79698,7 +79698,7 @@ static void _wrap__xmlXPathParserContext_value_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_value_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79727,7 +79727,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_value_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlXPathObjectPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_value_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79754,7 +79754,7 @@ static void _wrap__xmlXPathParserContext_valueNr_set(v8::Local<v8::Name> propert
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueNr_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79783,7 +79783,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_valueNr_get(v8::Local<v8::
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueNr_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79810,7 +79810,7 @@ static void _wrap__xmlXPathParserContext_valueMax_set(v8::Local<v8::Name> proper
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueMax_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79839,7 +79839,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_valueMax_get(v8::Local<v8:
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueMax_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79866,7 +79866,7 @@ static void _wrap__xmlXPathParserContext_valueTab_set(v8::Local<v8::Name> proper
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueTab_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79895,7 +79895,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_valueTab_get(v8::Local<v8:
   int res1 = 0 ;
   xmlXPathObjectPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueTab_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79922,7 +79922,7 @@ static void _wrap__xmlXPathParserContext_comp_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_comp_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79951,7 +79951,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_comp_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlXPathCompExprPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_comp_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -79978,7 +79978,7 @@ static void _wrap__xmlXPathParserContext_xptr_set(v8::Local<v8::Name> property, 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_xptr_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80007,7 +80007,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_xptr_get(v8::Local<v8::Nam
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_xptr_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80034,7 +80034,7 @@ static void _wrap__xmlXPathParserContext_ancestor_set(v8::Local<v8::Name> proper
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_ancestor_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80075,7 +80075,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_ancestor_get(v8::Local<v8:
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_ancestor_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80102,7 +80102,7 @@ static void _wrap__xmlXPathParserContext_valueFrame_set(v8::Local<v8::Name> prop
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueFrame_set" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80131,7 +80131,7 @@ static SwigV8ReturnValue _wrap__xmlXPathParserContext_valueFrame_get(v8::Local<v
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlXPathParserContext, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlXPathParserContext_valueFrame_get" "', argument " "1"" of type '" "_xmlXPathParserContext *""'"); 
   }
@@ -80151,7 +80151,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlXPathParserContext(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlXPathParserContext *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlXPathParserContext.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlXPathParserContext.");
@@ -87924,7 +87924,7 @@ static void _wrap__xmlChSRange_low_set(v8::Local<v8::Name> property, v8::Local<v
   unsigned short val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChSRange_low_set" "', argument " "1"" of type '" "_xmlChSRange *""'"); 
   }
@@ -87953,7 +87953,7 @@ static SwigV8ReturnValue _wrap__xmlChSRange_low_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   unsigned short result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChSRange_low_get" "', argument " "1"" of type '" "_xmlChSRange *""'"); 
   }
@@ -87980,7 +87980,7 @@ static void _wrap__xmlChSRange_high_set(v8::Local<v8::Name> property, v8::Local<
   unsigned short val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChSRange_high_set" "', argument " "1"" of type '" "_xmlChSRange *""'"); 
   }
@@ -88009,7 +88009,7 @@ static SwigV8ReturnValue _wrap__xmlChSRange_high_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   unsigned short result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChSRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChSRange_high_get" "', argument " "1"" of type '" "_xmlChSRange *""'"); 
   }
@@ -88029,7 +88029,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlChSRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlChSRange *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlChSRange.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlChSRange.");
@@ -88067,7 +88067,7 @@ static void _wrap__xmlChLRange_low_set(v8::Local<v8::Name> property, v8::Local<v
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChLRange_low_set" "', argument " "1"" of type '" "_xmlChLRange *""'"); 
   }
@@ -88096,7 +88096,7 @@ static SwigV8ReturnValue _wrap__xmlChLRange_low_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChLRange_low_get" "', argument " "1"" of type '" "_xmlChLRange *""'"); 
   }
@@ -88123,7 +88123,7 @@ static void _wrap__xmlChLRange_high_set(v8::Local<v8::Name> property, v8::Local<
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChLRange_high_set" "', argument " "1"" of type '" "_xmlChLRange *""'"); 
   }
@@ -88152,7 +88152,7 @@ static SwigV8ReturnValue _wrap__xmlChLRange_high_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChLRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChLRange_high_get" "', argument " "1"" of type '" "_xmlChLRange *""'"); 
   }
@@ -88172,7 +88172,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlChLRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlChLRange *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlChLRange.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlChLRange.");
@@ -88210,7 +88210,7 @@ static void _wrap__xmlChRangeGroup_nbShortRange_set(v8::Local<v8::Name> property
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_nbShortRange_set" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88239,7 +88239,7 @@ static SwigV8ReturnValue _wrap__xmlChRangeGroup_nbShortRange_get(v8::Local<v8::N
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_nbShortRange_get" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88266,7 +88266,7 @@ static void _wrap__xmlChRangeGroup_nbLongRange_set(v8::Local<v8::Name> property,
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_nbLongRange_set" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88295,7 +88295,7 @@ static SwigV8ReturnValue _wrap__xmlChRangeGroup_nbLongRange_get(v8::Local<v8::Na
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_nbLongRange_get" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88322,7 +88322,7 @@ static void _wrap__xmlChRangeGroup_shortRange_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_shortRange_set" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88351,7 +88351,7 @@ static SwigV8ReturnValue _wrap__xmlChRangeGroup_shortRange_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChSRange *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_shortRange_get" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88378,7 +88378,7 @@ static void _wrap__xmlChRangeGroup_longRange_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_longRange_set" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88407,7 +88407,7 @@ static SwigV8ReturnValue _wrap__xmlChRangeGroup_longRange_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChLRange *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlChRangeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlChRangeGroup_longRange_get" "', argument " "1"" of type '" "_xmlChRangeGroup *""'"); 
   }
@@ -88427,7 +88427,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlChRangeGroup(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlChRangeGroup *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlChRangeGroup.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlChRangeGroup.");
@@ -88847,7 +88847,7 @@ static void _wrap__htmlElemDesc_name_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_name_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -88890,7 +88890,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_name_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_name_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -88917,7 +88917,7 @@ static void _wrap__htmlElemDesc_startTag_set(v8::Local<v8::Name> property, v8::L
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_startTag_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -88946,7 +88946,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_startTag_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_startTag_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -88973,7 +88973,7 @@ static void _wrap__htmlElemDesc_endTag_set(v8::Local<v8::Name> property, v8::Loc
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_endTag_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89002,7 +89002,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_endTag_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_endTag_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89029,7 +89029,7 @@ static void _wrap__htmlElemDesc_saveEndTag_set(v8::Local<v8::Name> property, v8:
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_saveEndTag_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89058,7 +89058,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_saveEndTag_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_saveEndTag_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89085,7 +89085,7 @@ static void _wrap__htmlElemDesc_empty_set(v8::Local<v8::Name> property, v8::Loca
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_empty_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89114,7 +89114,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_empty_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_empty_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89141,7 +89141,7 @@ static void _wrap__htmlElemDesc_depr_set(v8::Local<v8::Name> property, v8::Local
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_depr_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89170,7 +89170,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_depr_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_depr_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89197,7 +89197,7 @@ static void _wrap__htmlElemDesc_dtd_set(v8::Local<v8::Name> property, v8::Local<
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_dtd_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89226,7 +89226,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_dtd_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_dtd_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89253,7 +89253,7 @@ static void _wrap__htmlElemDesc_isinline_set(v8::Local<v8::Name> property, v8::L
   char val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_isinline_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89282,7 +89282,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_isinline_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   char result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_isinline_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89311,7 +89311,7 @@ static void _wrap__htmlElemDesc_desc_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_desc_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89354,7 +89354,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_desc_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_desc_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89381,7 +89381,7 @@ static void _wrap__htmlElemDesc_subelts_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_subelts_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89411,7 +89411,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_subelts_get(v8::Local<v8::Name> pro
   char **result = 0 ;
   char *temp ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_subelts_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89443,7 +89443,7 @@ static void _wrap__htmlElemDesc_defaultsubelt_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_defaultsubelt_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89486,7 +89486,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_defaultsubelt_get(v8::Local<v8::Nam
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_defaultsubelt_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89513,7 +89513,7 @@ static void _wrap__htmlElemDesc_attrs_opt_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_opt_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89543,7 +89543,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_attrs_opt_get(v8::Local<v8::Name> p
   char **result = 0 ;
   char *temp ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_opt_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89573,7 +89573,7 @@ static void _wrap__htmlElemDesc_attrs_depr_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_depr_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89603,7 +89603,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_attrs_depr_get(v8::Local<v8::Name> 
   char **result = 0 ;
   char *temp ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_depr_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89633,7 +89633,7 @@ static void _wrap__htmlElemDesc_attrs_req_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_req_set" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89663,7 +89663,7 @@ static SwigV8ReturnValue _wrap__htmlElemDesc_attrs_req_get(v8::Local<v8::Name> p
   char **result = 0 ;
   char *temp ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlElemDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlElemDesc_attrs_req_get" "', argument " "1"" of type '" "_htmlElemDesc *""'"); 
   }
@@ -89686,7 +89686,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__htmlElemDesc(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _htmlElemDesc *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__htmlElemDesc.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__htmlElemDesc.");
@@ -89724,7 +89724,7 @@ static void _wrap__htmlEntityDesc_value_set(v8::Local<v8::Name> property, v8::Lo
   unsigned int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_value_set" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89753,7 +89753,7 @@ static SwigV8ReturnValue _wrap__htmlEntityDesc_value_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   unsigned int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_value_get" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89782,7 +89782,7 @@ static void _wrap__htmlEntityDesc_name_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_name_set" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89825,7 +89825,7 @@ static SwigV8ReturnValue _wrap__htmlEntityDesc_name_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_name_get" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89854,7 +89854,7 @@ static void _wrap__htmlEntityDesc_desc_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_desc_set" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89897,7 +89897,7 @@ static SwigV8ReturnValue _wrap__htmlEntityDesc_desc_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__htmlEntityDesc, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_htmlEntityDesc_desc_get" "', argument " "1"" of type '" "_htmlEntityDesc *""'"); 
   }
@@ -89917,7 +89917,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__htmlEntityDesc(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _htmlEntityDesc *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__htmlEntityDesc.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__htmlEntityDesc.");
@@ -100934,7 +100934,7 @@ static void _wrap__xmlURI_scheme_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_scheme_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -100978,7 +100978,7 @@ static SwigV8ReturnValue _wrap__xmlURI_scheme_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_scheme_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101007,7 +101007,7 @@ static void _wrap__xmlURI_opaque_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_opaque_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101051,7 +101051,7 @@ static SwigV8ReturnValue _wrap__xmlURI_opaque_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_opaque_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101080,7 +101080,7 @@ static void _wrap__xmlURI_authority_set(v8::Local<v8::Name> property, v8::Local<
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_authority_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101124,7 +101124,7 @@ static SwigV8ReturnValue _wrap__xmlURI_authority_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_authority_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101153,7 +101153,7 @@ static void _wrap__xmlURI_server_set(v8::Local<v8::Name> property, v8::Local<v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_server_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101197,7 +101197,7 @@ static SwigV8ReturnValue _wrap__xmlURI_server_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_server_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101226,7 +101226,7 @@ static void _wrap__xmlURI_user_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_user_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101270,7 +101270,7 @@ static SwigV8ReturnValue _wrap__xmlURI_user_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_user_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101297,7 +101297,7 @@ static void _wrap__xmlURI_port_set(v8::Local<v8::Name> property, v8::Local<v8::V
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_port_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101326,7 +101326,7 @@ static SwigV8ReturnValue _wrap__xmlURI_port_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_port_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101355,7 +101355,7 @@ static void _wrap__xmlURI_path_set(v8::Local<v8::Name> property, v8::Local<v8::V
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_path_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101399,7 +101399,7 @@ static SwigV8ReturnValue _wrap__xmlURI_path_get(v8::Local<v8::Name> property, co
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_path_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101428,7 +101428,7 @@ static void _wrap__xmlURI_query_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_query_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101472,7 +101472,7 @@ static SwigV8ReturnValue _wrap__xmlURI_query_get(v8::Local<v8::Name> property, c
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_query_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101501,7 +101501,7 @@ static void _wrap__xmlURI_fragment_set(v8::Local<v8::Name> property, v8::Local<v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_fragment_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101545,7 +101545,7 @@ static SwigV8ReturnValue _wrap__xmlURI_fragment_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_fragment_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101572,7 +101572,7 @@ static void _wrap__xmlURI_cleanup_set(v8::Local<v8::Name> property, v8::Local<v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_cleanup_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101601,7 +101601,7 @@ static SwigV8ReturnValue _wrap__xmlURI_cleanup_get(v8::Local<v8::Name> property,
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_cleanup_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101630,7 +101630,7 @@ static void _wrap__xmlURI_query_raw_set(v8::Local<v8::Name> property, v8::Local<
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_query_raw_set" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101674,7 +101674,7 @@ static SwigV8ReturnValue _wrap__xmlURI_query_raw_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   char *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlURI, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlURI_query_raw_get" "', argument " "1"" of type '" "_xmlURI *""'"); 
   }
@@ -101694,7 +101694,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlURI(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlURI *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlURI.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlURI.");
@@ -106146,7 +106146,7 @@ static void _wrap__xmlSchemaAnnot_next_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAnnot_next_set" "', argument " "1"" of type '" "_xmlSchemaAnnot *""'"); 
   }
@@ -106175,7 +106175,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAnnot_next_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   _xmlSchemaAnnot *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAnnot_next_get" "', argument " "1"" of type '" "_xmlSchemaAnnot *""'"); 
   }
@@ -106202,7 +106202,7 @@ static void _wrap__xmlSchemaAnnot_content_set(v8::Local<v8::Name> property, v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAnnot_content_set" "', argument " "1"" of type '" "_xmlSchemaAnnot *""'"); 
   }
@@ -106243,7 +106243,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAnnot_content_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAnnot, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAnnot_content_get" "', argument " "1"" of type '" "_xmlSchemaAnnot *""'"); 
   }
@@ -106263,7 +106263,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaAnnot(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaAnnot *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaAnnot.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaAnnot.");
@@ -106496,7 +106496,7 @@ static void _wrap__xmlSchemaAttribute_type_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_type_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106525,7 +106525,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_type_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_type_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106552,7 +106552,7 @@ static void _wrap__xmlSchemaAttribute_next_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_next_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106581,7 +106581,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_next_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   _xmlSchemaAttribute *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_next_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106610,7 +106610,7 @@ static void _wrap__xmlSchemaAttribute_name_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_name_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106645,7 +106645,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_name_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_name_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106686,7 +106686,7 @@ static void _wrap__xmlSchemaAttribute_id_set(v8::Local<v8::Name> property, v8::L
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_id_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106721,7 +106721,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_id_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_id_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106762,7 +106762,7 @@ static void _wrap__xmlSchemaAttribute_ref_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_ref_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106797,7 +106797,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_ref_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_ref_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106838,7 +106838,7 @@ static void _wrap__xmlSchemaAttribute_refNs_set(v8::Local<v8::Name> property, v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refNs_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106873,7 +106873,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_refNs_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refNs_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106914,7 +106914,7 @@ static void _wrap__xmlSchemaAttribute_typeName_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_typeName_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106949,7 +106949,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_typeName_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_typeName_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -106990,7 +106990,7 @@ static void _wrap__xmlSchemaAttribute_typeNs_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_typeNs_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107025,7 +107025,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_typeNs_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_typeNs_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107064,7 +107064,7 @@ static void _wrap__xmlSchemaAttribute_annot_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_annot_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107093,7 +107093,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_annot_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_annot_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107120,7 +107120,7 @@ static void _wrap__xmlSchemaAttribute_base_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_base_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107149,7 +107149,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_base_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_base_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107176,7 +107176,7 @@ static void _wrap__xmlSchemaAttribute_occurs_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_occurs_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107205,7 +107205,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_occurs_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_occurs_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107234,7 +107234,7 @@ static void _wrap__xmlSchemaAttribute_defValue_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_defValue_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107269,7 +107269,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_defValue_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_defValue_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107308,7 +107308,7 @@ static void _wrap__xmlSchemaAttribute_subtypes_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_subtypes_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107337,7 +107337,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_subtypes_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_subtypes_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107364,7 +107364,7 @@ static void _wrap__xmlSchemaAttribute_node_set(v8::Local<v8::Name> property, v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_node_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107405,7 +107405,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_node_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_node_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107434,7 +107434,7 @@ static void _wrap__xmlSchemaAttribute_targetNamespace_set(v8::Local<v8::Name> pr
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107469,7 +107469,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_targetNamespace_get(v8::Local
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107508,7 +107508,7 @@ static void _wrap__xmlSchemaAttribute_flags_set(v8::Local<v8::Name> property, v8
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_flags_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107537,7 +107537,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_flags_get(v8::Local<v8::Name>
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_flags_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107566,7 +107566,7 @@ static void _wrap__xmlSchemaAttribute_refPrefix_set(v8::Local<v8::Name> property
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refPrefix_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107601,7 +107601,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_refPrefix_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refPrefix_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107640,7 +107640,7 @@ static void _wrap__xmlSchemaAttribute_defVal_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_defVal_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107669,7 +107669,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_defVal_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlSchemaValPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_defVal_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107696,7 +107696,7 @@ static void _wrap__xmlSchemaAttribute_refDecl_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refDecl_set" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107725,7 +107725,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttribute_refDecl_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlSchemaAttributePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttribute, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttribute_refDecl_get" "', argument " "1"" of type '" "_xmlSchemaAttribute *""'"); 
   }
@@ -107745,7 +107745,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaAttribute(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaAttribute *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaAttribute.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaAttribute.");
@@ -107783,7 +107783,7 @@ static void _wrap__xmlSchemaAttributeLink_next_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeLink_next_set" "', argument " "1"" of type '" "_xmlSchemaAttributeLink *""'"); 
   }
@@ -107812,7 +107812,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeLink_next_get(v8::Local<v8::Na
   int res1 = 0 ;
   _xmlSchemaAttributeLink *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeLink_next_get" "', argument " "1"" of type '" "_xmlSchemaAttributeLink *""'"); 
   }
@@ -107839,7 +107839,7 @@ static void _wrap__xmlSchemaAttributeLink_attr_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeLink_attr_set" "', argument " "1"" of type '" "_xmlSchemaAttributeLink *""'"); 
   }
@@ -107868,7 +107868,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeLink_attr_get(v8::Local<v8::Na
   int res1 = 0 ;
   _xmlSchemaAttribute *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeLink_attr_get" "', argument " "1"" of type '" "_xmlSchemaAttributeLink *""'"); 
   }
@@ -107888,7 +107888,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaAttributeLink(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaAttributeLink *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaAttributeLink.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaAttributeLink.");
@@ -107941,7 +107941,7 @@ static void _wrap__xmlSchemaWildcardNs_next_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcardNs_next_set" "', argument " "1"" of type '" "_xmlSchemaWildcardNs *""'"); 
   }
@@ -107970,7 +107970,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcardNs_next_get(v8::Local<v8::Name>
   int res1 = 0 ;
   _xmlSchemaWildcardNs *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcardNs_next_get" "', argument " "1"" of type '" "_xmlSchemaWildcardNs *""'"); 
   }
@@ -107999,7 +107999,7 @@ static void _wrap__xmlSchemaWildcardNs_value_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcardNs_value_set" "', argument " "1"" of type '" "_xmlSchemaWildcardNs *""'"); 
   }
@@ -108034,7 +108034,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcardNs_value_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcardNs, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcardNs_value_get" "', argument " "1"" of type '" "_xmlSchemaWildcardNs *""'"); 
   }
@@ -108066,7 +108066,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaWildcardNs(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaWildcardNs *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaWildcardNs.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaWildcardNs.");
@@ -108104,7 +108104,7 @@ static void _wrap__xmlSchemaWildcard_type_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_type_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108133,7 +108133,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_type_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_type_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108162,7 +108162,7 @@ static void _wrap__xmlSchemaWildcard_id_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_id_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108197,7 +108197,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_id_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_id_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108236,7 +108236,7 @@ static void _wrap__xmlSchemaWildcard_annot_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_annot_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108265,7 +108265,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_annot_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_annot_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108292,7 +108292,7 @@ static void _wrap__xmlSchemaWildcard_node_set(v8::Local<v8::Name> property, v8::
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_node_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108333,7 +108333,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_node_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_node_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108360,7 +108360,7 @@ static void _wrap__xmlSchemaWildcard_minOccurs_set(v8::Local<v8::Name> property,
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_minOccurs_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108389,7 +108389,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_minOccurs_get(v8::Local<v8::Na
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_minOccurs_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108416,7 +108416,7 @@ static void _wrap__xmlSchemaWildcard_maxOccurs_set(v8::Local<v8::Name> property,
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_maxOccurs_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108445,7 +108445,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_maxOccurs_get(v8::Local<v8::Na
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_maxOccurs_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108472,7 +108472,7 @@ static void _wrap__xmlSchemaWildcard_processContents_set(v8::Local<v8::Name> pro
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_processContents_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108501,7 +108501,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_processContents_get(v8::Local<
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_processContents_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108528,7 +108528,7 @@ static void _wrap__xmlSchemaWildcard_any_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_any_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108557,7 +108557,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_any_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_any_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108584,7 +108584,7 @@ static void _wrap__xmlSchemaWildcard_nsSet_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_nsSet_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108613,7 +108613,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_nsSet_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaWildcardNsPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_nsSet_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108640,7 +108640,7 @@ static void _wrap__xmlSchemaWildcard_negNsSet_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_negNsSet_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108669,7 +108669,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_negNsSet_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlSchemaWildcardNsPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_negNsSet_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108696,7 +108696,7 @@ static void _wrap__xmlSchemaWildcard_flags_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_flags_set" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108725,7 +108725,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaWildcard_flags_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaWildcard, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaWildcard_flags_get" "', argument " "1"" of type '" "_xmlSchemaWildcard *""'"); 
   }
@@ -108745,7 +108745,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaWildcard(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaWildcard *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaWildcard.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaWildcard.");
@@ -108858,7 +108858,7 @@ static void _wrap__xmlSchemaAttributeGroup_type_set(v8::Local<v8::Name> property
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_type_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -108887,7 +108887,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_type_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_type_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -108914,7 +108914,7 @@ static void _wrap__xmlSchemaAttributeGroup_next_set(v8::Local<v8::Name> property
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_next_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -108943,7 +108943,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_next_get(v8::Local<v8::N
   int res1 = 0 ;
   _xmlSchemaAttribute *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_next_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -108972,7 +108972,7 @@ static void _wrap__xmlSchemaAttributeGroup_name_set(v8::Local<v8::Name> property
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_name_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109007,7 +109007,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_name_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_name_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109048,7 +109048,7 @@ static void _wrap__xmlSchemaAttributeGroup_id_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_id_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109083,7 +109083,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_id_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_id_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109124,7 +109124,7 @@ static void _wrap__xmlSchemaAttributeGroup_ref_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_ref_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109159,7 +109159,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_ref_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_ref_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109200,7 +109200,7 @@ static void _wrap__xmlSchemaAttributeGroup_refNs_set(v8::Local<v8::Name> propert
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refNs_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109235,7 +109235,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_refNs_get(v8::Local<v8::
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refNs_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109274,7 +109274,7 @@ static void _wrap__xmlSchemaAttributeGroup_annot_set(v8::Local<v8::Name> propert
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_annot_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109303,7 +109303,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_annot_get(v8::Local<v8::
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_annot_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109330,7 +109330,7 @@ static void _wrap__xmlSchemaAttributeGroup_attributes_set(v8::Local<v8::Name> pr
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attributes_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109359,7 +109359,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_attributes_get(v8::Local
   int res1 = 0 ;
   xmlSchemaAttributePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attributes_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109386,7 +109386,7 @@ static void _wrap__xmlSchemaAttributeGroup_node_set(v8::Local<v8::Name> property
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_node_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109427,7 +109427,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_node_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_node_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109454,7 +109454,7 @@ static void _wrap__xmlSchemaAttributeGroup_flags_set(v8::Local<v8::Name> propert
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_flags_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109483,7 +109483,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_flags_get(v8::Local<v8::
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_flags_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109510,7 +109510,7 @@ static void _wrap__xmlSchemaAttributeGroup_attributeWildcard_set(v8::Local<v8::N
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attributeWildcard_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109539,7 +109539,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_attributeWildcard_get(v8
   int res1 = 0 ;
   xmlSchemaWildcardPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attributeWildcard_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109568,7 +109568,7 @@ static void _wrap__xmlSchemaAttributeGroup_refPrefix_set(v8::Local<v8::Name> pro
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refPrefix_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109603,7 +109603,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_refPrefix_get(v8::Local<
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refPrefix_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109642,7 +109642,7 @@ static void _wrap__xmlSchemaAttributeGroup_refItem_set(v8::Local<v8::Name> prope
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refItem_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109671,7 +109671,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_refItem_get(v8::Local<v8
   int res1 = 0 ;
   xmlSchemaAttributeGroupPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_refItem_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109700,7 +109700,7 @@ static void _wrap__xmlSchemaAttributeGroup_targetNamespace_set(v8::Local<v8::Nam
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109735,7 +109735,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_targetNamespace_get(v8::
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109772,7 +109772,7 @@ static void _wrap__xmlSchemaAttributeGroup_attrUses_set(v8::Local<v8::Name> prop
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attrUses_set" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109797,7 +109797,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaAttributeGroup_attrUses_get(v8::Local<v
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaAttributeGroup, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaAttributeGroup_attrUses_get" "', argument " "1"" of type '" "_xmlSchemaAttributeGroup *""'"); 
   }
@@ -109817,7 +109817,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaAttributeGroup(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaAttributeGroup *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaAttributeGroup.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaAttributeGroup.");
@@ -109855,7 +109855,7 @@ static void _wrap__xmlSchemaTypeLink_next_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaTypeLink_next_set" "', argument " "1"" of type '" "_xmlSchemaTypeLink *""'"); 
   }
@@ -109884,7 +109884,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaTypeLink_next_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   _xmlSchemaTypeLink *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaTypeLink_next_get" "', argument " "1"" of type '" "_xmlSchemaTypeLink *""'"); 
   }
@@ -109911,7 +109911,7 @@ static void _wrap__xmlSchemaTypeLink_type_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaTypeLink_type_set" "', argument " "1"" of type '" "_xmlSchemaTypeLink *""'"); 
   }
@@ -109940,7 +109940,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaTypeLink_type_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaTypeLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaTypeLink_type_get" "', argument " "1"" of type '" "_xmlSchemaTypeLink *""'"); 
   }
@@ -109960,7 +109960,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaTypeLink(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaTypeLink *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaTypeLink.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaTypeLink.");
@@ -109998,7 +109998,7 @@ static void _wrap__xmlSchemaFacetLink_next_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacetLink_next_set" "', argument " "1"" of type '" "_xmlSchemaFacetLink *""'"); 
   }
@@ -110027,7 +110027,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacetLink_next_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   _xmlSchemaFacetLink *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacetLink_next_get" "', argument " "1"" of type '" "_xmlSchemaFacetLink *""'"); 
   }
@@ -110054,7 +110054,7 @@ static void _wrap__xmlSchemaFacetLink_facet_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacetLink_facet_set" "', argument " "1"" of type '" "_xmlSchemaFacetLink *""'"); 
   }
@@ -110083,7 +110083,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacetLink_facet_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlSchemaFacetPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacetLink, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacetLink_facet_get" "', argument " "1"" of type '" "_xmlSchemaFacetLink *""'"); 
   }
@@ -110103,7 +110103,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaFacetLink(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaFacetLink *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaFacetLink.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaFacetLink.");
@@ -110591,7 +110591,7 @@ static void _wrap__xmlSchemaType_type_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_type_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110620,7 +110620,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_type_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_type_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110647,7 +110647,7 @@ static void _wrap__xmlSchemaType_next_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_next_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110676,7 +110676,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_next_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   _xmlSchemaType *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_next_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110705,7 +110705,7 @@ static void _wrap__xmlSchemaType_name_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_name_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110740,7 +110740,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_name_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_name_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110781,7 +110781,7 @@ static void _wrap__xmlSchemaType_id_set(v8::Local<v8::Name> property, v8::Local<
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_id_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110816,7 +110816,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_id_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_id_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110857,7 +110857,7 @@ static void _wrap__xmlSchemaType_ref_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_ref_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110892,7 +110892,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_ref_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_ref_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110933,7 +110933,7 @@ static void _wrap__xmlSchemaType_refNs_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_refNs_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -110968,7 +110968,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_refNs_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_refNs_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111007,7 +111007,7 @@ static void _wrap__xmlSchemaType_annot_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_annot_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111036,7 +111036,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_annot_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_annot_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111063,7 +111063,7 @@ static void _wrap__xmlSchemaType_subtypes_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_subtypes_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111092,7 +111092,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_subtypes_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_subtypes_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111119,7 +111119,7 @@ static void _wrap__xmlSchemaType_attributes_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributes_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111148,7 +111148,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_attributes_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlSchemaAttributePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributes_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111175,7 +111175,7 @@ static void _wrap__xmlSchemaType_node_set(v8::Local<v8::Name> property, v8::Loca
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_node_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111216,7 +111216,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_node_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_node_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111243,7 +111243,7 @@ static void _wrap__xmlSchemaType_minOccurs_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_minOccurs_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111272,7 +111272,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_minOccurs_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_minOccurs_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111299,7 +111299,7 @@ static void _wrap__xmlSchemaType_maxOccurs_set(v8::Local<v8::Name> property, v8:
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_maxOccurs_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111328,7 +111328,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_maxOccurs_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_maxOccurs_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111355,7 +111355,7 @@ static void _wrap__xmlSchemaType_flags_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_flags_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111384,7 +111384,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_flags_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_flags_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111411,7 +111411,7 @@ static void _wrap__xmlSchemaType_contentType_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contentType_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111440,7 +111440,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_contentType_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlSchemaContentType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contentType_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111469,7 +111469,7 @@ static void _wrap__xmlSchemaType_base_set(v8::Local<v8::Name> property, v8::Loca
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_base_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111504,7 +111504,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_base_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_base_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111545,7 +111545,7 @@ static void _wrap__xmlSchemaType_baseNs_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_baseNs_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111580,7 +111580,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_baseNs_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_baseNs_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111619,7 +111619,7 @@ static void _wrap__xmlSchemaType_baseType_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_baseType_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111648,7 +111648,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_baseType_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_baseType_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111675,7 +111675,7 @@ static void _wrap__xmlSchemaType_facets_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_facets_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111704,7 +111704,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_facets_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlSchemaFacetPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_facets_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111731,7 +111731,7 @@ static void _wrap__xmlSchemaType_redef_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_redef_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111760,7 +111760,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_redef_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   _xmlSchemaType *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_redef_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111787,7 +111787,7 @@ static void _wrap__xmlSchemaType_recurse_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_recurse_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111816,7 +111816,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_recurse_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_recurse_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111843,7 +111843,7 @@ static void _wrap__xmlSchemaType_attributeUses_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributeUses_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111872,7 +111872,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_attributeUses_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlSchemaAttributeLinkPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributeUses_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111899,7 +111899,7 @@ static void _wrap__xmlSchemaType_attributeWildcard_set(v8::Local<v8::Name> prope
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributeWildcard_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111928,7 +111928,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_attributeWildcard_get(v8::Local<v8
   int res1 = 0 ;
   xmlSchemaWildcardPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attributeWildcard_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111955,7 +111955,7 @@ static void _wrap__xmlSchemaType_builtInType_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_builtInType_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -111984,7 +111984,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_builtInType_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_builtInType_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112011,7 +112011,7 @@ static void _wrap__xmlSchemaType_memberTypes_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_memberTypes_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112040,7 +112040,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_memberTypes_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlSchemaTypeLinkPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_memberTypes_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112067,7 +112067,7 @@ static void _wrap__xmlSchemaType_facetSet_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_facetSet_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112096,7 +112096,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_facetSet_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaFacetLinkPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_facetSet_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112125,7 +112125,7 @@ static void _wrap__xmlSchemaType_refPrefix_set(v8::Local<v8::Name> property, v8:
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_refPrefix_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112160,7 +112160,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_refPrefix_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_refPrefix_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112199,7 +112199,7 @@ static void _wrap__xmlSchemaType_contentTypeDef_set(v8::Local<v8::Name> property
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contentTypeDef_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112228,7 +112228,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_contentTypeDef_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contentTypeDef_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112255,7 +112255,7 @@ static void _wrap__xmlSchemaType_contModel_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contModel_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112284,7 +112284,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_contModel_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlRegexpPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_contModel_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112313,7 +112313,7 @@ static void _wrap__xmlSchemaType_targetNamespace_set(v8::Local<v8::Name> propert
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112348,7 +112348,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_targetNamespace_get(v8::Local<v8::
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112385,7 +112385,7 @@ static void _wrap__xmlSchemaType_attrUses_set(v8::Local<v8::Name> property, v8::
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attrUses_set" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112410,7 +112410,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaType_attrUses_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaType, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaType_attrUses_get" "', argument " "1"" of type '" "_xmlSchemaType *""'"); 
   }
@@ -112430,7 +112430,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaType(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaType *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaType.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaType.");
@@ -112753,7 +112753,7 @@ static void _wrap__xmlSchemaElement_type_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_type_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112782,7 +112782,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_type_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_type_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112809,7 +112809,7 @@ static void _wrap__xmlSchemaElement_next_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_next_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112838,7 +112838,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_next_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   _xmlSchemaType *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_next_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112867,7 +112867,7 @@ static void _wrap__xmlSchemaElement_name_set(v8::Local<v8::Name> property, v8::L
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_name_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112902,7 +112902,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_name_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_name_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112943,7 +112943,7 @@ static void _wrap__xmlSchemaElement_id_set(v8::Local<v8::Name> property, v8::Loc
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_id_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -112978,7 +112978,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_id_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_id_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113019,7 +113019,7 @@ static void _wrap__xmlSchemaElement_ref_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_ref_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113054,7 +113054,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_ref_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_ref_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113095,7 +113095,7 @@ static void _wrap__xmlSchemaElement_refNs_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refNs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113130,7 +113130,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_refNs_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refNs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113169,7 +113169,7 @@ static void _wrap__xmlSchemaElement_annot_set(v8::Local<v8::Name> property, v8::
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_annot_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113198,7 +113198,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_annot_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_annot_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113225,7 +113225,7 @@ static void _wrap__xmlSchemaElement_subtypes_set(v8::Local<v8::Name> property, v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_subtypes_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113254,7 +113254,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_subtypes_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlSchemaTypePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_subtypes_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113281,7 +113281,7 @@ static void _wrap__xmlSchemaElement_attributes_set(v8::Local<v8::Name> property,
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_attributes_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113310,7 +113310,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_attributes_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlSchemaAttributePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_attributes_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113337,7 +113337,7 @@ static void _wrap__xmlSchemaElement_node_set(v8::Local<v8::Name> property, v8::L
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_node_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113378,7 +113378,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_node_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_node_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113405,7 +113405,7 @@ static void _wrap__xmlSchemaElement_minOccurs_set(v8::Local<v8::Name> property, 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_minOccurs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113434,7 +113434,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_minOccurs_get(v8::Local<v8::Nam
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_minOccurs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113461,7 +113461,7 @@ static void _wrap__xmlSchemaElement_maxOccurs_set(v8::Local<v8::Name> property, 
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_maxOccurs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113490,7 +113490,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_maxOccurs_get(v8::Local<v8::Nam
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_maxOccurs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113517,7 +113517,7 @@ static void _wrap__xmlSchemaElement_flags_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_flags_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113546,7 +113546,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_flags_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_flags_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113575,7 +113575,7 @@ static void _wrap__xmlSchemaElement_targetNamespace_set(v8::Local<v8::Name> prop
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113610,7 +113610,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_targetNamespace_get(v8::Local<v
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113651,7 +113651,7 @@ static void _wrap__xmlSchemaElement_namedType_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_namedType_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113686,7 +113686,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_namedType_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_namedType_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113727,7 +113727,7 @@ static void _wrap__xmlSchemaElement_namedTypeNs_set(v8::Local<v8::Name> property
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_namedTypeNs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113762,7 +113762,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_namedTypeNs_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_namedTypeNs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113803,7 +113803,7 @@ static void _wrap__xmlSchemaElement_substGroup_set(v8::Local<v8::Name> property,
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_substGroup_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113838,7 +113838,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_substGroup_get(v8::Local<v8::Na
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_substGroup_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113879,7 +113879,7 @@ static void _wrap__xmlSchemaElement_substGroupNs_set(v8::Local<v8::Name> propert
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_substGroupNs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113914,7 +113914,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_substGroupNs_get(v8::Local<v8::
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_substGroupNs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113955,7 +113955,7 @@ static void _wrap__xmlSchemaElement_scope_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_scope_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -113990,7 +113990,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_scope_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_scope_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114031,7 +114031,7 @@ static void _wrap__xmlSchemaElement_value_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_value_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114066,7 +114066,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_value_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_value_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114105,7 +114105,7 @@ static void _wrap__xmlSchemaElement_refDecl_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refDecl_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114134,7 +114134,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_refDecl_get(v8::Local<v8::Name>
   int res1 = 0 ;
   _xmlSchemaElement *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refDecl_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114161,7 +114161,7 @@ static void _wrap__xmlSchemaElement_contModel_set(v8::Local<v8::Name> property, 
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_contModel_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114190,7 +114190,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_contModel_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlRegexpPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_contModel_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114217,7 +114217,7 @@ static void _wrap__xmlSchemaElement_contentType_set(v8::Local<v8::Name> property
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_contentType_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114246,7 +114246,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_contentType_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlSchemaContentType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_contentType_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114275,7 +114275,7 @@ static void _wrap__xmlSchemaElement_refPrefix_set(v8::Local<v8::Name> property, 
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refPrefix_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114310,7 +114310,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_refPrefix_get(v8::Local<v8::Nam
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_refPrefix_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114349,7 +114349,7 @@ static void _wrap__xmlSchemaElement_defVal_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_defVal_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114378,7 +114378,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_defVal_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaValPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_defVal_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114403,7 +114403,7 @@ static void _wrap__xmlSchemaElement_idcs_set(v8::Local<v8::Name> property, v8::L
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_idcs_set" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114428,7 +114428,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaElement_idcs_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaElement, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaElement_idcs_get" "', argument " "1"" of type '" "_xmlSchemaElement *""'"); 
   }
@@ -114448,7 +114448,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaElement(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaElement *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaElement.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaElement.");
@@ -114546,7 +114546,7 @@ static void _wrap__xmlSchemaFacet_type_set(v8::Local<v8::Name> property, v8::Loc
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_type_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114575,7 +114575,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_type_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_type_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114602,7 +114602,7 @@ static void _wrap__xmlSchemaFacet_next_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_next_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114631,7 +114631,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_next_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   _xmlSchemaFacet *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_next_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114660,7 +114660,7 @@ static void _wrap__xmlSchemaFacet_value_set(v8::Local<v8::Name> property, v8::Lo
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_value_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114695,7 +114695,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_value_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_value_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114736,7 +114736,7 @@ static void _wrap__xmlSchemaFacet_id_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_id_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114771,7 +114771,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_id_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_id_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114810,7 +114810,7 @@ static void _wrap__xmlSchemaFacet_annot_set(v8::Local<v8::Name> property, v8::Lo
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_annot_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114839,7 +114839,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_annot_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_annot_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114866,7 +114866,7 @@ static void _wrap__xmlSchemaFacet_node_set(v8::Local<v8::Name> property, v8::Loc
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_node_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114907,7 +114907,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_node_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlNodePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_node_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114934,7 +114934,7 @@ static void _wrap__xmlSchemaFacet_fixed_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_fixed_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114963,7 +114963,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_fixed_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_fixed_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -114990,7 +114990,7 @@ static void _wrap__xmlSchemaFacet_whitespace_set(v8::Local<v8::Name> property, v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_whitespace_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115019,7 +115019,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_whitespace_get(v8::Local<v8::Name
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_whitespace_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115046,7 +115046,7 @@ static void _wrap__xmlSchemaFacet_val_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_val_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115075,7 +115075,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_val_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlSchemaValPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_val_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115102,7 +115102,7 @@ static void _wrap__xmlSchemaFacet_regexp_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_regexp_set" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115131,7 +115131,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaFacet_regexp_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlRegexpPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaFacet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaFacet_regexp_get" "', argument " "1"" of type '" "_xmlSchemaFacet *""'"); 
   }
@@ -115151,7 +115151,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaFacet(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaFacet *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaFacet.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaFacet.");
@@ -115189,7 +115189,7 @@ static void _wrap__xmlSchemaNotation_type_set(v8::Local<v8::Name> property, v8::
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_type_set" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115218,7 +115218,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaNotation_type_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlSchemaTypeType result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_type_get" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115247,7 +115247,7 @@ static void _wrap__xmlSchemaNotation_name_set(v8::Local<v8::Name> property, v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_name_set" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115282,7 +115282,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaNotation_name_get(v8::Local<v8::Name> p
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_name_get" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115321,7 +115321,7 @@ static void _wrap__xmlSchemaNotation_annot_set(v8::Local<v8::Name> property, v8:
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_annot_set" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115350,7 +115350,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaNotation_annot_get(v8::Local<v8::Name> 
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_annot_get" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115379,7 +115379,7 @@ static void _wrap__xmlSchemaNotation_identifier_set(v8::Local<v8::Name> property
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_identifier_set" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115414,7 +115414,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaNotation_identifier_get(v8::Local<v8::N
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_identifier_get" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115455,7 +115455,7 @@ static void _wrap__xmlSchemaNotation_targetNamespace_set(v8::Local<v8::Name> pro
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115490,7 +115490,7 @@ static SwigV8ReturnValue _wrap__xmlSchemaNotation_targetNamespace_get(v8::Local<
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchemaNotation, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchemaNotation_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchemaNotation *""'"); 
   }
@@ -115522,7 +115522,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchemaNotation(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchemaNotation *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchemaNotation.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchemaNotation.");
@@ -115712,7 +115712,7 @@ static void _wrap__xmlSchema_name_set(v8::Local<v8::Name> property, v8::Local<v8
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_name_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115747,7 +115747,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_name_get(v8::Local<v8::Name> property,
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_name_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115788,7 +115788,7 @@ static void _wrap__xmlSchema_targetNamespace_set(v8::Local<v8::Name> property, v
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_targetNamespace_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115823,7 +115823,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_targetNamespace_get(v8::Local<v8::Name
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_targetNamespace_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115864,7 +115864,7 @@ static void _wrap__xmlSchema_version_set(v8::Local<v8::Name> property, v8::Local
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_version_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115899,7 +115899,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_version_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_version_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115940,7 +115940,7 @@ static void _wrap__xmlSchema_id_set(v8::Local<v8::Name> property, v8::Local<v8::
   size_t size2 = 0 ;
   int alloc2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_id_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -115975,7 +115975,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_id_get(v8::Local<v8::Name> property, c
   int res1 = 0 ;
   xmlChar *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_id_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116014,7 +116014,7 @@ static void _wrap__xmlSchema_doc_set(v8::Local<v8::Name> property, v8::Local<v8:
   int res2 ;
   void *arg20 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_doc_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116043,7 +116043,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_doc_get(v8::Local<v8::Name> property, 
   int res1 = 0 ;
   xmlDocPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_doc_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116070,7 +116070,7 @@ static void _wrap__xmlSchema_annot_set(v8::Local<v8::Name> property, v8::Local<v
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_annot_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116099,7 +116099,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_annot_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   xmlSchemaAnnotPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_annot_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116126,7 +116126,7 @@ static void _wrap__xmlSchema_flags_set(v8::Local<v8::Name> property, v8::Local<v
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_flags_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116155,7 +116155,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_flags_get(v8::Local<v8::Name> property
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_flags_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116182,7 +116182,7 @@ static void _wrap__xmlSchema_typeDecl_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_typeDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116211,7 +116211,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_typeDecl_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_typeDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116238,7 +116238,7 @@ static void _wrap__xmlSchema_attrDecl_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_attrDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116267,7 +116267,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_attrDecl_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_attrDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116294,7 +116294,7 @@ static void _wrap__xmlSchema_attrgrpDecl_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_attrgrpDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116323,7 +116323,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_attrgrpDecl_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_attrgrpDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116350,7 +116350,7 @@ static void _wrap__xmlSchema_elemDecl_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_elemDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116379,7 +116379,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_elemDecl_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_elemDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116406,7 +116406,7 @@ static void _wrap__xmlSchema_notaDecl_set(v8::Local<v8::Name> property, v8::Loca
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_notaDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116435,7 +116435,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_notaDecl_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_notaDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116462,7 +116462,7 @@ static void _wrap__xmlSchema_schemasImports_set(v8::Local<v8::Name> property, v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_schemasImports_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116491,7 +116491,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_schemasImports_get(v8::Local<v8::Name>
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_schemasImports_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116516,7 +116516,7 @@ static void _wrap__xmlSchema__private_set(v8::Local<v8::Name> property, v8::Loca
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema__private_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116541,7 +116541,7 @@ static SwigV8ReturnValue _wrap__xmlSchema__private_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema__private_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116568,7 +116568,7 @@ static void _wrap__xmlSchema_groupDecl_set(v8::Local<v8::Name> property, v8::Loc
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_groupDecl_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116597,7 +116597,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_groupDecl_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_groupDecl_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116624,7 +116624,7 @@ static void _wrap__xmlSchema_dict_set(v8::Local<v8::Name> property, v8::Local<v8
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_dict_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116653,7 +116653,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_dict_get(v8::Local<v8::Name> property,
   int res1 = 0 ;
   xmlDictPtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_dict_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116678,7 +116678,7 @@ static void _wrap__xmlSchema_includes_set(v8::Local<v8::Name> property, v8::Loca
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_includes_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116703,7 +116703,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_includes_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_includes_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116730,7 +116730,7 @@ static void _wrap__xmlSchema_preserve_set(v8::Local<v8::Name> property, v8::Loca
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_preserve_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116759,7 +116759,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_preserve_get(v8::Local<v8::Name> prope
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_preserve_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116786,7 +116786,7 @@ static void _wrap__xmlSchema_counter_set(v8::Local<v8::Name> property, v8::Local
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_counter_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116815,7 +116815,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_counter_get(v8::Local<v8::Name> proper
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_counter_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116842,7 +116842,7 @@ static void _wrap__xmlSchema_idcDef_set(v8::Local<v8::Name> property, v8::Local<
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_idcDef_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116871,7 +116871,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_idcDef_get(v8::Local<v8::Name> propert
   int res1 = 0 ;
   xmlHashTablePtr result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_idcDef_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116896,7 +116896,7 @@ static void _wrap__xmlSchema_volatiles_set(v8::Local<v8::Name> property, v8::Loc
   void *argp1 = 0 ;
   int res1 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_volatiles_set" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116921,7 +116921,7 @@ static SwigV8ReturnValue _wrap__xmlSchema_volatiles_get(v8::Local<v8::Name> prop
   int res1 = 0 ;
   void *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlSchema, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlSchema_volatiles_get" "', argument " "1"" of type '" "_xmlSchema *""'"); 
   }
@@ -116941,7 +116941,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlSchema(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlSchema *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlSchema.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlSchema.");
@@ -123302,7 +123302,7 @@ static void _wrap__xmlLocationSet_locNr_set(v8::Local<v8::Name> property, v8::Lo
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locNr_set" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123331,7 +123331,7 @@ static SwigV8ReturnValue _wrap__xmlLocationSet_locNr_get(v8::Local<v8::Name> pro
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locNr_get" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123358,7 +123358,7 @@ static void _wrap__xmlLocationSet_locMax_set(v8::Local<v8::Name> property, v8::L
   int val2 ;
   int ecode2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locMax_set" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123387,7 +123387,7 @@ static SwigV8ReturnValue _wrap__xmlLocationSet_locMax_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   int result;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locMax_get" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123414,7 +123414,7 @@ static void _wrap__xmlLocationSet_locTab_set(v8::Local<v8::Name> property, v8::L
   void *argp2 = 0 ;
   int res2 = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locTab_set" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123443,7 +123443,7 @@ static SwigV8ReturnValue _wrap__xmlLocationSet_locTab_get(v8::Local<v8::Name> pr
   int res1 = 0 ;
   xmlXPathObjectPtr *result = 0 ;
   
-  res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
+  res1 = SWIG_ConvertPtr(info.This(), &argp1,SWIGTYPE_p__xmlLocationSet, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_xmlLocationSet_locTab_get" "', argument " "1"" of type '" "_xmlLocationSet *""'"); 
   }
@@ -123463,7 +123463,7 @@ fail:
 static SwigV8ReturnValue _wrap_new__xmlLocationSet(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
-  SWIGV8_OBJECT self = args.Holder();
+  SWIGV8_OBJECT self = args.This();
   _xmlLocationSet *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__xmlLocationSet.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__xmlLocationSet.");
